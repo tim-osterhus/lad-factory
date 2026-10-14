@@ -1,1 +1,4 @@
 .DS_Store
+# Local run records and logs can contain target-project data.
+run/
+historylog/*/

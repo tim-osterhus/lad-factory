@@ -1,67 +1,55 @@
-# lad-factory
+# LAD Factory
 
-`lad-factory` is a bounded static Lean Agentic Development (LAD) runtime for executing scoped software work packets through implementation, independent checking, recovery, and evidence-backed closure.
+LAD Factory is a Markdown workflow for sequential software development with native Codex agents.
 
-It is for operators who want autonomous coding work to remain inspectable and recoverable instead of treating an agent's final message as proof of completion.
+Use it when a specification needs planning, implementation, independent review, repair, and an Arbiter decision against the original goal. Stage instructions live in files. Current assignments and evidence stay readable on disk.
 
-**Status:** pre-alpha repository scaffold. No runnable controller exists yet. The first deliverable is the qualification suite described below; do not use this repository for production orchestration.
+Status: ready to copy and inspect as a Markdown package. The included fixture walks through documented transitions. It does not demonstrate a live autonomous run or production reliability.
 
-```bash
-git clone https://github.com/tim-osterhus/lad-factory.git
-cd lad-factory
-```
+## Start a run
 
-There is nothing to install or run yet. The repository will expose checked commands as implementation lands.
-
-## Frozen execution topology
-
-The initial runtime target is one operator-approved graph, not a general workflow compiler:
+1. Clone or copy this package into a directory your Codex session can read.
+2. Read [setup](docs/setup.md) and confirm the required native controls.
+3. Create `run/current/` using the [templates](templates/README.md).
+4. Preserve the original target specification and acceptance criteria in `run/current/goal.md`.
+5. Start the Orchestrator from the package root with this exact prompt:
 
 ```text
-READY -> BUILDER -> CHECKER
-                       | pass -> UPDATER -> TASK_DONE
-                       | findings -> FIXER -> DOUBLECHECKER
-                                              | pass -> UPDATER
-                                              | exhausted -> TROUBLESHOOTER
-
-Execution failure -> bounded retry -> TROUBLESHOOTER -> CONSULTANT
-CONSULTANT -> existing stage | planning incident | WAITING_FOR_HUMAN
-Root lineage drained -> ARBITER -> CLOSED | remediation | WAITING_FOR_HUMAN
+Read prompts/orchestrator.md and follow instructions.
 ```
 
-The controller will own transitions, retry budgets, stale-result rejection, human gates, and closure. Agents will emit typed results, evidence, and recommendations; they will not rewrite the graph or declare their own output authoritative.
+The Orchestrator creates or verifies the native goal before delegating. Model, reasoning effort, and fresh context are agent settings. Every initial stage prompt contains only the instruction to read its stage file. The assignment file carries the work.
 
-## Runtime truth
+## Arbiter closure
 
-The implementation target has five non-negotiable properties:
+```text
+Recon for existing code -> Planner -> Manager
+  -> Builder -> Checker -> Updater -> next packet
+                 -> Fixer -> Doublechecker
+After two Fixer cycles: Learning, then the pending route
+Unresolved review: Troubleshooter -> Consultant when needed
+All packets complete -> Arbiter -> closure or scoped remediation
+```
 
-- Every work packet names its scope, writable paths, checks, budgets, and legal next actions.
-- Packet, attempt, transition, incident, wait, and closure state survives process restarts.
-- Checker establishes an independent baseline that Fixer and Doublechecker cannot silently replace.
-- Ordinary failures route through bounded Troubleshooter and Consultant recovery before asking for a human.
-- Arbiter closes a root lineage only from its canonical contract and inspectable evidence.
+The [Orchestrator](prompts/orchestrator.md) starts one stage at a time and waits idle for completion. Stages may use fresh nested agents for separable work. Planner works alone.
 
-These are design targets, not current feature claims.
+Checker records expected behavior before examining the change. Doublechecker preserves that review baseline. Arbiter checks every original criterion independently of packet completion.
 
-## Qualification before claims
+## Inspect the package
 
-The runtime will not be called operational until an automated qualification track proves all of the following:
+- [Routing](context/routing.md) identifies each role's required context.
+- [Shared contracts](context/contracts.md) define ownership, evidence, logs, and bounded recovery.
+- [Nested model selection](context/nested-models.md) defines worker tiers and delegation.
+- [Protocol fixture](examples/dry-run/README.md) exercises documented transitions without running native agents.
 
-1. A normal packet reaches Builder, Checker, Updater, and closure.
-2. A Checker finding reaches Fixer and Doublechecker against one immutable baseline.
-3. A deterministic local failure reaches Troubleshooter and resumes at the interrupted stage.
-4. A defective packet contract reaches Consultant, planning repair, and revised execution.
-5. A planning-side failure is repaired without restarting unrelated work.
-6. A controller kill, restart, stale result, and current-generation completion reconcile correctly.
-7. An Arbiter gap produces bounded remediation and eventual closure.
-8. A genuinely human-only action stops in a durable wait before the protected action occurs.
+## Native dependencies and limits
 
-Passing requires zero unauthorized transitions, duplicate completions, or manual runtime-state edits. Each run must remain reconstructable from durable records and repository state.
+The host must support native goals, fresh contexts, explicit models and efforts, and completion-event waiting. Stage owners use `gpt-6.1-sol`. Only Arbiter uses `gpt-6-astra`. Luna handles bounded nested work.
 
-## Deliberate limits
+These files depend on the host to execute those controls. They provide no scheduler, process recovery service, or automatic wakeup after session unload. Run records require a retention and backup policy. [Setup](docs/setup.md) explains capability checks and interrupted-run recovery.
 
-The first implementation will not include dynamic or agent-authored graph topology, a plugin system, a generic workflow-package layer, arbitrary fan-out and joins, unbounded retries, or chat history as authoritative state. Stable packet and evidence contracts can preserve later migration paths without putting those abstractions on the critical path now.
+## Sources and license
 
-## License
+Stage responsibilities draw on [Millrace v0.21.1](https://github.com/tim-osterhus/millrace/tree/v0.21.1). The layout is informed by Jake Van Clief's Interpretable Context Methodology. [Provenance](docs/provenance.md) records the sources and adaptation boundaries.
 
 Licensed under the [Apache License 2.0](LICENSE).
