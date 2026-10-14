@@ -60,13 +60,15 @@ Pre-dispatch path snapshot: <current invocation snapshot path or none>
 
 | Scope | Budget | Used | Remaining |
 | --- | --- | --- | --- |
-| <each applicable scope from context/transitions.md> | <finite limit> | 0 | <limit> |
+| <each applicable scope from context/transitions.md> | <finite limit> | <0 for a new run, otherwise reconciled debits> | <remaining after recorded debits> |
+
+Recovery counter scope: <originating packet lineage or this run's persistent unpacketized scope, with reconciled ledger references>
 
 ## Dispatch ledger
 
 | Invocation | Stage/packet | Reserved attempt | Native identity | Outcome | Cycle pairing | Path audit |
 | --- | --- | --- | --- | --- | --- | --- |
-| <id> | <stage and packet or pre-packet> | <counter debit> | <agent ID or unresolved> | <active, rejected, interrupted, or result> | <Fixer/evaluation IDs or none> | <evidence or pending> |
+| <id> | <stage, packet if any, and originating recovery counter scope> | <counter debit and scope reference> | <agent ID or unresolved> | <active, rejected, interrupted, or result> | <Fixer/evaluation IDs or none> | <evidence or pending> |
 
 Preserve debits on failed, invalid, interrupted, and unknown dispatches.
 Learning status is pending, passed, findings, or failed. Failed Learning preserves the pending route.
@@ -74,6 +76,11 @@ Learning status is pending, passed, findings, or failed. Failed Learning preserv
 ## Pending route
 
 <Resume stage after Learning or recovery and its supporting result.>
+
+<For a Human hold: reason/type, triggering invocation, exact saved resume stage/route, and necessary human resolution evidence.>
+<Source/guidance identities and relevant historical usage, current reservations, remaining limits, and active-owner identity/outcome.>
+<On resolution: verified scope/authority and identities, affected evidence/dependents, approved finite budget changes preserving past debits, and fresh resume invocation/debit.>
+<A terminal blocked invocation remains blocked. Reconcile active or uncertain owners before replacement.>
 
 ## Decisions and recovery
 

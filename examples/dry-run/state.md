@@ -59,20 +59,22 @@ Pre-dispatch path snapshot: illustrative clean target and unchanged package inve
 | Updater dispatches | 4 | 0 | 4 |
 | Fixer dispatches | 3 | 2 | 1 |
 | Evaluated Fixer cycles | 2 | 2 | 0 |
-| Troubleshooter dispatches | 2 | 0 | 2 |
-| Local repair attempts | 1 | 0 | 1 |
+| Troubleshooter dispatches for originating fixture-p01 lineage | 2 | 0 | 2 |
+| Local repair attempts for originating fixture-p01 lineage | 1 | 0 | 1 |
 | Consultant dispatches | 2 | 0 | 2 |
 | Planning repair | 1 | 0 | 1 |
 | Learning dispatches | 2 | 1 | 1 |
 | Arbiter dispatches | 3 | 0 | 3 |
 | Arbiter remediation plan | 1 | 0 | 1 |
-| Invalid-result replacement for this stage/packet | 1 | 0 | 1 |
+| Invalid-result or technical replacement for this stage/fixture-p01 lineage | 1 | 0 | 1 |
 | Nested dispatches / nesting depth for this invocation | 4 / 2 | 0 / 0 | 4 / 2 |
 | Check-command invocations for this invocation | 12 | 0 | 12 |
 | Per-command time limit | 600 seconds | not executed | 600 seconds |
 
 These are illustrative counter values for the preceding nine stages and reserved Learning dispatch.
 No actual native attempt or command occurred.
+
+Recovery counter scope: originating fixture-p01 lineage, retained through Consultant, Troubleshooter, and any replacement packets.
 
 ## Dispatch ledger
 

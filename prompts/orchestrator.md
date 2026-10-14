@@ -81,6 +81,8 @@ Reject and preserve out-of-scope differences under the shared hold policy.
 
 Reject stale or superseded results. Reconcile unexpected events by exact agent identity.
 Only then accept artifacts, update canonical state, and choose a route from `context/transitions.md`.
+Validate `blocked` evidence against that policy's Human hold conditions.
+Record classification corrections for recoverable obstacles and use the stage's existing findings/error route.
 Record every dispatch outcome, including rejected, failed, and interrupted attempts.
 Unknown usage remains reserved. Never reset budgets on resume or silently allocate another recovery episode.
 
@@ -99,7 +101,8 @@ Accept a complete consistent plan before dispatching Builder.
 
 Keep a criterion-to-packet-and-evidence map. Do not start parallel packets.
 
-Planning failures route through Consultant.
+Specification and packet defects route through Consultant.
+Planner/Manager technical execution errors route through Troubleshooter with the exact saved stage resume point.
 Consultant may recommend scoped Planner or Manager repair within recorded planning budgets.
 Do not add unrequested planning roles or reset completed unrelated work.
 
@@ -164,6 +167,10 @@ Record interrupted or superseded invocations without deleting their history.
 
 Resume within remaining budgets. Do not fabricate background wakeup or native proof.
 Use the complete shared transition table for blocked/error, invalid evidence, and exhausted attempts.
+Record each genuine hold in the existing pending-route record with its exact resume stage and required resolution evidence.
+After human resolution, verify authority, identities, active-owner outcome, remaining caps, and affected evidence before dispatch.
+Keep terminal blocked artifacts blocked. Reserve a new debit for a fresh invocation of the recorded appropriate stage.
+Use approved Planner/Manager repair for an explicit scope decision. Preserve original goal history and spent budgets.
 
 If interruption occurs between spawn and identifier recording, enter a reconciliation hold.
 An uncertain native outcome requires the same hold.

@@ -35,6 +35,7 @@ Parent invocation: <none or exact parent>
 ## Recovery or decisions
 
 <Attempt usage, pending route, proposed repair, missing authority or inputs.>
+<For blocked: exact human dependence and evidence that already-authorized retrieval, checks, or bounded repair cannot resolve it.>
 
 ## Changed-path audit
 

@@ -34,18 +34,17 @@ All packets complete -> Arbiter -> closure or scoped remediation
 
 The [Orchestrator](prompts/orchestrator.md) starts one stage at a time and waits idle for completion. Stages may use fresh nested agents for separable work. Planner works alone.
 
-Checker records expected behavior before examining the change. Doublechecker preserves that review baseline. Arbiter checks every original criterion independently of packet completion.
+Checker freezes expected behavior before inspecting any target implementation or Builder evidence. Doublechecker preserves that review baseline. Arbiter checks every original criterion independently of packet completion.
 
 ## Inspect the package
 
 - [Routing](context/routing.md) identifies each role's required context.
-- [Shared contracts](context/contracts.md) define ownership, evidence, logs, and bounded recovery.
+- [Shared contracts](context/contracts.md) define worker ownership, evidence, logs, and assigned limits.
 - [Continuation policy](context/continuation.md) defines Goal and heartbeat authorization, waiting, recovery, and closure.
 - [Transition policy](context/transitions.md) covers every stage outcome and finite dispatch limits.
 - [Instruction revisions](context/instruction-revisions.md) preserve review guidance and require changed-path audits before acceptance.
 - [Nested model selection](context/nested-models.md) defines worker tiers and delegation.
 - [Protocol fixture](examples/dry-run/README.md) exercises documented transitions without running native agents.
-- [Native pilot report](examples/native-pilot/README.md) records the October 14, 2026 qualification result and its limits.
 
 ## Native dependencies and limits
 

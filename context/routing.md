@@ -5,23 +5,23 @@ Runtime paths use the package root recorded in `run/current/bootstrap.md`.
 Target paths use the recorded target workspace.
 A snapshot prompt locates bootstrap at `../../../bootstrap.md` relative to its `prompts/` directory.
 Setup uses the mutable package root while preparing the first snapshot.
-See `context/instruction-revisions.md` for path resolution and snapshots.
 Read the current assignment before project sources.
 Follow the target repository's applicable instructions.
 
 | Role | Required context | Inputs |
 | --- | --- | --- |
-| Orchestrator | `context/contracts.md`, `context/transitions.md`, `context/instruction-revisions.md`, `context/continuation.md`, own prompt | Bootstrap, goal, state, matching results |
-| Every stage | `context/contracts.md`, `context/transitions.md`, `context/instruction-revisions.md`, own prompt | `run/current/assignment.md` and cited files |
+| Orchestrator and setup | `context/contracts.md`, `context/transitions.md`, `context/instruction-revisions.md`, `context/continuation.md`, own prompt, `docs/setup.md` | Canonical run records and matching results |
+| Every stage | `context/contracts.md`, own prompt | `run/current/assignment.md` and ordered cited inputs |
 | Delegating stage or nested worker | `context/nested-models.md` | Written work order and disjoint ownership |
-| Planner | Shared contracts only | No nested agents |
-| Arbiter | Shared contracts and own prompt | Original goal and complete evidence index |
+| Planner | Shared worker context above | No nested agents or nested-model preload |
 
 The assignment routes both work type and affected area to project sources.
 Bug work starts with reproduction. Refactoring records behavior to preserve.
 Features start with requested behavior. Review starts with criteria and source identity.
-Stage-specific input order overrides generic preloading. Checker freezes its requirement-derived baseline before implementation or claim exposure.
+Stage-specific input order overrides generic preloading, including linked or embedded appendices.
+Checker freezes its requirement-derived baseline before any target implementation exposure.
 
-Expand context when evidence reveals a relevant dependency.
+Workers load additional policy or project sources only when their assigned responsibility requires them.
+Controller policies are not worker preload requirements.
 Do not load unrelated archives, dependencies, or all documentation by default.
 Keep stable instructions here and temporary progress in current-run records.

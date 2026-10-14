@@ -2,7 +2,7 @@
 
 Read `../context/routing.md` relative to this loaded file.
 Resolve all other guidance and runtime paths by that routing file.
-Read `context/contracts.md`, `context/transitions.md`, and `context/instruction-revisions.md`.
+Read `context/contracts.md`.
 Read `run/current/assignment.md` and its cited inputs.
 For nested work, read and follow `context/nested-models.md`.
 
@@ -23,5 +23,5 @@ Do not reset counters, change the specification, or churn the workflow.
 
 Return the assignment's pending route unchanged.
 This stage follows the two-cycle gate, including a successful second cycle.
-Use the bounded failure policy in `context/transitions.md`.
-The Orchestrator alone accepts activation at the boundary in `context/instruction-revisions.md`.
+Report unavailable prerequisites or execution errors without starting another Learning invocation.
+The Orchestrator applies the bounded failure and activation policies. Preserve the assigned pending route.

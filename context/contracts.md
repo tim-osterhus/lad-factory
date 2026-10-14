@@ -1,117 +1,109 @@
-# Shared contracts
+# Shared worker contracts
 
 ## Authority and ownership
 
 `run/current/goal.md` preserves the original target specification and stable criterion identifiers.
-Planner may propose necessary detail without changing the target.
-The Orchestrator accepts refinements within scope and maps them to the original goal.
-
+Planner may propose necessary detail. Only the Orchestrator accepts refinements within the original scope.
 A material scope decision requires the user.
 
 Only the Orchestrator writes canonical state, assignment, accepted specification, packets, and evidence index.
 Stages write assigned artifacts, their result, and their log.
-Project edits require explicit writable paths.
-
-Nested workers receive disjoint paths. Their parent owns integration.
-Repository instructions and existing user changes remain authoritative.
+Project edits require explicit writable paths. Preserve repository instructions and existing user work.
 Path ownership is an instruction, not a sandbox boundary.
-Require the pre-dispatch snapshot and actual changed-path audit in `context/instruction-revisions.md` before acceptance.
 
-## Assignment and evidence
+Parents record pre-dispatch path state and audit actual changes before accepting worker outputs.
+Assignments supply the audit roots, snapshot, protected paths, exclusions, and permitted writes.
+Workers report actual changes and unexpected paths without deleting, resetting, or overwriting protected work.
 
-Every stage reads `run/current/assignment.md` from the configured package root.
-It names run, invocation, stage, original goal, specification, packet, sources, guidance revision, writable paths, checks, budgets, and outputs.
-The assignment contains the task.
+The Orchestrator independently checks aggregate changes under its controller policy.
+Nested parents load `context/instruction-revisions.md`'s changed-path audit section when preparing and accepting helper work.
+
+## Assignment and immutable guidance
+
+Read `run/current/assignment.md` from the package root recorded in bootstrap.
+It names run, invocation, stage, goal, specification, packet, ordered inputs, writable paths, checks, budgets, and outputs.
+It also supplies source metadata, instruction revision, manifest identity, path bases, and pre-dispatch snapshot.
+
+Reject missing or mismatched assignment identity. Record unavailable inputs honestly.
 
 Initial prompts contain only `Read <actual-relative-snapshot-stage-path>.md and follow instructions.`
 Model, effort, and fresh context are native settings.
-Resolve guidance, runtime, and target paths using `context/instruction-revisions.md`.
-The assignment must match the loaded immutable instruction revision and manifest.
 
-Read linked sources in the owning stage's required order. Generic preload instructions never override stage-specific sequencing.
-Record unavailable inputs honestly.
-Chat history is not authoritative state.
-Use `templates/result.md` for each result.
+Verify loaded guidance bytes against the assigned immutable revision and manifest. Never edit an active snapshot.
+Guidance paths use that instruction root. Runtime paths use the recorded package root.
+Target paths use the assigned target workspace. Reading a file never changes the working directory.
 
+Read cited inputs in the owning stage's required order, including embedded appendices.
+Generic preloading never overrides that order. Chat history is not authoritative state.
+
+## Evidence and outcomes
+
+Use the pinned `templates/result.md` for each result.
 Outcomes are `pass`, `findings`, `blocked`, or `error`.
-A recommendation does not authorize a transition.
-The Orchestrator rejects mismatched, superseded, or incomplete results.
-`context/transitions.md` defines every legal route, override, counter, and default limit.
-Stage and nested agents never create, adopt, update, complete, or disable the Orchestrator's Goal or heartbeat.
-The Orchestrator follows `context/continuation.md` for the selected control.
+
+Use `findings` for inspectable defects or deficient planning and `error` for recoverable execution failures.
+Use `blocked` only when progress requires human input, authority, protected-work resolution, or an approved budget decision.
+Show why already-authorized retrieval, checks, or bounded repair cannot resolve the obstacle.
+
+An exhausted bounded diagnosis with no safe actionable route also requires a Human hold.
+Do not label ordinary access retrieval or a repairable environment failure human-only.
+
+A recommendation never authorizes a transition or additional budget.
+The Orchestrator validates blocker evidence and owns routes, counters, holds, and acceptance.
+Stage and nested agents never create, adopt, update, complete, or disable any Goal or heartbeat.
+Do not replay an external action with an unknown outcome.
 
 Evidence identifies commands, working directory, exit status, and examined source.
 Dirty-checkout identity includes base revision, diff or content hashes, and relevant untracked files.
-Keep failed and unrun checks visible.
-
-Success messages and fixture records are not proof of native execution.
-
-## Finish
-
-Write assigned artifacts and a result following `templates/result.md`.
-Create the required UTC log under the assigned invocation directory.
-Return the result path, outcome, and unresolved issue.
-
-Affirm that all descendants are terminal and their results are collected.
+Keep failed and unrun checks visible. Assignment metadata is not proof of examined source.
 
 ## Independent review
 
-Checker loads requirement-side inputs and freezes expected behavior before implementation, diff, or Builder-claim exposure, including embedded packet appendices.
-Its separate baseline records criteria, checks, source identity, and accepted pre-existing issues.
-It also records the pinned guidance revision and manifest.
-The Orchestrator preserves baseline path and identity through Fixer and Doublechecker.
+Checker derives expectations only from the original goal, specification, and requirement-side packet inputs.
+Checker follows this prohibition:
 
-Fixer cannot replace the baseline.
-Doublechecker verifies findings and current packet criteria for regressions.
-Changed requirements or an invalid baseline route through Consultant.
+Do not read, search, or inspect any target application code, code excerpts, diffs, implementation-derived tests, or Builder evidence until you have written and frozen your expectations baseline.
 
-New evidence may supplement the baseline without silently rewriting it.
+Defer embedded implementation appendices and evidence until after freeze.
+Before freeze, record supplied source identity as assignment metadata without inspecting that source.
+Include only pre-existing exceptions already supplied on the requirement side.
+Record criteria, expected behavior, required checks, pinned guidance revision, and manifest identity in the baseline.
+Freeze the baseline path and identity before implementation access.
 
-## Budgets and recovery
+After freeze, verify actual source identity and record newly discovered pre-existing issues as separate observations.
+Never silently rewrite the baseline to accommodate implementation or new observations.
 
-Apply `context/transitions.md` without inventing routes or resetting used counters.
-Assignments carry all applicable finite limits and remaining counters.
+The Orchestrator preserves the baseline through Fixer and Doublechecker.
+Fixer cannot replace it. Doublechecker checks findings and current packet criteria for regressions.
+Changed requirements or an invalid baseline require Consultant review.
+
+## Assigned limits and nested work
+
+Use the assignment's applicable finite limits and used/remaining counters. Never reset usage or invent routes.
 Separate this invocation's reserved dispatch/replacement debits from capacity for future invocations.
 Zero future capacity does not revoke an already-reserved invocation. It forbids another dispatch under that cap.
 
-Record revised packets and affected dependents before resuming.
-Preserve unrelated completed work and the original review basis.
-Learning activation follows `context/instruction-revisions.md`.
-Budget exhaustion requires the named human decision and leaves the original objective incomplete.
-Apply the selected continuation mode's hold handling in `context/continuation.md`.
+Report attempted repairs and check usage, including failed or interrupted attempts.
 
-## Logs
+One top-level stage runs at a time. Nested work stays inside the active stage.
+Planner never delegates. Other stages load `context/nested-models.md` when using helpers.
 
-Every Orchestrator, stage, and nested invocation creates one Markdown log smaller than 5120 bytes.
+Parents assign disjoint paths, pinned guidance, outputs, log directories, and remaining descendant budgets.
+Parents persist child debits before launch and integrate audited helper results.
+Parents collect every descendant result and confirm all descendants are terminal before finishing.
+Never dispatch a replacement while an owner is active or its identity/outcome is uncertain.
+
+Learning writes only a separate candidate. It cannot change guidance, snapshots, baseline, target code, counters, or pending route.
+The Orchestrator owns candidate acceptance and activation under its controller policy.
+
+## Finish and logs
+
+Write assigned artifacts, the result, and one Markdown log smaller than 5120 bytes.
+Every Orchestrator, stage, and nested invocation logs under `historylog/<run-id>/<invocation-id>/`.
 Use UTC and the exact filename `StageName_HHMM-MMDDYY.md`.
-StageName is the stage name. Nested workers use their owning stage's name.
+Nested workers use their owning stage's name and record their specific role in the log body.
 
-Record the nested worker's specific role in the log body.
-Write under `historylog/<run-id>/<invocation-id>/`.
-Unique invocation directories prevent minute collisions without changing filenames.
+Unique invocation directories prevent collisions. Never overwrite another log.
+Log assignment, outcome, evidence paths, decisions, and unresolved issues. Omit transcripts, credentials, and secrets.
 
-Never overwrite another log. Allocate a new invocation directory if necessary.
-Log assignment, outcome, evidence paths, decisions, and unresolved issues.
-Omit transcripts, credentials, and secrets.
-
-Parents assign each worker's log directory.
-
-## Lifecycle
-
-One top-level stage runs at a time.
-The Orchestrator stays entirely idle and waits for native completion events.
-A bounded wait timeout permits another event wait, without status polling or parallel work.
-
-Nested work stays inside the active stage.
-Parents collect all nested results before finishing.
-Only terminal completion from the recorded active stage owner permits result acceptance after all descendants finish.
-
-After interruption, verify the saved continuation control and agent identity before reconciling disk records.
-An active stage must finish or be explicitly interrupted before replacement.
-Do not infer completion from a file or launch duplicate work.
-
-No guaranteed idle-session wakeup means no promise of background continuation.
-
-An uncertain spawn identity or native outcome requires a reconciliation hold.
-Do not replace work or advance stages until exact invocation, native identity, and outcome are established.
-If reconciliation fails, request the specific missing host or human evidence.
+Return the result path, outcome, unresolved issue, and confirmation that all descendants are terminal and collected.

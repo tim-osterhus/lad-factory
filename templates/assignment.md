@@ -14,7 +14,7 @@ Packet: <path or none>
 
 Target workspace: <workspace>
 
-Source identity: <revision plus dirty/untracked identity>
+Source identity: <supplied revision plus dirty/untracked metadata, independently verified only at the stage's permitted source-access point>
 
 Instruction revision: <immutable guidance revision>
 
@@ -34,7 +34,8 @@ Log directory: historylog/<run-id>/<invocation-id>/
 
 ## Task and inputs
 
-<Concrete task, work type, affected area, instructions, and input paths.>
+<Concrete task, work type, affected area, instructions, and ordered input paths.>
+<For Checker: requirement-side inputs and already-supplied exceptions first. Separate and defer implementation/evidence appendices until baseline freeze.>
 
 ## Writable paths
 
@@ -43,6 +44,7 @@ Log directory: historylog/<run-id>/<invocation-id>/
 ## Checks and acceptance
 
 <Required checks, working directories, criteria, and unavailable prerequisites.>
+<Supply role-relevant route guards and downstream packet constraints needed for this assignment, without requiring full controller-policy preload.>
 
 ## Review baseline
 
@@ -51,9 +53,10 @@ Log directory: historylog/<run-id>/<invocation-id>/
 ## Budgets and counters
 
 <Finite attempts, local repair, planning repair, remediation, used counters, pending route.>
+Recovery counter scope: <originating packet lineage or this run's persistent unpacketized scope, with reconciled ledger references>.
 Current invocation reservations: <already-debited dispatch attempt and any replacement/recovery debit, with ledger references>.
 Future invocation capacity: <remaining counts after those reservations>.
-Copy all applicable `context/transitions.md` limits and used/remaining counters.
+The Orchestrator copies all applicable policy limits and used/remaining counters into this assignment.
 Include total-run and nested budgets. Do not allocate fresh limits on resume.
 Zero future capacity does not revoke this invocation's valid reservation or authorize another invocation.
 
@@ -63,4 +66,4 @@ Zero future capacity does not revoke this invocation's valid reservation or auth
 
 ## Delegation
 
-<Allowed work, host limits, worker ownership, and context/nested-models.md. Planner: none.>
+<Allowed work, host limits, worker ownership, and context/nested-models.md when delegated. Planner: none, without nested-model input.>

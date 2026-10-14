@@ -52,6 +52,8 @@ examples/dry-run/baseline.md, fixture-baseline-v1
 
 ## Budgets and counters
 
+Recovery counter scope: originating fixture-p01 lineage, matching the illustrative state.
+
 Fixer cycles used: 2. Learning not yet completed.
 
 Pending route: Troubleshooter. First Learning dispatch reserved, one retry remains.

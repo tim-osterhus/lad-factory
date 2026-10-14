@@ -2,7 +2,7 @@
 
 Read `../context/routing.md` relative to this loaded file.
 Resolve all other guidance and runtime paths by that routing file.
-Read `context/contracts.md`, `context/transitions.md`, and `context/instruction-revisions.md`.
+Read `context/contracts.md`.
 Read `run/current/assignment.md` and its cited inputs.
 Planner does not delegate.
 
@@ -21,4 +21,5 @@ Do not add speculative functionality, architecture, or process.
 Identify material decisions that require the user.
 
 Recommend Manager after a sufficient scoped specification.
-A planning failure goes to Consultant, not an invented stage.
+Recommend Consultant for specification defects.
+For recoverable technical errors, recommend Troubleshooter with the exact Planner resume point.
