@@ -4,8 +4,6 @@ LAD Factory is a Markdown workflow for sequential software development with nati
 
 Use it when a specification needs planning, implementation, independent review, repair, and an Arbiter decision against the original goal. Stage instructions live in files. Current assignments and evidence stay readable on disk.
 
-Status: ready to copy and inspect as a Markdown package. The included fixture walks through documented transitions. It does not demonstrate a live autonomous run or production reliability.
-
 ## Start a run
 
 1. Clone or copy this package into a directory your Codex session can read.
