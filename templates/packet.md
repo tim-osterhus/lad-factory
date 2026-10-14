@@ -8,6 +8,10 @@ Specification: run/current/spec.md
 
 Original criteria: <AC identifiers>
 
+Instruction revision: <packet's immutable guidance revision>
+
+Guidance manifest: <path and identity>
+
 Depends on: <prior packet identifiers or none>
 
 Order: <sequential position>
@@ -36,7 +40,7 @@ Order: <sequential position>
 
 ## Budgets
 
-<Finite attempts and local-repair limits. Two unresolved Fixer cycles route to Troubleshooter.>
+<All applicable finite limits from context/transitions.md and existing used counters.>
 
 ## Handoff
 

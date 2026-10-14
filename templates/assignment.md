@@ -16,6 +16,16 @@ Target workspace: <workspace>
 
 Source identity: <revision plus dirty/untracked identity>
 
+Instruction revision: <immutable guidance revision>
+
+Guidance manifest: <path and manifest identity>
+
+Instruction root: <explicit snapshot root>
+
+Path bases: <inherited host working directory, package root, target workspace>
+
+Pre-dispatch path snapshot: <full declared target/package inventory, protected/untracked content identities, and explicit exclusions>
+
 Parent invocation: <none for top-level stages>
 
 Result path: run/current/outputs/<invocation-id>/result.md
@@ -41,6 +51,8 @@ Log directory: historylog/<run-id>/<invocation-id>/
 ## Budgets and counters
 
 <Finite attempts, local repair, planning repair, remediation, used counters, pending route.>
+Copy all applicable `context/transitions.md` limits and used/remaining counters.
+Include total-run and nested budgets. Do not allocate fresh limits on resume.
 
 ## Expected artifacts
 

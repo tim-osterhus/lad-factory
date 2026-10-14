@@ -1,6 +1,8 @@
 # Checker
 
-Read `context/routing.md` and `context/contracts.md`.
+Read `../context/routing.md` relative to this loaded file.
+Resolve all other guidance and runtime paths by that routing file.
+Read `context/contracts.md`, `context/transitions.md`, and `context/instruction-revisions.md`.
 Read `run/current/assignment.md` and its cited inputs.
 For nested work, read and follow `context/nested-models.md`.
 

@@ -6,7 +6,17 @@ Target workspace: illustrative greeting project
 
 Original source: fixture specification below
 
-Native goal ID: not created in this structural fixture
+Native goal authorization: none. This fixture does not create a goal.
+
+Native goal reference: not created in this structural fixture
+
+Native goal owning thread: none
+
+Native goal verified objective/status: not observed
+
+Native goal verification evidence: none
+
+Optional goal_id: not exposed
 
 ## Original target specification
 

@@ -1,78 +1,101 @@
 # Setup and capability checks
 
-Copy the package into a directory your Codex session can read.
-Keep the package root stable during a run.
-No package manager, script, or compiled runtime is required.
+Use `prompts/setup.md` to prepare project-specific run records.
+No package manager, installer script, or compiled runtime is required.
+Choose a readable package copy and target workspace. Keep both paths stable during a run.
+Use one current run per package copy. Concurrent runs need separate copies.
 
-Normal target-project tools remain available to authorized agents.
+The package may be inside the target repository or beside it.
+Native agents inherit the host working directory. Do not assume a spawn control can change it.
+Set application command working directories explicitly to the recorded target workspace.
+Resolve initial read-file paths from the actual inherited host directory.
+Reading a file does not change that directory.
 
-The package root must be the agent's working directory for every initial read-file prompt.
-Set that directory through native launch settings when supported.
-Otherwise start the host task in the package root.
+For a package in the host directory's `lad-factory/` subdirectory, start setup with exactly:
 
-Record the target code workspace separately in the assignment.
-Use that target directory for application commands and source paths.
-Fresh agents must reach both directories without relying on inherited conversation.
+```text
+Read lad-factory/prompts/setup.md and follow instructions.
+```
 
-## Confirm the host
+When the host directory is the package root, use `Read prompts/setup.md and follow instructions.`
+For a sibling package, instantiate its actual relative path, including `../` segments as needed.
+Initial stage prompts must use relative paths. Never send a placeholder or absolute prompt path.
+Setup records the actual Orchestrator snapshot prompt for the user.
 
-| Capability | Required behavior |
+## Native goal authorization
+
+Reading setup or workflow files does not authorize native goal creation.
+Give a separate explicit user instruction, such as:
+
+```text
+Create a native goal for the original target specification and acceptance criteria in the prepared run/current/goal.md, and execute that LAD Factory run.
+```
+
+Resolve that goal path through the configured package root.
+Alternatively, use a verified native `/goal` composer command and record its observed response.
+The composer surface is host-dependent. It is not a shell command.
+Do not set a native token budget unless the user requests one.
+
+The Orchestrator inspects an existing goal before creating one.
+Verify owning thread, objective, status, and original-criterion binding before adoption.
+An unrelated active goal or missing binding evidence prevents dispatch. Preserve the existing goal.
+
+Persist whatever stable reference the host exposes, together with the owning thread and verified objective/status.
+A host response may expose `goal.threadId`, `objective`, and `status` without `goal_id`.
+In that case use the exposed thread-scoped reference. Do not invent an internal ID.
+Record `goal_id` only when actually exposed.
+
+Goal controls belong to the Orchestrator's owning thread, not its stage or nested workers.
+Do not assume a child agent's goal tools address the parent goal.
+
+## Observed capability gate
+
+| Capability | Evidence required before dependent execution |
 | --- | --- |
-| Native goal | Create, inspect, and complete a goal with supported native controls |
-| Fresh agents | Start every stage and nested worker without inherited conversation context |
-| Model control | Set exact model and effort outside the initial prompt |
-| Completion events | Wait for the launched agent without periodic status inspection |
-| Files | Read assignments and write assigned artifacts in the shared workspace |
+| Native goal | Available create/inspect/complete controls, and observed goal binding in the owning thread |
+| Fresh agents | Actual support for fresh context on stage and nested dispatch |
+| Model control | Native settings accept the fixed stage model and reasoning effort |
+| Completion events | Native event/mailbox wait for launched identities |
+| Files and permissions | Observed access to required inputs and assigned writes in package and target |
 
-For hosts exposing collaboration tools, fresh context is `fork_turns="none"`.
-Set `model` and `reasoning_effort` in the spawn call.
-Use `collaboration.wait_agent` for mailbox events.
+Record observations, tool names, and limitations. Never infer capabilities from a filename or documentation alone.
 
-Respect the actual per-call wait limit. Repeat event waits after timeouts without polling.
+A supported fresh-context control may be `fork_turns="none"` with model and effort set outside the prompt.
+For collaboration hosts, use `collaboration.wait_agent` for mailbox events.
+Respect the actual per-call wait limit. Repeat event waits after timeouts without status polling.
+Progress and helper events do not permit stage acceptance.
 
-Mailbox events may include progress, helper results, and other nonterminal messages.
-Those events do not permit stage acceptance. Resume the idle event wait.
+Missing controls stop dependent execution. Preserve prepared files and name the missing capability.
+Do not substitute CLI agent processes, unrelated chats, or a custom controller.
 
-For hosts exposing goal tools, use `create_goal`, `get_goal`, and `update_goal`.
-Starting this workflow authorizes its native goal.
-Do not set a token budget unless the user requests one.
+## Prepared records
 
-The `/goal` command is a supported composer surface in some Codex hosts.
-It is not a shell command or a substitute for unavailable goal access.
-Verify actual host behavior before relying on a composer command.
+Setup fills `run/current/bootstrap.md`, goal, state, assignment, and an empty evidence index.
+It preserves the original specification, stable criteria, target instructions, path bases, and pre-existing user work.
+Setup copies the default finite limits from `context/transitions.md` unless the user supplied other finite limits.
+Setup preserves model assignments. It never resets counters on an existing run.
 
-Missing controls stop dependent execution.
-Explain the missing capability and preserve prepared files.
-Do not substitute CLI agent processes, unrelated chats, or a homemade controller.
+Create an immutable guidance snapshot and separate path/hash manifest using `context/instruction-revisions.md`.
+The first Orchestrator prompt reads that snapshot. Later stage prompts read the same pinned revision until an accepted boundary.
+Package guidance and target source identities remain separate.
 
-## Prepare the current run
+Preserve the target's `AGENTS.md` byte-for-byte by default.
+Only when the user authorized target routing, append one small link to this package's routing entrypoint.
+Check for an existing equivalent link first. Never replace target instructions or duplicate the addition.
 
-1. Create `run/current/` and a unique run identifier.
-2. Copy the goal and state templates into that directory.
-3. Preserve the user's original specification in the goal.
-4. Assign stable identifiers to every acceptance criterion.
-5. Record the target workspace, instructions, and existing user changes.
-6. Start the Orchestrator from the package root with the README prompt.
-
-Use one current run per package copy.
-Concurrent goals require separate copies.
 Current-run files and generated history directories are ignored by Git.
-
 Ignore rules provide neither backup nor access control.
-Save required evidence under the target project's retention policy.
+Use the target project's retention and backup policy for required evidence.
 
 ## Interrupted-run recovery
 
-1. Read state and the original goal.
-2. Inspect the native goal and recorded agent identifier.
-3. Reconcile results against the exact invocation and examined source.
-4. Wait for an active agent or explicitly interrupt it before replacement.
-5. Record interruption and allocate a new invocation for any restart.
-6. Resume within remaining budgets.
+Read canonical state and original goal, then inspect the native goal and recorded agent identity.
+Reconcile results against the exact invocation, instruction revision, and examined source.
+Wait for an active stage or explicitly interrupt it before replacement.
+Record interruption and preserve its spent attempt before a new invocation.
+Resume only within the remaining limits and hold guards in `context/transitions.md`.
 
 Do not replay writes whose external outcome is unknown.
 Resolve their outcome before deciding whether to repeat the action.
-Preserve the target repository's release and external-action gates.
-
-Files support recovery when the user returns.
-They do not guarantee that an unloaded session will wake.
+Preserve the target's release and external-action gates.
+Files support recovery when the user returns. They do not guarantee idle-session wakeup.

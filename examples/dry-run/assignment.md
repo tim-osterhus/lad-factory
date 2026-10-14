@@ -16,6 +16,16 @@ Target workspace: illustrative greeting project
 
 Source identity: fixture-source-after-cycle-2
 
+Instruction revision: fixture-guidance-v1, illustrative only
+
+Guidance manifest: illustrative path/hash inventory, not generated
+
+Instruction root: illustrative immutable fixture-guidance-v1 snapshot
+
+Path bases: package, target, and inherited host directory are illustrative, not real paths
+
+Pre-dispatch path snapshot: illustrative clean target and unchanged package inventory
+
 Parent invocation: none
 
 Result path: examples/dry-run/result.md
@@ -44,7 +54,9 @@ examples/dry-run/baseline.md, fixture-baseline-v1
 
 Fixer cycles used: 2. Learning not yet completed.
 
-Pending route: Troubleshooter. One Learning invocation for this packet.
+Pending route: Troubleshooter. First Learning dispatch reserved, one retry remains.
+Use the illustrative finite limits and counters in examples/dry-run/state.md.
+No counters reset during Learning or interrupted-run recovery.
 
 ## Expected artifacts
 

@@ -6,6 +6,10 @@ Packet: fixture-p01
 
 Baseline identity: fixture-baseline-v1
 
+Instruction revision: fixture-guidance-v1, illustrative only
+
+Guidance manifest: illustrative path/hash inventory, not generated
+
 Expected source: fixture-source-before-diff
 
 Recorded before implementation diff: yes, illustrative sequence only

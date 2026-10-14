@@ -26,8 +26,11 @@ Avoid manager layers for trivial or inseparable work.
 
 Write each worker's work order to a readable Markdown file.
 Include run ID, parent invocation, outputs, log directory, and these shared contracts.
+Include the parent's pinned guidance revision, manifest, explicit path bases, and remaining nested budgets.
 Worker initial prompts contain only the instruction to read that work-order file.
 
 Parents integrate and verify worker results before finishing.
+Record pre-dispatch path state and validate helper changes before integration and acceptance.
+Never treat writable-path instructions as permission enforcement.
 Every worker logs under its own invocation directory using the owning stage name.
 Nested agents never edit canonical goal, state, assignment, or packet records.

@@ -10,6 +10,10 @@ Outcome: pass
 
 Examined source: fixture-source-after-cycle-2
 
+Instruction revision: fixture-guidance-v1, illustrative only
+
+Guidance manifest: illustrative path/hash inventory, not generated
+
 Recommended route: Troubleshooter
 
 Parent invocation: none
@@ -38,6 +42,12 @@ Fixer cycles remain 2.
 Mark Learning completed only when accepting a real matching stage result.
 Restore the pending Troubleshooter route.
 The successful variant restores Updater.
+
+## Changed-path audit
+
+Illustrative pre-state: clean target and unchanged package guidance.
+Illustrative post-state: assigned result artifact only. No target-code or active-guidance changes.
+No real path audit executed. A native parent must independently compare actual differences before acceptance.
 
 ## Nested work
 

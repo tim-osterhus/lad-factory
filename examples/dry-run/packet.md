@@ -8,6 +8,10 @@ Specification: examples/dry-run/goal.md
 
 Original criteria: AC-01, AC-02
 
+Instruction revision: fixture-guidance-v1, illustrative only
+
+Guidance manifest: illustrative path/hash inventory, not generated
+
 Depends on: none
 
 Order: 1
@@ -38,9 +42,9 @@ Trim once, reject an empty result, then form the greeting.
 
 ## Budgets
 
-Two Fixer cycles before Troubleshooter.
-One bounded Troubleshooter repair and one Consultant assessment.
-One scoped planning repair and one Arbiter remediation plan.
+Use the illustrative default limits and counters in state.md, following context/transitions.md.
+Two evaluated Fixer cycles trigger Learning before the saved route.
+Failed, invalid, and interrupted attempts still debit dispatch limits.
 
 ## Handoff
 

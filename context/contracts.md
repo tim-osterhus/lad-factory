@@ -14,15 +14,19 @@ Project edits require explicit writable paths.
 
 Nested workers receive disjoint paths. Their parent owns integration.
 Repository instructions and existing user changes remain authoritative.
+Path ownership is an instruction, not a sandbox boundary.
+Require the pre-dispatch snapshot and actual changed-path audit in `context/instruction-revisions.md` before acceptance.
 
 ## Assignment and evidence
 
-Every stage reads `run/current/assignment.md`.
-It names run, invocation, stage, original goal, specification, packet, sources, writable paths, checks, budgets, and outputs.
+Every stage reads `run/current/assignment.md` from the configured package root.
+It names run, invocation, stage, original goal, specification, packet, sources, guidance revision, writable paths, checks, budgets, and outputs.
 The assignment contains the task.
 
-Initial prompts contain only `Read <relative-stage-path>.md and follow instructions.`
+Initial prompts contain only `Read <actual-relative-snapshot-stage-path>.md and follow instructions.`
 Model, effort, and fresh context are native settings.
+Resolve guidance, runtime, and target paths using `context/instruction-revisions.md`.
+The assignment must match the loaded immutable instruction revision and manifest.
 
 Read linked sources before acting. Record unavailable inputs honestly.
 Chat history is not authoritative state.
@@ -31,6 +35,8 @@ Use `templates/result.md` for each result.
 Outcomes are `pass`, `findings`, `blocked`, or `error`.
 A recommendation does not authorize a transition.
 The Orchestrator rejects mismatched, superseded, or incomplete results.
+`context/transitions.md` defines every legal route, override, counter, and default limit.
+Stage and nested agents do not create, adopt, update, or complete the Orchestrator's native goal.
 
 Evidence identifies commands, working directory, exit status, and examined source.
 Dirty-checkout identity includes base revision, diff or content hashes, and relevant untracked files.
@@ -50,6 +56,7 @@ Affirm that all descendants are terminal and their results are collected.
 
 Checker writes expected behavior before opening the implementation diff.
 Its separate baseline records criteria, checks, source identity, and accepted pre-existing issues.
+It also records the pinned guidance revision and manifest.
 The Orchestrator preserves baseline path and identity through Fixer and Doublechecker.
 
 Fixer cannot replace the baseline.
@@ -60,26 +67,12 @@ New evidence may supplement the baseline without silently rewriting it.
 
 ## Budgets and recovery
 
-Assignments carry finite attempts, local-repair, planning-repair, and remediation budgets.
-The Orchestrator records actual usage.
-Count a Fixer cycle after Fixer finishes and Doublechecker evaluates the repair.
-
-After two cycles on one packet, run Learning once at the next completed stage boundary.
-Run Learning even when the second Doublechecker passes.
-Preserve counters and the pending route. A no-op Learning result is valid.
-
-After two unresolved cycles, the pending route is Troubleshooter.
-
-Troubleshooter diagnoses and attempts only assigned bounded local recovery.
-Consultant distinguishes execution failure, defective planning, missing authority, and missing inputs.
-Consultant proposes the smallest trustworthy resume or planning repair.
-
-The Orchestrator records revised packets and affected dependents before resuming.
-Do not restart unrelated completed work.
-Budget exhaustion does not mean completion.
-
-Use Consultant within its budget, then request the missing human decision.
-Record the blocker and needed work. Leave the native goal incomplete.
+Apply `context/transitions.md` without inventing routes or resetting used counters.
+Assignments carry all applicable finite limits and remaining counters.
+Record revised packets and affected dependents before resuming.
+Preserve unrelated completed work and the original review basis.
+Learning activation follows `context/instruction-revisions.md`.
+Budget exhaustion requires the named human decision and leaves the goal incomplete.
 
 ## Logs
 

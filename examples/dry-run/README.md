@@ -7,6 +7,8 @@ Identifiers beginning `fixture-` describe illustrative data.
 Read [goal](goal.md), [packet](packet.md), [baseline](baseline.md), [state](state.md), [assignment](assignment.md), and [result](result.md).
 The assignment demonstrates Learning after two evaluated Fixer cycles.
 The result is an illustrative no-op. It preserves the pending Troubleshooter route.
+The exhaustive legal routes and finite default limits are in [transition policy](../../context/transitions.md).
+The table below illustrates guards and traces. It does not replace that normative policy.
 
 ## Transition cases
 
@@ -16,6 +18,24 @@ The result is an illustrative no-op. It preserves the pending Troubleshooter rou
 | Successful second repair | Two Fixer cycles, second Doublechecker passes | Learning once, then Updater. Cycles stay 2 |
 | Unresolved second repair | Two Fixer cycles, second Doublechecker reports findings | Learning once, then Troubleshooter. Cycles stay 2 |
 | Learning no-op | Evidence does not support instruction change | Preserve pending route and record Learning complete |
+| Learning independent failure | Learning errors with no resolved prerequisite | Record failed Learning, preserve revision/counters, restore legal pending route. No recursive Learning or reset |
+| Learning transient retry | Learning errors, prerequisite is demonstrably resolved, one dispatch remains | One new Learning invocation, debit remaining attempt, retain pending route |
+| Candidate activation | Learning proposes guidance while current packet remains open | Keep packet's fixture-guidance-v1 through Updater. Accept new snapshot only at a recorded safe boundary |
+| Missing internal goal ID | Host exposes owning thread, objective, and status only | Persist verified thread-scoped reference and objective/status. Do not require or fabricate goal_id |
+| Unauthorized goal startup | User only asks to read a workflow file | Prepare records, require separate explicit native-goal authorization before creation |
+| Builder error | Builder cannot complete implementation | Debit attempt, Troubleshooter with exact Builder resume point and remaining local-repair budget |
+| Updater blocked | Documentation requires missing input or authority | Human hold naming that input. No next packet acceptance |
+| Invalid result | Matching owner returns no required evidence | Reject, retain debit, one same-stage replacement if all caps allow, otherwise Human hold |
+| Failed Fixer attempt | Fixer errors before inspectable repair | Debit Fixer dispatch, no fabricated evaluated cycle, Troubleshooter within remaining caps |
+| Consultant exhausted | Diagnosis needs another consultation after run cap | Human hold. Do not route through another stage to refresh the cap |
+| Unexpected review edit | Checker changes application code outside allowed artifacts | Parent rejects acceptance, records differences, preserves files, enters Human hold |
+| Existing dirty work | User already changed or deleted a relevant file | Pre-dispatch snapshot preserves ownership and hashes. Audit only actual post-dispatch differences |
+| Protected untracked mutation | Checker rewrites an existing protected untracked file but Git still reports the same `??` status | Full pre/post content hashes detect changed bytes. Reject acceptance, preserve files, and require conflict resolution |
+| Audit coverage gap | Protected or unexpected change cannot be attributed because baseline inventory omitted it | Refuse acceptance. Record the missing coverage and preserve user work |
+| Confirmed interrupted restart | Exact stage owner is confirmed terminal after interruption, snapshot/path/authority guards pass, all caps remain | Debit a new fresh invocation of the same stage. Preserve the prior debit and history |
+| Interrupted restart denied | Native identity is known but interruption is not terminal, or snapshot/audit/budget guard fails | No replacement. Continue active-stage wait or enter the applicable hold |
+| Arbiter remediation reservation | Arbiter reports an original-criterion gap and one episode remains | Reserve episode debit before Manager dispatch. Remaining episodes become zero and survive rejected/interrupted/superseded attempts |
+| Renamed remediation packet | A consumed remediation episode gets new packet names | Remaining episode count stays zero. Another episode requires the user's explicit budget decision |
 | Local recovery | Troubleshooter repairs review finding within budget | Doublechecker using the original baseline |
 | Planning escalation | Consultant finds incompatible packet contracts | Manager repairs affected packets and checks the whole set |
 | Specification insufficiency | Consultant identifies missing necessary detail | Planner works alone, then Manager repairs affected plan |
@@ -33,16 +53,23 @@ The result is an illustrative no-op. It preserves the pending Troubleshooter rou
 
 ## Static acceptance checklist
 
-1. Every stage entry in Orchestrator names an existing prompt file.
-2. Every initial stage prompt contains only the exact read-file instruction.
+1. Every stage entry in Orchestrator names an existing package-relative prompt suffix.
+2. Every instantiated initial prompt reads its real immutable snapshot path in one line, relative to inherited host directory.
 3. Every top-level owner uses Sol, except Arbiter using Astra.
 4. Planner forbids delegation and other stages reference nested selection.
 5. Shared contracts and templates agree on ownership and result fields.
 6. The fixture assignment and result match run, invocation, and stage.
 7. The immutable baseline identity survives two Fixer cycles.
-8. Learning preserves counters and the pending route on pass or findings.
+8. Learning preserves counters and the pending route on all four outcomes under the bounded failure guard.
 9. Arbiter coverage refers to every original criterion.
 10. Logs use UTC, unique invocation directories, exact filenames, and less than 5120 bytes.
+11. Every stage has all four outcome cells. Invalid/interrupted/missing-evidence overrides retain dispatch debits.
+12. Assignments, results, baselines, and state pin guidance independently of target-code identity.
+13. Snapshot manifests exclude themselves and generated outputs. Active snapshot bytes remain unchanged.
+14. Parent acceptance requires a changed-path audit against pre-dispatch user work and stage/helper writable paths.
+15. Protected untracked bytes remain in the inventory even when status text is unchanged. Coverage gaps prevent acceptance.
+16. Interrupted restart requires terminal interruption and every restart guard, then resumes the same stage with a fresh invocation.
+17. Arbiter remediation counters debit before Manager dispatch and cannot reset through rejection, interruption, or packet renaming.
 
 These checks validate file consistency and documented routing.
 They do not validate host autonomy, failure recovery, or production operation.

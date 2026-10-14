@@ -7,16 +7,19 @@ Use it when a specification needs planning, implementation, independent review, 
 ## Start a run
 
 1. Clone or copy this package into a directory your Codex session can read.
-2. Read [setup](docs/setup.md) and confirm the required native controls.
-3. Create `run/current/` using the [templates](templates/README.md).
-4. Preserve the original target specification and acceptance criteria in `run/current/goal.md`.
-5. Start the Orchestrator from the package root with this exact prompt:
+2. Start the [setup entrypoint](prompts/setup.md) using its actual path from your host's working directory.
+3. Setup prepares `run/current/` from the [templates](templates/README.md), preserving your original criteria and target instructions.
+4. Explicitly authorize native goal creation in a separate user instruction, or provide verified native `/goal` evidence. See [setup](docs/setup.md).
+5. Start the Orchestrator with setup's recorded single-line prompt for the immutable instruction snapshot.
+
+For a package copied into your host directory as `lad-factory/`, the setup prompt is:
 
 ```text
-Read prompts/orchestrator.md and follow instructions.
+Read lad-factory/prompts/setup.md and follow instructions.
 ```
 
-The Orchestrator creates or verifies the native goal before delegating. Model, reasoning effort, and fresh context are agent settings. Every initial stage prompt contains only the instruction to read its stage file. The assignment file carries the work.
+Reading the workflow does not authorize a native goal. The Orchestrator verifies the authorized goal before delegating.
+Model, reasoning effort, and fresh context are agent settings. Every initial stage prompt only reads its pinned stage file. The assignment carries the work.
 
 ## Arbiter closure
 
@@ -24,7 +27,7 @@ The Orchestrator creates or verifies the native goal before delegating. Model, r
 Recon for existing code -> Planner -> Manager
   -> Builder -> Checker -> Updater -> next packet
                  -> Fixer -> Doublechecker
-After two Fixer cycles: Learning, then the pending route
+After two evaluated Fixer cycles: Learning, then the pending route
 Unresolved review: Troubleshooter -> Consultant when needed
 All packets complete -> Arbiter -> closure or scoped remediation
 ```
@@ -37,8 +40,11 @@ Checker records expected behavior before examining the change. Doublechecker pre
 
 - [Routing](context/routing.md) identifies each role's required context.
 - [Shared contracts](context/contracts.md) define ownership, evidence, logs, and bounded recovery.
+- [Transition policy](context/transitions.md) covers every stage outcome and finite dispatch limits.
+- [Instruction revisions](context/instruction-revisions.md) preserve review guidance and require changed-path audits before acceptance.
 - [Nested model selection](context/nested-models.md) defines worker tiers and delegation.
 - [Protocol fixture](examples/dry-run/README.md) exercises documented transitions without running native agents.
+- [Native pilot plan](examples/native-pilot/README.md) names the required live scenarios. Results are pending.
 
 ## Native dependencies and limits
 
