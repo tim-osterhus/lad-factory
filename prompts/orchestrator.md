@@ -2,35 +2,19 @@
 
 Read `../context/routing.md` relative to this loaded file.
 Resolve all other guidance and runtime paths by that routing file.
-Read `context/contracts.md`, `context/transitions.md`, `context/instruction-revisions.md`, and `docs/setup.md`.
+Read `context/contracts.md`, `context/transitions.md`, `context/instruction-revisions.md`, `context/continuation.md`, and `docs/setup.md`.
 Read canonical `run/current/bootstrap.md` and verify this prompt's snapshot revision and manifest.
 
 Read `run/current/goal.md` and any existing `run/current/state.md`.
 Operate the native workflow. Do not implement target code yourself.
 
-## Native goal and capability gate
+## Native continuation and capability gate
 
-Verify native goal, fresh contexts, explicit model/effort, and completion-event waiting.
-If a required control is absent, preserve prepared files and report the missing control.
-Do not invent slash behavior or use shell commands as native goal controls.
-
-Require a separate explicit user request for goal creation or observed verified composer `/goal` evidence.
-Reading these instructions alone is not authorization to create a goal.
-Use supported native goal creation only after that gate.
-Bind the native goal to the original target specification and all acceptance criteria.
-Inspect an existing native goal before creating another.
-
-Before adopting an active goal, verify its exact original target specification and criterion binding.
-Preserve an unrelated active goal. Do not reuse, replace, or complete it.
-Report that conflict before dispatch. Missing binding evidence also prevents adoption.
-
-Record its stable host-exposed reference, owning thread, observed objective/status, and verification evidence.
-Record `goal_id` only if exposed. A verified thread-scoped reference is sufficient when no internal ID is exposed.
-
-Verify that native goal controls address this owning thread. Stage and nested agents must not control this goal.
-Keep the goal active until the original target passes Arbiter.
-Never complete a goal to avoid waiting or because a budget expires.
-Follow native pause, blocked, and budget rules. Only the user can authorize a pause.
+Apply `context/continuation.md` before dependent dispatch.
+Verify common agent controls and the selected mode's authority, owner binding, and actual host capabilities.
+When Goals are unavailable or not desired, provide yourself the authorized native same-chat heartbeat under that policy.
+Record the selected mode and verified control in bootstrap and state.
+Preserve prepared files and report missing capabilities or authority.
 
 ## Stage owners and exact initial prompts
 
@@ -72,8 +56,8 @@ Actual host slots constrain nested concurrency. They do not change sequential st
 1. Confirm the previous stage and all its workers have finished.
 2. Allocate a unique invocation and output directory.
 3. Verify the pinned instruction snapshot and record pre-dispatch target/package path state.
-4. Write the complete assignment using the pinned `templates/assignment.md` and all applicable remaining budgets.
-5. Reserve a dispatch debit and record active stage, invocation, code/guidance identities, and budgets in state before spawning.
+4. Write the complete assignment using the pinned `templates/assignment.md` and all applicable budgets.
+5. Reserve and persist applicable dispatch/replacement debits before spawning. Copy reservations and future capacity into assignment and state. Record active stage, invocation, and code/guidance identities in state before spawning.
 6. Spawn the designated owner with the actual single-line snapshot read-file prompt in fresh context.
 7. Record the returned native agent identifier.
 8. Wait entirely idle for native completion events.
@@ -150,7 +134,7 @@ Updater pass permits completion of that packet and the next ordered packet.
 If its edits invalidate checks, rerun the affected review first.
 All accepted packets and nested work must drain before Arbiter.
 
-## Arbiter and goal closure
+## Arbiter and run closure
 
 Run Arbiter against the original goal, complete criterion map, and current evidence.
 A gap routes to Manager for bounded sequential remediation tied to original criteria.
@@ -158,20 +142,19 @@ Reserve and persist the remediation episode debit before Manager dispatch, follo
 Record the original lineage and preserve unaffected evidence.
 
 Run the normal implementation/review path and return to Arbiter.
-Unavailable input or authority requires an exact human request, with the goal incomplete.
+Unavailable input or authority requires an exact human request, with the original objective incomplete.
 Do not replace a full-goal gap with a narrower success claim.
 
-Only a current Arbiter pass for every original criterion permits native goal completion.
+Only a current Arbiter pass for every original criterion permits successful run closure.
 Confirm no required work or unresolved external outcome remains.
-Reinspect the native goal reference, owning thread, and objective before completion.
-Complete the native goal with its supported control and record the returned status.
+Close the selected native continuation control using `context/continuation.md` and record its returned status.
 
 If a token budget was requested, report native final usage.
 Hand off the verdict, evidence, remaining limitations, and changed paths.
 
 ## Recovery
 
-Read state, inspect native goal, and reconcile the recorded native agent.
+Read state, verify the saved continuation control under `context/continuation.md`, and reconcile the recorded native agent.
 Wait for active work or explicitly interrupt it before any replacement.
 Validate completed results against the exact invocation and current source.
 

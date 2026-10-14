@@ -19,7 +19,7 @@ The Orchestrator dispatches only within original scope, assigned paths, and rema
 | Consultant | Accepted diagnosis route below | Accepted diagnosis route below, or Human hold without an actionable proposal | Human hold | Human hold |
 | Updater | Accept packet, then Builder for next packet or Arbiter when drained. Affected review first if edits invalidate evidence | Checker for affected new review, Doublechecker when the existing baseline applies. Consultant for defective packet | Human hold | Troubleshooter, resume Updater |
 | Learning | Record assessment and restore saved pending route | Record candidate/assessment and restore saved pending route | Learning failure rule below | Learning failure rule below |
-| Arbiter | Verify closure guards, then Orchestrator completes native goal | Manager for bounded original-criterion remediation | Human hold | Retry Arbiter once within its dispatch cap, otherwise Human hold |
+| Arbiter | Verify closure guards, then Orchestrator closes the selected continuation control | Manager for bounded original-criterion remediation | Human hold | Retry Arbiter once within its dispatch cap, otherwise Human hold |
 
 Consultant may accept only these diagnoses: scoped execution repair to Troubleshooter, sufficient specification repair to Planner then Manager, or packet repair to Manager.
 The execution route requires a saved interrupted stage and unused local-repair budget.
@@ -48,13 +48,16 @@ Greenfield projects enter Planner after setup.
 | Invalid result, missing required evidence, stale revision, or wrong invocation | Reject acceptance. Preserve the spent attempt and rejection evidence. Retry that same stage once if its dispatch cap allows, otherwise Human hold |
 | Out-of-scope changed path | Reject acceptance, record the difference and affected ownership, preserve files, and enter Human hold. No destructive reset |
 | Source changed since review | Invalidate affected evidence. Checker establishes a new baseline if the prior basis is invalid. Otherwise Doublechecker rechecks the preserved baseline |
-| Native goal conflicts or capability unavailable | Human hold before dependent dispatch |
+| Existing Goal conflict or selected continuation/common capability unavailable | Human hold before dependent dispatch under `context/continuation.md` |
 | Any necessary budget exhausted | Human hold. Do not substitute another role to evade the cap |
 
 Reserve and persist one dispatch attempt before every spawn, including retries.
 Failed, blocked, invalid, interrupted, and identifier-uncertain launches retain that debit.
 If native dispatch demonstrably never occurred, record proof before returning the reservation.
 Unknown usage stays reserved. Resume never resets counters.
+
+Assignments distinguish the current reserved dispatch/replacement from capacity for future invocations.
+Zero future capacity does not revoke a valid reservation already debited for the current invocation.
 
 An interrupted-stage restart requires confirmed terminal interruption and the exact native invocation identity.
 Validate the pinned instruction snapshot, pre/post path audit, original authority, and any invalid-result or missing-evidence guards.
@@ -109,7 +112,8 @@ Missing authority needed by that pending route requires Human hold.
 A Human hold names the exact missing input, authority, budget decision, or path-conflict resolution.
 No stage dispatch occurs until the user supplies it and the Orchestrator verifies that the saved route is legal.
 Record approved budget changes explicitly. Preserve historical usage.
-Human hold is workflow state, not permission to pause or block the native goal contrary to its tool rules.
+Human hold is workflow state. Apply `context/continuation.md` for the selected mode.
+In Goal mode, a hold does not authorize pausing or blocking contrary to native tool rules.
 
 A reconciliation hold resumes only after exact invocation, native identity, and outcome are established.
 An active stage must finish or receive explicit interruption before replacement.

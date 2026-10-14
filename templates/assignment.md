@@ -51,8 +51,11 @@ Log directory: historylog/<run-id>/<invocation-id>/
 ## Budgets and counters
 
 <Finite attempts, local repair, planning repair, remediation, used counters, pending route.>
+Current invocation reservations: <already-debited dispatch attempt and any replacement/recovery debit, with ledger references>.
+Future invocation capacity: <remaining counts after those reservations>.
 Copy all applicable `context/transitions.md` limits and used/remaining counters.
 Include total-run and nested budgets. Do not allocate fresh limits on resume.
+Zero future capacity does not revoke this invocation's valid reservation or authorize another invocation.
 
 ## Expected artifacts
 

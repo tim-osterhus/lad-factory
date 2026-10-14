@@ -11,7 +11,7 @@ Follow the target repository's applicable instructions.
 
 | Role | Required context | Inputs |
 | --- | --- | --- |
-| Orchestrator | `context/contracts.md`, `context/transitions.md`, `context/instruction-revisions.md`, own prompt | Bootstrap, goal, state, matching results |
+| Orchestrator | `context/contracts.md`, `context/transitions.md`, `context/instruction-revisions.md`, `context/continuation.md`, own prompt | Bootstrap, goal, state, matching results |
 | Every stage | `context/contracts.md`, `context/transitions.md`, `context/instruction-revisions.md`, own prompt | `run/current/assignment.md` and cited files |
 | Delegating stage or nested worker | `context/nested-models.md` | Written work order and disjoint ownership |
 | Planner | Shared contracts only | No nested agents |
@@ -20,6 +20,7 @@ Follow the target repository's applicable instructions.
 The assignment routes both work type and affected area to project sources.
 Bug work starts with reproduction. Refactoring records behavior to preserve.
 Features start with requested behavior. Review starts with criteria and source identity.
+Stage-specific input order overrides generic preloading. Checker freezes its requirement-derived baseline before implementation or claim exposure.
 
 Expand context when evidence reveals a relevant dependency.
 Do not load unrelated archives, dependencies, or all documentation by default.

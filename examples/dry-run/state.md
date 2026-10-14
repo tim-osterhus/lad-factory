@@ -2,6 +2,8 @@
 
 Run: fixture-greeting
 
+Continuation mode: illustrative Goal mode only. No native control is created.
+
 Native goal reference: not created in this structural fixture
 
 Native goal owning thread: none

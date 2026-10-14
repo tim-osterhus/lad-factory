@@ -1,7 +1,7 @@
 # Protocol fixture
 
 This fixture is a structural walkthrough, not a native Codex run.
-No agents, native goal, application checks, or external actions were executed.
+No agents, native Goal, heartbeat, application checks, or external actions were executed.
 Identifiers beginning `fixture-` describe illustrative data.
 
 Read [goal](goal.md), [packet](packet.md), [baseline](baseline.md), [state](state.md), [assignment](assignment.md), and [result](result.md).
@@ -23,6 +23,11 @@ The table below illustrates guards and traces. It does not replace that normativ
 | Candidate activation | Learning proposes guidance while current packet remains open | Keep packet's fixture-guidance-v1 through Updater. Accept new snapshot only at a recorded safe boundary |
 | Missing internal goal ID | Host exposes owning thread, objective, and status only | Persist verified thread-scoped reference and objective/status. Do not require or fabricate goal_id |
 | Unauthorized goal startup | User only asks to read a workflow file | Prepare records, require separate explicit native-goal authorization before creation |
+| Authorized heartbeat fallback | Goals unavailable or not desired, recurring authorization and native same-chat safe resumption verified | Orchestrator creates or reuses one heartbeat under [continuation policy](../../context/continuation.md). No Goal capability required |
+| Unverified heartbeat host | Scheduler tool exists but idle resumption or owner binding is unproven | Report missing evidence and manual user-resume limitation. Do not promise background continuation |
+| Heartbeat with active stage | Saved exact owner still has active work | Continue `collaboration.wait_agent`. No periodic status check, duplicate dispatch, or premature turn ending |
+| Late heartbeat wake | Closure, cancellation, or legitimate recorded human-input/budget hold already saved | Stop only the saved heartbeat and report disposition. Do not start another run |
+| Reserved replacement at zero future capacity | Current replacement already debited, future replacements 0 | Execute the reserved invocation within its assigned limits. No further replacement authorized |
 | Builder error | Builder cannot complete implementation | Debit attempt, Troubleshooter with exact Builder resume point and remaining local-repair budget |
 | Updater blocked | Documentation requires missing input or authority | Human hold naming that input. No next packet acceptance |
 | Invalid result | Matching owner returns no required evidence | Reject, retain debit, one same-stage replacement if all caps allow, otherwise Human hold |
@@ -40,7 +45,7 @@ The table below illustrates guards and traces. It does not replace that normativ
 | Planning escalation | Consultant finds incompatible packet contracts | Manager repairs affected packets and checks the whole set |
 | Specification insufficiency | Consultant identifies missing necessary detail | Planner works alone, then Manager repairs affected plan |
 | Arbiter gap | Packet complete, AC-02 lacks current evidence | Manager creates scoped remediation, then normal review and Arbiter |
-| Arbiter closure | All original criteria pass with current independent evidence | Orchestrator completes native goal and verifies returned status |
+| Arbiter closure | All original criteria pass with current independent evidence | Orchestrator closes the selected native continuation control and verifies returned status |
 | Interrupted active stage | Disk state says running and native agent is active | Event wait or explicit interruption before replacement |
 | Nonterminal mailbox event | Progress, helper final, or unexpected agent ID arrives | Resume idle wait. Only exact owner FINAL with drained descendants and valid result permits acceptance |
 | Unrelated active goal | Native goal target or criteria differ from this run | Preserve that goal and report conflict before dispatch |
@@ -48,8 +53,8 @@ The table below illustrates guards and traces. It does not replace that normativ
 | Stale result | Result invocation differs from active invocation | Reject result without canonical transition |
 | Stale snapshot | Source changed after review | Invalidate affected evidence and recheck at current source |
 | Unknown external outcome | A permitted write's outcome cannot be verified | Record unknown and reconcile before any repeat |
-| Missing native control | Fresh context, goal, model, or event wait unavailable | Stop dependent execution and report capability |
-| Human decision | Required scope or authority is missing | Ask the exact question and leave goal incomplete |
+| Missing native control | Fresh context, model, event wait, or selected continuation control unavailable | Stop dependent execution and report capability |
+| Human decision | Required scope or authority is missing | Ask the exact question and leave objective incomplete. Handle the selected control under continuation policy |
 
 ## Static acceptance checklist
 

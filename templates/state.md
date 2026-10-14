@@ -2,6 +2,14 @@
 
 Run: <run-id>
 
+Continuation mode: <goal or heartbeat>
+
+Continuation authorization: <preserved selected-mode user evidence>
+
+Continuation owning chat/reference/status/evidence: <verified saved selected control>
+
+These native Goal fields apply only in Goal mode. Use `not applicable: heartbeat mode` otherwise.
+
 Native goal reference: <stable host-exposed reference>
 
 Native goal owning thread: <verified thread reference>
@@ -13,6 +21,8 @@ Native goal verification evidence: <response path and time>
 Optional goal_id: <only if exposed, otherwise not exposed>
 
 Native goal status: <observed status, or unverified before native binding>
+
+Heartbeat details: <heartbeat mode only: cadence, exact prompt, safe idle-resumption/serialization evidence, lifecycle receipt, otherwise not applicable>
 
 Workflow status: prepared
 
@@ -68,6 +78,8 @@ Learning status is pending, passed, findings, or failed. Failed Learning preserv
 ## Decisions and recovery
 
 <Refinements, superseded invocations, blockers, and required human decisions.>
+
+<Selected-mode recovery/closure under context/continuation.md. Preserve active owner and control reference, never duplicate schedules, and record legitimate holds/cancellation/closure.>
 
 <Arbiter remediation episode ID, original criteria, reserved debit before Manager dispatch, and retained lineage/counters on rejection or interruption.>
 

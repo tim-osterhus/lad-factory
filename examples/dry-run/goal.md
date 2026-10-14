@@ -6,6 +6,8 @@ Target workspace: illustrative greeting project
 
 Original source: fixture specification below
 
+Continuation mode: illustrative Goal mode only. No native control is created.
+
 Native goal authorization: none. This fixture does not create a goal.
 
 Native goal reference: not created in this structural fixture

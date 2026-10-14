@@ -12,7 +12,13 @@ Target instructions: <applicable instruction paths and identities>
 
 Original request source: <preserved user request path or evidence>
 
-Native goal authorization: <separate explicit user request or verified /goal response, otherwise missing>
+Continuation mode: <goal or heartbeat>
+
+Continuation authorization: <explicit selected-mode user request or verified /goal evidence for Goal mode, otherwise missing>
+
+Continuation owning chat: <verified host-exposed reference>
+
+Continuation reference/status/evidence: <verified selected control, or unverified during preparation>
 
 Instruction revision: <immutable revision>
 
@@ -26,7 +32,7 @@ Exact Orchestrator startup prompt: <one Read actual-relative-snapshot-path and f
 
 | Control/access | Observation and evidence | Status |
 | --- | --- | --- |
-| Native goal in owning thread | <available tools and observed binding, if available> | <verified or unverified> |
+| Selected continuation control | <Goal lifecycle/binding, or heartbeat scheduler/binding/safe idle-resumption evidence under context/continuation.md> | <verified or unverified> |
 | Fresh context | <actual host control> | <verified or unverified> |
 | Fixed models and efforts | <actual settings support> | <verified or unverified> |
 | Native completion-event wait | <actual host control and limits> | <verified or unverified> |
@@ -40,3 +46,7 @@ Exact Orchestrator startup prompt: <one Read actual-relative-snapshot-path and f
 ## Preparation gaps
 
 <Exact missing target, specification, capability, or authority. No native proof is implied by prepared files.>
+
+## Continuation details
+
+<Apply context/continuation.md. Goal mode: objective/criteria binding and supported lifecycle evidence. Heartbeat mode: saved native reference, cadence, exact prompt, safe resumption/serialization evidence. Preserve existing Goal conflicts and unrelated schedules.>

@@ -22,10 +22,12 @@ For a sibling package, instantiate its actual relative path, including `../` seg
 Initial stage prompts must use relative paths. Never send a placeholder or absolute prompt path.
 Setup records the actual Orchestrator snapshot prompt for the user.
 
-## Native goal authorization
+## Continuation mode and authorization
 
-Reading setup or workflow files does not authorize native goal creation.
-Give a separate explicit user instruction, such as:
+Apply the shared [continuation policy](../context/continuation.md).
+Select native Goal mode or the native same-chat heartbeat fallback.
+Record explicit user authorization for the selected mode. Reading workflow files alone supplies neither authorization.
+For Goal mode, give a separate instruction such as:
 
 ```text
 Create a native goal for the original target specification and acceptance criteria in the prepared run/current/goal.md, and execute that LAD Factory run.
@@ -36,23 +38,21 @@ Alternatively, use a verified native `/goal` composer command and record its obs
 The composer surface is host-dependent. It is not a shell command.
 Do not set a native token budget unless the user requests one.
 
-The Orchestrator inspects an existing goal before creating one.
-Verify owning thread, objective, status, and original-criterion binding before adoption.
-An unrelated active goal or missing binding evidence prevents dispatch. Preserve the existing goal.
+For heartbeat mode, explicitly authorize recurring work in the owning chat, for example:
 
-Persist whatever stable reference the host exposes, together with the owning thread and verified objective/status.
-A host response may expose `goal.threadId`, `objective`, and `status` without `goal_id`.
-In that case use the exposed thread-scoped reference. Do not invent an internal ID.
-Record `goal_id` only when actually exposed.
+```text
+Execute the prepared LAD run using one native recurring heartbeat in this chat. Preserve its original criteria and budgets, and stop that heartbeat at closure, cancellation, or a recorded human-input/budget hold.
+```
 
-Goal controls belong to the Orchestrator's owning thread, not its stage or nested workers.
-Do not assume a child agent's goal tools address the parent goal.
+The Orchestrator verifies host scheduling, owner binding, and safe idle-chat resumption before creating or reusing the heartbeat.
+Use the shared policy's concise scheduler prompt and lifecycle rules.
+Goals are not a required capability in heartbeat mode. Existing active Goal conflicts still require reconciliation.
 
 ## Observed capability gate
 
 | Capability | Evidence required before dependent execution |
 | --- | --- |
-| Native goal | Available create/inspect/complete controls, and observed goal binding in the owning thread |
+| Selected continuation mode | Goal: supported lifecycle controls and observed owner/objective binding. Heartbeat: native scheduler, same-chat binding, safe idle resumption without overlapping controllers |
 | Fresh agents | Actual support for fresh context on stage and nested dispatch |
 | Model control | Native settings accept the fixed stage model and reasoning effort |
 | Completion events | Native event/mailbox wait for launched identities |
@@ -65,7 +65,8 @@ For collaboration hosts, use `collaboration.wait_agent` for mailbox events.
 Respect the actual per-call wait limit. Repeat event waits after timeouts without status polling.
 Progress and helper events do not permit stage acceptance.
 
-Missing controls stop dependent execution. Preserve prepared files and name the missing capability.
+Missing common or selected-mode controls stop dependent execution. Preserve prepared files and name the missing capability.
+If neither continuation control is available, report that the user must resume manually without promising background continuation.
 Do not substitute CLI agent processes, unrelated chats, or a custom controller.
 
 ## Prepared records
@@ -89,7 +90,7 @@ Use the target project's retention and backup policy for required evidence.
 
 ## Interrupted-run recovery
 
-Read canonical state and original goal, then inspect the native goal and recorded agent identity.
+Read canonical state and original goal, then reconcile the saved continuation control and recorded agent identity under the shared policy.
 Reconcile results against the exact invocation, instruction revision, and examined source.
 Wait for an active stage or explicitly interrupt it before replacement.
 Record interruption and preserve its spent attempt before a new invocation.
@@ -98,4 +99,4 @@ Resume only within the remaining limits and hold guards in `context/transitions.
 Do not replay writes whose external outcome is unknown.
 Resolve their outcome before deciding whether to repeat the action.
 Preserve the target's release and external-action gates.
-Files support recovery when the user returns. They do not guarantee idle-session wakeup.
+Files support recovery when the user returns. Scheduler availability alone does not prove unloaded-session wakeup.

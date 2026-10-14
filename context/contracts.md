@@ -28,7 +28,8 @@ Model, effort, and fresh context are native settings.
 Resolve guidance, runtime, and target paths using `context/instruction-revisions.md`.
 The assignment must match the loaded immutable instruction revision and manifest.
 
-Read linked sources before acting. Record unavailable inputs honestly.
+Read linked sources in the owning stage's required order. Generic preload instructions never override stage-specific sequencing.
+Record unavailable inputs honestly.
 Chat history is not authoritative state.
 Use `templates/result.md` for each result.
 
@@ -36,7 +37,8 @@ Outcomes are `pass`, `findings`, `blocked`, or `error`.
 A recommendation does not authorize a transition.
 The Orchestrator rejects mismatched, superseded, or incomplete results.
 `context/transitions.md` defines every legal route, override, counter, and default limit.
-Stage and nested agents do not create, adopt, update, or complete the Orchestrator's native goal.
+Stage and nested agents never create, adopt, update, complete, or disable the Orchestrator's Goal or heartbeat.
+The Orchestrator follows `context/continuation.md` for the selected control.
 
 Evidence identifies commands, working directory, exit status, and examined source.
 Dirty-checkout identity includes base revision, diff or content hashes, and relevant untracked files.
@@ -54,7 +56,7 @@ Affirm that all descendants are terminal and their results are collected.
 
 ## Independent review
 
-Checker writes expected behavior before opening the implementation diff.
+Checker loads requirement-side inputs and freezes expected behavior before implementation, diff, or Builder-claim exposure, including embedded packet appendices.
 Its separate baseline records criteria, checks, source identity, and accepted pre-existing issues.
 It also records the pinned guidance revision and manifest.
 The Orchestrator preserves baseline path and identity through Fixer and Doublechecker.
@@ -69,10 +71,14 @@ New evidence may supplement the baseline without silently rewriting it.
 
 Apply `context/transitions.md` without inventing routes or resetting used counters.
 Assignments carry all applicable finite limits and remaining counters.
+Separate this invocation's reserved dispatch/replacement debits from capacity for future invocations.
+Zero future capacity does not revoke an already-reserved invocation. It forbids another dispatch under that cap.
+
 Record revised packets and affected dependents before resuming.
 Preserve unrelated completed work and the original review basis.
 Learning activation follows `context/instruction-revisions.md`.
-Budget exhaustion requires the named human decision and leaves the goal incomplete.
+Budget exhaustion requires the named human decision and leaves the original objective incomplete.
+Apply the selected continuation mode's hold handling in `context/continuation.md`.
 
 ## Logs
 
@@ -100,7 +106,7 @@ Nested work stays inside the active stage.
 Parents collect all nested results before finishing.
 Only terminal completion from the recorded active stage owner permits result acceptance after all descendants finish.
 
-After interruption, inspect native goal and agent identity before reconciling disk records.
+After interruption, verify the saved continuation control and agent identity before reconciling disk records.
 An active stage must finish or be explicitly interrupted before replacement.
 Do not infer completion from a file or launch duplicate work.
 
