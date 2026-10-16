@@ -1,0 +1,20 @@
+# Non-Planner only. Resolve markers into an explicitly selected native profile.
+# Planner must use the separate planner-config.yaml.template binding.
+model:
+  default: "{{PARENT_MODEL_ID}}"
+  provider: "{{PARENT_PROVIDER_ID}}"
+agent:
+  reasoning_effort: "{{PARENT_NATIVE_EFFORT}}"
+  reasoning_overrides:
+    "{{CHILD_MODEL_ID}}": "{{CHILD_NATIVE_EFFORT}}"
+terminal:
+  backend: local
+  cwd: "{{DECLARED_WORKING_DIRECTORY}}"
+delegation:
+  model: "{{CHILD_MODEL_ID}}"
+  provider: "{{CHILD_PROVIDER_ID}}"
+  fallback_providers: []
+  max_concurrent_children: 3
+  max_spawn_depth: 2
+  orchestrator_enabled: true
+  subagent_auto_approve: false

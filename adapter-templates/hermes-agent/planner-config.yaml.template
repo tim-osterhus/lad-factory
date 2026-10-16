@@ -1,0 +1,15 @@
+# Planner-only native profile. Resolve markers without enabling delegation.
+model:
+  default: "{{PLANNER_MODEL_ID}}"
+  provider: "{{PLANNER_PROVIDER_ID}}"
+agent:
+  reasoning_effort: "{{PLANNER_NATIVE_EFFORT}}"
+terminal:
+  backend: local
+  cwd: "{{DECLARED_WORKING_DIRECTORY}}"
+platform_toolsets:
+  cli: [terminal, file]
+delegation:
+  max_spawn_depth: 1
+  orchestrator_enabled: false
+  subagent_auto_approve: false

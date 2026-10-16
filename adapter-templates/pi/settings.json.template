@@ -1,0 +1,5 @@
+{
+  "defaultProvider": "{{PROVIDER_ID}}",
+  "defaultModel": "{{MODEL_ID}}",
+  "defaultThinkingLevel": "{{NATIVE_THINKING_LEVEL}}"
+}

@@ -6,11 +6,11 @@ Target workspace: <workspace>
 
 Original source: <preserved user request or source>
 
-Continuation mode: <goal or heartbeat, under context/continuation.md>
+Continuation mode: <goal, heartbeat, callback, or interactive under context/continuation.md>
 
 Continuation authorization: <explicit selected-mode user instruction or verified /goal evidence for Goal mode>
 
-These native Goal fields apply only in Goal mode. Use `not applicable: heartbeat mode` otherwise.
+These native Goal fields apply only in Goal mode. Mark them not applicable in other modes.
 
 Native goal reference: <stable reference exposed by this host>
 
@@ -23,6 +23,8 @@ Native goal verification evidence: <tool response path and verification time>
 Optional goal_id: <only if the host exposes it, otherwise not exposed>
 
 Heartbeat reference/owning chat/verification evidence: <only in heartbeat mode, otherwise not applicable>
+
+Callback/interactive evidence: <exact delivery/resume binding, or saved user-return requirement, otherwise not applicable>
 
 `goal.md` remains the original specification authority regardless of continuation mode.
 

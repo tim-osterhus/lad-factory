@@ -74,7 +74,7 @@ Greenfield projects enter Planner after setup.
 
 | Condition | Required action |
 | --- | --- |
-| Progress, helper FINAL, or unexpected owner event | Continue idle native event wait. No acceptance or counters for a new dispatch |
+| Progress, helper completion, or unexpected owner event | Continue the adapter's native wait or authorized callback procedure. No acceptance or counters for a new dispatch |
 | Stage still active | Wait, or explicitly interrupt before any replacement |
 | Interrupted invocation | Preserve evidence and dispatch debit. After confirmed terminal interruption, resume the same stage in a fresh invocation only under the restart guards below. Otherwise Human hold |
 | Unknown spawn or external-write outcome | Reconciliation hold. Do not replace or replay until exact evidence resolves the outcome |

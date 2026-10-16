@@ -18,6 +18,10 @@ Source identity: <supplied revision plus dirty/untracked metadata, independently
 
 Instruction revision: <immutable guidance revision>
 
+Profile revision and adapter identity: <pinned installation files and manifest entries>
+
+Effective owner binding: <exact model/provider, effort or supported equivalent, native configuration identity, chosen authorized fallback or none>
+
 Guidance manifest: <path and manifest identity>
 
 Instruction root: <explicit snapshot root>

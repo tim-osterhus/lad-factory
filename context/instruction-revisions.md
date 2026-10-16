@@ -3,7 +3,17 @@
 ## Immutable guidance
 
 Before dispatch, copy the active package guidance into `run/current/instructions/<revision>/`.
-Include `AGENTS.md`, all `prompts/`, `context/`, `templates/`, and `docs/setup.md`.
+Include `AGENTS.md`, `SETUP.md`, all `prompts/`, `context/`, `templates/`, and `docs/setup.md`.
+Include the installed `installation/profile.md` and self-contained `installation/adapter.md` at those same relative paths.
+The adapter file contains complete identified sections for the primary guide and every selected secondary guide.
+Cross-harness installations also include the full shared cross-harness contract in that file. Separate mutable guide imports are forbidden.
+
+The profile includes every effective stage/helper model, effort, native configuration identity, and explicitly authorized fallback.
+Record its explicit revision and the selected adapter identity in bootstrap, state, and assignments.
+Required installed/native files live outside optional `adapter-templates/`. Do not snapshot or depend on that source folder.
+Verify native files against their recorded identities before dispatch and acceptance. Changed settings require reconciliation.
+When the host needs native files outside the snapshot, preserve their exact identity and reject configuration drift.
+
 Do not include generated run records, logs, candidate changes, or manifests in that guidance set.
 Write a sorted relative-path and SHA-256 manifest beside the snapshot at `run/current/manifests/<revision>.md`.
 
@@ -21,6 +31,9 @@ Spawn stages by reading their snapshot prompt, not the mutable package prompt.
 Hash verification before dispatch and acceptance detects changed snapshot files.
 Read guidance from that snapshot throughout the invocation, including contracts and templates.
 The Orchestrator follows its pinned snapshot for routing and acceptance throughout the packet.
+Every invocation uses the pinned profile and adapter, never changed mutable installation files.
+Installation reconfiguration affects future runs only. Do not change active-run model bindings or native controls midway.
+Learning activation preserves the run's profile and adapter bytes. A model or host change requires an explicitly prepared future run.
 
 The host working directory remains inherited. Initial prompt paths must resolve from that directory.
 For example: `Read lad-factory/run/current/instructions/rev-01/prompts/builder.md and follow instructions.`

@@ -2,3 +2,5 @@
 # Local run records and logs can contain target-project data.
 run/
 historylog/*/
+# Private installation choices and copied host bindings.
+installation/

@@ -12,6 +12,8 @@ Examined source: <revision plus dirty/untracked identity>
 
 Instruction revision: <same immutable revision as assignment>
 
+Profile revision and adapter identity: <same pinned installation identities as assignment>
+
 Guidance manifest: <same path and identity as assignment>
 
 Recommended route: <stage or human decision>

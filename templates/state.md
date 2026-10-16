@@ -2,13 +2,13 @@
 
 Run: <run-id>
 
-Continuation mode: <goal or heartbeat>
+Continuation mode: <goal, heartbeat, callback, or interactive>
 
 Continuation authorization: <preserved selected-mode user evidence>
 
 Continuation owning chat/reference/status/evidence: <verified saved selected control>
 
-These native Goal fields apply only in Goal mode. Use `not applicable: heartbeat mode` otherwise.
+These native Goal fields apply only in Goal mode. Mark them not applicable in other modes.
 
 Native goal reference: <stable host-exposed reference>
 
@@ -23,6 +23,8 @@ Optional goal_id: <only if exposed, otherwise not exposed>
 Native goal status: <observed status, or unverified before native binding>
 
 Heartbeat details: <heartbeat mode only: cadence, exact prompt, safe idle-resumption/serialization evidence, lifecycle receipt, otherwise not applicable>
+
+Callback/interactive details: <exact owner delivery and authorized yield, or saved resume instruction requiring user return, otherwise not applicable>
 
 Workflow status: prepared
 
@@ -43,6 +45,10 @@ Last accepted result: <path or none>
 Evidence index: run/current/evidence.md
 
 Instruction revision: <active immutable revision>
+
+Profile revision and adapter identity: <pinned installation files and manifest entries>
+
+Effective native configuration identities: <recorded paths, hashes, precedence and selected owner/helper bindings>
 
 Guidance manifest: <run/current/manifests/revision.md and identity>
 

@@ -12,9 +12,15 @@ Target instructions: <applicable instruction paths and identities>
 
 Original request source: <preserved user request path or evidence>
 
-Continuation mode: <goal or heartbeat>
+Profile revision and identity: <pinned installation/profile.md revision and manifest entry>
 
-Continuation authorization: <explicit selected-mode user request or verified /goal evidence for Goal mode, otherwise missing>
+Adapter identity: <pinned installation/adapter.md revision and manifest entry>
+
+Effective native configuration identities: <paths, content identities, precedence, and effective owner/helper settings>
+
+Continuation mode: <goal, heartbeat, callback, or interactive>
+
+Continuation authorization: <selected-mode evidence, explicit Goal/recurring request when applicable, or missing>
 
 Continuation owning chat: <verified host-exposed reference>
 
@@ -30,12 +36,14 @@ Exact Orchestrator startup prompt: <one Read actual-relative-snapshot-path and f
 
 ## Observed capabilities and permissions
 
+Classify evidence as observed, documented, user-confirmed, or unknown. Record dates and whether each execution gate is verified.
+
 | Control/access | Observation and evidence | Status |
 | --- | --- | --- |
-| Selected continuation control | <Goal lifecycle/binding, or heartbeat scheduler/binding/safe idle-resumption evidence under context/continuation.md> | <verified or unverified> |
+| Selected continuation control | <actual lifecycle/binding, callback wait/yield/resume, or interactive user-return limitation under context/continuation.md> | <observed, documented, user-confirmed, or unknown> |
 | Fresh context | <actual host control> | <verified or unverified> |
-| Fixed models and efforts | <actual settings support> | <verified or unverified> |
-| Native completion-event wait | <actual host control and limits> | <verified or unverified> |
+| Pinned model and effort bindings | <actual effective settings and configuration identities> | <observed, documented, user-confirmed, or unknown> |
+| Native completion/wait/yield | <actual host control, exact owner terminal signal, and limits> | <observed, documented, user-confirmed, or unknown> |
 | Required package and target paths | <observed read/write access and limits> | <verified or unverified> |
 
 ## Existing work and prepared limits
@@ -49,4 +57,4 @@ Exact Orchestrator startup prompt: <one Read actual-relative-snapshot-path and f
 
 ## Continuation details
 
-<Apply context/continuation.md. Goal mode: objective/criteria binding and supported lifecycle evidence. Heartbeat mode: saved native reference, cadence, exact prompt, safe resumption/serialization evidence. Preserve existing Goal conflicts and unrelated schedules.>
+<Apply context/continuation.md. Goal: objective/criteria binding and lifecycle evidence. Heartbeat: reference, cadence, prompt, safe resumption/serialization evidence. Callback: exact owner delivery and authorized yield. Interactive: saved resume instruction and explicit user-return requirement. Preserve existing controls.>

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "lad-orchestrator": {
+      "description": "LAD Orchestrator for the current pinned run",
+      "mode": "primary",
+      "model": "{{ORCHESTRATOR_PROVIDER_MODEL}}",
+      "prompt": "{file:{{INSTALLED_WRAPPER_PATH}}}",
+      "permission": { "edit": "ask", "bash": "ask", "task": "ask" }
+    },
+    "lad-stage": {
+      "description": "LAD {{ROLE}} for the current assignment",
+      "mode": "subagent",
+      "model": "{{STAGE_PROVIDER_MODEL}}",
+      "prompt": "{file:{{INSTALLED_WRAPPER_PATH}}}",
+      "permission": { "edit": "ask", "bash": "ask", "task": "ask" }
+    },
+    "lad-planner": {
+      "description": "LAD Planner, without helpers",
+      "mode": "subagent",
+      "model": "{{PLANNER_PROVIDER_MODEL}}",
+      "prompt": "{file:{{INSTALLED_WRAPPER_PATH}}}",
+      "permission": { "edit": "ask", "bash": "ask", "task": "deny" }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+---
+description: Read a pinned LAD stage or work-order file
+argument-hint: "<actual-relative-pinned-file-path>"
+---
+Read $1 and follow instructions.

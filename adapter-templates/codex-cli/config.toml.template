@@ -1,0 +1,10 @@
+# Inert fragment. Merge resolved values at the correct native scope.
+model = "{{ORCHESTRATOR_MODEL_ID}}"
+model_reasoning_effort = "{{ORCHESTRATOR_NATIVE_EFFORT}}"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+[agents]
+enabled = true
+# Choose a finite value within host capacity and the accepted profile.
+max_concurrent_threads_per_session = 3

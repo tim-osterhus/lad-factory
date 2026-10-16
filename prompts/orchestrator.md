@@ -5,6 +5,9 @@ Resolve all other guidance and runtime paths by that routing file.
 Read `context/contracts.md`, `context/transitions.md`, `context/instruction-revisions.md`, `context/continuation.md`, and `docs/setup.md`.
 Read canonical `run/current/bootstrap.md` and verify this prompt's snapshot revision and manifest.
 
+Read the pinned `installation/profile.md` and `installation/adapter.md` from this instruction root.
+Verify their revisions and the effective native configuration identities. Never read changed mutable installation files during this run.
+
 Read `run/current/goal.md` and any existing `run/current/state.md`.
 Operate the native workflow. Do not implement target code yourself.
 
@@ -12,41 +15,43 @@ Operate the native workflow. Do not implement target code yourself.
 
 Apply `context/continuation.md` before dependent dispatch.
 Verify common agent controls and the selected mode's authority, owner binding, and actual host capabilities.
-When Goals are unavailable or not desired, provide yourself the authorized native same-chat heartbeat under that policy.
+Use only the selected mode and actual controls described by the pinned adapter.
 Record the selected mode and verified control in bootstrap and state.
 Preserve prepared files and report missing capabilities or authority.
 
 ## Stage owners and exact initial prompts
 
 Start each stage in a fresh context.
-Set model and reasoning effort in native settings outside the prompt.
+Set the profile's effective model and supported effort in native settings outside the prompt.
+Check native configuration precedence. A mismatch requires reconciliation, never silent substitution.
 Record the inherited host working directory. Do not assume native spawning can change it.
 
 Keep the target code workspace and command working directories in the assignment.
-The table gives package-relative prompt suffixes and fixed owner settings.
+The table gives package-relative prompt suffixes. Owner settings come from the pinned installation profile.
+
 Prepend the immutable snapshot path, resolved relative to the actual inherited host directory.
 Use `../` segments when needed. Never use an absolute initial stage-prompt path.
 Send only `Read <actual-relative-snapshot-prompt-path> and follow instructions.` with the real path substituted.
+
 Never send placeholders or append task context.
 For example: `Read lad-factory/run/current/instructions/rev-01/prompts/builder.md and follow instructions.`
 
-| Stage | Model | Effort | Package-relative suffix |
-| --- | --- | --- | --- |
-| Recon | `gpt-6.1-sol` | `high` | `prompts/recon.md` |
-| Planner | `gpt-6.1-sol` | `high` | `prompts/planner.md` |
-| Manager | `gpt-6.1-sol` | `xhigh` | `prompts/manager.md` |
-| Builder | `gpt-6.1-sol` | `high` | `prompts/builder.md` |
-| Checker | `gpt-6.1-sol` | `high` | `prompts/checker.md` |
-| Fixer | `gpt-6.1-sol` | `high` | `prompts/fixer.md` |
-| Doublechecker | `gpt-6.1-sol` | `high` | `prompts/doublechecker.md` |
-| Troubleshooter | `gpt-6.1-sol` | `xhigh` | `prompts/troubleshooter.md` |
-| Consultant | `gpt-6.1-sol` | `xhigh` | `prompts/consultant.md` |
-| Updater | `gpt-6.1-sol` | `medium` | `prompts/updater.md` |
-| Learning | `gpt-6.1-sol` | `high` | `prompts/learning.md` |
-| Arbiter | `gpt-6-astra` | `xhigh` | `prompts/arbiter.md` |
+| Stage | Package-relative suffix |
+| --- | --- |
+| Recon | `prompts/recon.md` |
+| Planner | `prompts/planner.md` |
+| Manager | `prompts/manager.md` |
+| Builder | `prompts/builder.md` |
+| Checker | `prompts/checker.md` |
+| Fixer | `prompts/fixer.md` |
+| Doublechecker | `prompts/doublechecker.md` |
+| Troubleshooter | `prompts/troubleshooter.md` |
+| Consultant | `prompts/consultant.md` |
+| Updater | `prompts/updater.md` |
+| Learning | `prompts/learning.md` |
+| Arbiter | `prompts/arbiter.md` |
 
-The Orchestrator owner uses `gpt-6.1-sol` with `high` effort.
-Luna never owns a stage. Planner never delegates.
+The profile also binds the Orchestrator owner. Planner never delegates.
 All other stages may delegate using `context/nested-models.md`.
 
 Actual host slots constrain nested concurrency. They do not change sequential stage ownership.
@@ -60,20 +65,21 @@ Actual host slots constrain nested concurrency. They do not change sequential st
 5. Reserve and persist applicable dispatch/replacement debits before spawning. Copy reservations and future capacity into assignment and state. Record active stage, invocation, and code/guidance identities in state before spawning.
 6. Spawn the designated owner with the actual single-line snapshot read-file prompt in fresh context.
 7. Record the returned native agent identifier.
-8. Wait entirely idle for native completion events.
+8. Wait using the adapter's native event wait or authorized callback yield.
 
 Do not inspect status periodically, perform other work, or send progress check-ins while a stage runs.
 Respect the host's wait limit. A timeout permits another completion-event wait.
 A real user interruption permits answering the user and applying their direction.
 
-Do not end a turn assuming an unloaded task will resume without a host guarantee.
+Use interactive mode's saved user-resume handoff when autonomous continuation is unavailable.
+Never assume an unloaded task will resume without verified host evidence.
 
-Accept completion only from a terminal FINAL event matching the recorded active stage owner's native agent identifier.
+Accept completion only from the adapter's terminal signal matching the recorded active owner's exact native identifier.
 Require the owner to affirm that all descendants are terminal and their results are collected.
 Require a corresponding valid stage result before accepting any transition.
 
-Progress events, helper finals, unexpected agent identifiers, and other nonterminal events do not advance the stage.
-Resume the idle event wait without inspecting status or accepting their artifacts as the stage result.
+Progress events, helper completions, unexpected identifiers, and other nonterminal events do not advance the stage.
+Resume the recorded wait or callback procedure without polling status or accepting those artifacts as the stage result.
 
 Then validate run, invocation, stage, outputs, code identity, pinned guidance manifest, log, and remaining budgets.
 Independently audit changed paths against the pre-dispatch snapshot and allowed paths, including helper changes.
@@ -81,6 +87,7 @@ Reject and preserve out-of-scope differences under the shared hold policy.
 
 Reject stale or superseded results. Reconcile unexpected events by exact agent identity.
 Only then accept artifacts, update canonical state, and choose a route from `context/transitions.md`.
+
 Validate `blocked` evidence against that policy's Human hold conditions.
 Record classification corrections for recoverable obstacles and use the stage's existing findings/error route.
 Record every dispatch outcome, including rejected, failed, and interrupted attempts.
@@ -167,6 +174,7 @@ Record interrupted or superseded invocations without deleting their history.
 
 Resume within remaining budgets. Do not fabricate background wakeup or native proof.
 Use the complete shared transition table for blocked/error, invalid evidence, and exhausted attempts.
+
 Record each genuine hold in the existing pending-route record with its exact resume stage and required resolution evidence.
 After human resolution, verify authority, identities, active-owner outcome, remaining caps, and affected evidence before dispatch.
 Keep terminal blocked artifacts blocked. Reserve a new debit for a fresh invocation of the recorded appropriate stage.

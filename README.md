@@ -1,24 +1,27 @@
 # LAD Factory
 
-LAD Factory is a Markdown workflow for sequential software development with native Codex agents.
+LAD Factory is a Markdown workflow for sequential software development with native coding agents.
 
 Use it when a specification needs planning, implementation, independent review, repair, and an Arbiter decision against the original goal. Stage instructions live in files. Current assignments and evidence stay readable on disk.
 
-## Start a run
+## Install, then start a run
 
-1. Clone or copy this package into a directory your Codex session can read.
-2. Start the [setup entrypoint](prompts/setup.md) using its actual path from your host's working directory.
-3. Setup prepares `run/current/` from the [templates](templates/README.md), preserving your original criteria and target instructions.
-4. Select and explicitly authorize native Goal mode, or one same-chat recurring heartbeat when Goals are unavailable or not desired. See [setup](docs/setup.md).
-5. Start the Orchestrator with setup's recorded single-line prompt for the immutable instruction snapshot.
+1. Clone or copy this package into a directory your host session can read.
+2. Follow [SETUP.md](SETUP.md) to discover available bindings and prepare a private installation profile and selected adapter.
+3. Start [run setup](prompts/setup.md) using its actual path from the host's working directory.
+4. Run setup prepares `run/current/`, preserves your criteria and target instructions, and pins the installation files into an immutable snapshot.
+5. Start the Orchestrator with setup's recorded single-line prompt after resolving the selected mode's execution gates.
 
-For a package copied into your host directory as `lad-factory/`, the setup prompt is:
+For a package copied into your host directory as `lad-factory/`, the installation prompt is:
 
 ```text
-Read lad-factory/prompts/setup.md and follow instructions.
+Read lad-factory/SETUP.md and follow instructions.
 ```
 
-Reading the workflow authorizes neither a native Goal nor recurring work. The Orchestrator verifies the selected control before delegating.
+Installation recommends model bindings from role needs, permitted model metadata, and your quality, cost, speed, and privacy priorities.
+It inspects existing metadata without model calls or benchmarks. Unknown capabilities remain explicit execution gates.
+
+Reading the workflow authorizes neither a native Goal nor recurring work. The Orchestrator verifies the selected controls before delegating.
 Model, reasoning effort, and fresh context are agent settings. Every initial stage prompt only reads its pinned stage file. The assignment carries the work.
 
 ## Arbiter closure
@@ -32,7 +35,8 @@ Unresolved review: Troubleshooter -> Consultant when needed
 All packets complete -> Arbiter -> closure or scoped remediation
 ```
 
-The [Orchestrator](prompts/orchestrator.md) starts one stage at a time and waits idle for completion. Stages may use fresh nested agents for separable work. Planner works alone.
+The [Orchestrator](prompts/orchestrator.md) starts one stage at a time and uses its adapter's completion wait or authorized callback yield.
+Interactive mode records when you must return to resume. Stages may use fresh helpers for separable work. Planner works alone.
 
 Checker freezes expected behavior before inspecting any target implementation or Builder evidence. Doublechecker preserves that review baseline. Arbiter checks every original criterion independently of packet completion.
 
@@ -40,17 +44,29 @@ Checker freezes expected behavior before inspecting any target implementation or
 
 - [Routing](context/routing.md) identifies each role's required context.
 - [Shared contracts](context/contracts.md) define worker ownership, evidence, logs, and assigned limits.
-- [Continuation policy](context/continuation.md) defines Goal and heartbeat authorization, waiting, recovery, and closure.
+- [Continuation policy](context/continuation.md) defines Goal, heartbeat, callback, and interactive resumption, authorization, recovery, and closure.
 - [Transition policy](context/transitions.md) covers every stage outcome and finite dispatch limits.
 - [Instruction revisions](context/instruction-revisions.md) preserve review guidance and require changed-path audits before acceptance.
-- [Nested model selection](context/nested-models.md) defines worker tiers and delegation.
+- [Nested model selection](context/nested-models.md) defines helper capability tiers and delegation. Your profile binds their models and efforts.
 - [Protocol fixture](examples/dry-run/README.md) exercises documented transitions without running native agents.
 
-## Native dependencies and limits
+## Installed bindings and limits
 
-The host must support fresh contexts, explicit models and efforts, completion-event waiting, and the selected native continuation control. Stage owners use `gpt-6.1-sol`. Only Arbiter uses `gpt-6-astra`. Luna handles bounded nested work.
+The optional [adapter source pack](adapter-templates/README.md) contains Codex CLI, Claude Code, OpenCode, Pi, and Hermes Agent starters.
+Its [cross-harness guide](adapter-templates/cross-harness.md) describes explicit transport bindings and their limits.
+The Codex CLI source supplies the shipped Sol/Astra/Luna defaults. Your installed profile may choose other permitted models.
 
-These files depend on the host to execute those controls. The heartbeat fallback uses the host's verified scheduler and same-chat binding. These files provide no scheduler or process recovery service. Unloaded-session wakeup and Cloud compatibility require actual host evidence. Run records require a retention and backup policy. [Setup](docs/setup.md) explains capability checks and interrupted-run recovery.
+Setup merges all selected binding guides into self-contained `installation/adapter.md` and writes `installation/profile.md`.
+Cross-harness installations include the full shared cross-harness contract in the same pinned adapter file.
+Required native files are copied outside the source pack. You may then remove the entire optional `adapter-templates/` folder.
+Keep the folder to reconfigure later, or deliberately restore the needed source version. Setup never deletes it automatically.
+
+The host must provide fresh contexts, effective model settings, exact-owner completion, and the selected continuation mechanics.
+Native configuration can override requested settings. Provider, permission, and tool inheritance follow the actual host.
+
+Model IDs alone do not enable another harness. No universal bridge, scheduler, or recovery service is included.
+Unloaded-session resumption requires actual evidence. Run records require retention and backup.
+[Run setup](docs/setup.md) explains execution gates and interrupted-run recovery.
 
 ## Sources and license
 

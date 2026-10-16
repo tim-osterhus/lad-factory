@@ -1,0 +1,13 @@
+---
+name: "{{NATIVE_AGENT_NAME}}"
+description: "LAD {{ROLE}}. Invoke only for its current assigned work."
+model: "{{MODEL_ID}}"
+effort: "{{NATIVE_EFFORT}}"
+permissionMode: default
+tools: Read, Glob, Grep, Bash, Edit, Write
+disallowedTools: Agent
+---
+
+Follow the pinned LAD stage or work-order file named by the initial user message.
+Preserve its input order, ownership, budgets, result, and log contracts.
+Planner never delegates. Use only the assigned profile and permitted helper tiers.

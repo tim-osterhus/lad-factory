@@ -25,7 +25,9 @@ The table below illustrates guards and traces. It does not replace that normativ
 | Unauthorized goal startup | User only asks to read a workflow file | Prepare records, require separate explicit native-goal authorization before creation |
 | Authorized heartbeat fallback | Goals unavailable or not desired, recurring authorization and native same-chat safe resumption verified | Orchestrator creates or reuses one heartbeat under [continuation policy](../../context/continuation.md). No Goal capability required |
 | Unverified heartbeat host | Scheduler tool exists but idle resumption or owner binding is unproven | Report missing evidence and manual user-resume limitation. Do not promise background continuation |
-| Heartbeat with active stage | Saved exact owner still has active work | Continue `collaboration.wait_agent`. No periodic status check, duplicate dispatch, or premature turn ending |
+| Heartbeat with active stage | Saved exact owner still has active work | Continue the pinned adapter's event wait or authorized callback procedure. No periodic status check or duplicate dispatch |
+| Interactive continuation | Host cannot resume the owning session automatically | Save the active identity and resume instruction, require user return, then reconcile before dispatch. Preserve every stage |
+| Callback yield | Native completion arrives only between turns | Yield only under the pinned adapter's verified exact-owner delivery contract. Do not claim run completion |
 | Late heartbeat wake | Closure, cancellation, or legitimate recorded human-input/budget hold already saved | Stop only the saved heartbeat and report disposition. Do not start another run |
 | Reserved replacement at zero future capacity | Current replacement already debited, future replacements 0 | Execute the reserved invocation within its assigned limits. No further replacement authorized |
 | Builder error | Builder cannot complete implementation | Debit attempt, Troubleshooter with exact Builder resume point and remaining local-repair budget |
@@ -62,7 +64,7 @@ The table below illustrates guards and traces. It does not replace that normativ
 | Arbiter gap | Packet complete, AC-02 lacks current evidence | Manager creates scoped remediation, then normal review and Arbiter |
 | Arbiter closure | All original criteria pass with current independent evidence | Orchestrator closes the selected native continuation control and verifies returned status |
 | Interrupted active stage | Disk state says running and native agent is active | Event wait or explicit interruption before replacement |
-| Nonterminal mailbox event | Progress, helper final, or unexpected agent ID arrives | Resume idle wait. Only exact owner FINAL with drained descendants and valid result permits acceptance |
+| Nonterminal mailbox event | Progress, helper completion, or unexpected agent ID arrives | Resume native wait. Only the adapter's exact-owner terminal signal with drained descendants and valid result permits acceptance |
 | Unrelated active goal | Native goal target or criteria differ from this run | Preserve that goal and report conflict before dispatch |
 | Unknown spawn identity | Spawn may have succeeded before its ID was recorded | Hold for exact invocation, native identity, and outcome. No replacement or advancement |
 | Stale result | Result invocation differs from active invocation | Reject result without canonical transition |
@@ -75,7 +77,7 @@ The table below illustrates guards and traces. It does not replace that normativ
 
 1. Every stage entry in Orchestrator names an existing package-relative prompt suffix.
 2. Every instantiated initial prompt reads its real immutable snapshot path in one line, relative to inherited host directory.
-3. Every top-level owner uses Sol, except Arbiter using Astra.
+3. Every owner and helper has an explicit model/effort binding in the pinned profile. Codex CLI source retains its shipped defaults.
 4. Planner forbids delegation and other stages reference nested selection.
 5. Shared contracts and templates agree on ownership and result fields.
 6. The fixture assignment and result match run, invocation, and stage.
@@ -90,6 +92,8 @@ The table below illustrates guards and traces. It does not replace that normativ
 15. Protected untracked bytes remain in the inventory even when status text is unchanged. Coverage gaps prevent acceptance.
 16. Interrupted restart requires terminal interruption and every restart guard, then resumes the same stage with a fresh invocation.
 17. Arbiter remediation counters debit before Manager dispatch and cannot reset through rejection, interruption, or packet renaming.
+18. The installed profile and adapter are pinned in the manifest. Changed mutable installation files cannot alter an active run.
+19. Installed runtime instructions and native files remain usable after removal of the optional adapter source pack.
 
 These checks validate file consistency and documented routing.
 They do not validate host autonomy, failure recovery, or production operation.

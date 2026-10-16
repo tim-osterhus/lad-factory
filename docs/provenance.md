@@ -13,8 +13,8 @@ Baseline: [Millrace v0.21.1](https://github.com/tim-osterhus/millrace/tree/v0.21
 - [Learning](https://github.com/tim-osterhus/millrace/blob/v0.21.1/docs/graphs/learning-standard.md): evidence review and the smallest supported guidance change.
 - [Stage instructions](https://github.com/tim-osterhus/millrace/tree/v0.21.1/src/millrace_ai/assets/skills/stage): role boundaries.
 
-This package uses native Codex controls and sequential packets.
-Recon intake, single-stage Learning, model assignments, and file contracts are local choices.
+This package uses installed native host bindings and sequential packets.
+Recon intake, single-stage Learning, shipped adapter defaults, and file contracts are local choices.
 No upstream controller or graph engine is included.
 
 ## Interpretable Context Methodology

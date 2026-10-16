@@ -1,67 +1,79 @@
 # Native continuation policy
 
-`goal.md` preserves the original specification in either mode.
-The Orchestrator owns the selected continuation control. Stages and nested workers never control it.
-Record mode, authorization, owning chat, host reference, status, and verification evidence in bootstrap and state.
-Fresh contexts, fixed models/efforts, and native completion-event waiting remain required in both modes.
+`goal.md` preserves the original specification in every mode.
+The Orchestrator owns continuation. Stages and helpers never control Goals, schedules, or run resumption.
+Use the pinned `installation/profile.md` and `installation/adapter.md` for actual native controls and limitations.
+Record mode, authorization, exact owning session, control reference, status, and evidence in bootstrap and state.
+Fresh stage contexts, pinned model settings, sequential ownership, and independent review apply in every mode.
 
 ## Select and bind one mode
 
-Use native Goal mode when explicitly authorized and available.
-When Goals are unavailable or not desired, the Orchestrator provides itself one native same-chat recurring heartbeat, subject to the gates below.
-Heartbeat mode does not require Goal creation, inspection, or completion controls.
-Reading workflow files alone authorizes neither a Goal nor a recurring task.
+Select `goal`, `heartbeat`, `callback`, or `interactive` from the installed adapter's supported modes.
+Reading workflow files authorizes neither a Goal nor recurring work.
+Installation can prepare a mode with unknown capabilities. Verify its gates before dependent execution.
 
-Goal mode requires a separate explicit user Goal request or verified native `/goal` evidence.
-Verify the original objective, criteria, owning chat, status, and supported lifecycle controls before adoption or creation.
-Save the stable host-exposed reference. Use a verified chat-scoped reference when no internal Goal ID is exposed.
-Never invent an ID, slash behavior, or shell Goal control. Set a token budget only when the user requests one.
+Goal mode requires a separate explicit user Goal request or verified native composer evidence.
+Verify the original objective, criteria, owner, status, and supported lifecycle controls before adoption or creation.
+Save the stable host-exposed reference. Use a verified session-scoped reference when no internal Goal ID is exposed.
 
+Never invent an ID, slash behavior, or shell Goal control. Set a token budget only when requested.
 Keep the Goal incomplete until Arbiter closure. Follow native pause, blocked, and budget rules.
 Never complete a Goal to avoid waiting or because a budget expires. Only the user can authorize a pause.
 
-Heartbeat mode requires explicit user recurring-task authorization in the original request, startup instruction, or preserved record.
-Verify actual native scheduler availability, exact owning-chat binding, and safe idle-chat resumption without overlapping controllers.
-Tool presence alone proves neither safe resumption nor serialization, unloaded wakeup, or Cloud compatibility.
+Heartbeat mode requires explicit user recurring-task authorization.
+Verify the native scheduler, exact owning-session binding, and safe idle resumption without overlapping controllers.
+Tool presence alone proves neither serialization, unloaded wakeup, nor host compatibility.
 
-After verification, create or reuse exactly one heartbeat bound to this run and owning chat.
-Record its native reference, supported cadence, prompt, and evidence. Never substitute a standalone job.
-A five-minute cadence is an example only when the host supports it, not a documented minimum.
-Reuse the saved heartbeat on recovery. Do not create another controller or schedule.
+Create or reuse exactly one verified heartbeat for this run. Record its reference, cadence, prompt, and evidence.
+Reuse that heartbeat on recovery. Never substitute a standalone job, shell loop, or another controller.
+The heartbeat resumes saved state. It does not periodically poll stage status.
 
-Inspect any exposed existing Goal before mode selection. An unrelated active Goal or uncertain binding requires a hold.
-Preserve unrelated Goals and schedules. Switching modes cannot silently pause, abandon, replace, or complete an active Goal.
-A requested mode change needs explicit user direction and verified lifecycle reconciliation before dependent dispatch.
+Callback mode requires an adapter-documented completion delivery mechanism for the exact owned invocation.
+Verify where completion arrives and whether delivery requires yielding the current turn.
+An authorized yield for that callback is waiting, not run completion. Preserve the active owner and pending route.
+Promise automatic continuation only when evidence establishes that delivery resumes the owning idle or unloaded session.
+If delivery requires a user turn, use interactive mode and disclose that requirement.
 
-If neither authorized continuation control is available, report the missing capability and manual user-resume limitation.
-Preserve prepared records. Do not fabricate an API, cron/shell loop, custom controller, or background-continuation promise.
+Interactive mode requires the user to return and resume the owning session when native autonomous continuation is unavailable.
+Save the active invocation, pending route, and exact resume instruction before yielding.
+Report what is running, where results will be saved, and that the user must return.
+Never claim background continuation. Reconcile the owner and result on return before dispatching anything else.
+Interactive mode preserves every stage, review guard, and finite budget.
+
+Inspect exposed existing controls before adopting a mode. An unrelated active Goal or uncertain binding requires reconciliation.
+Preserve unrelated Goals and schedules. Do not silently pause, abandon, replace, or complete them.
+
+A mode change requires explicit user direction and verified lifecycle reconciliation before dependent dispatch.
+Missing capabilities stop dependent execution. Preserve prepared files and identify the exact missing evidence or authority.
+Do not invent APIs, launch unsupported external harnesses, or add a custom continuation service.
 
 ## Wait, resume, and close
 
-The heartbeat is a stopgap against premature stopping, not a stage-status checker.
-While a stage is active, remain idle in `collaboration.wait_agent` on collaboration hosts.
-Repeat native event waits after bounded timeouts. Never periodically inspect active-stage status or end the turn prematurely.
+While a stage is active, use the pinned adapter's native event wait or authorized callback yield.
+Repeat bounded native event waits after timeouts. Never periodically inspect stage status or duplicate a dispatch.
+Use interactive resumption only as recorded above. Never end a turn with an unsupported continuation promise.
 
-A scheduler wake reconciles saved state and exact active owner before any dispatch.
-Preserve scope, criteria, counters, budgets, routes, and instruction identities. Never duplicate active work or restart a completed run.
-Reconcile uncertain native identities/outcomes under `context/transitions.md` before advancing.
+Progress events, helper completions, and unexpected identities cannot advance the stage.
+Accept only the adapter's terminal completion signal for the exact recorded owner, with a valid current result and collected terminal descendants.
+
+Every wake or user return reconciles saved state and the exact active owner before dispatch.
+Preserve scope, criteria, counters, budgets, routes, and pinned instruction identities.
+Reconcile uncertain identities or outcomes under `context/transitions.md`. Never restart completed work.
 
 Only a current Arbiter pass for every original criterion, with all work drained, permits successful closure.
-In Goal mode, reinspect the exact owning Goal and complete it with its supported control. Record the returned status.
+In Goal mode, reinspect and complete only the exact owning Goal using its supported control. Record the returned status.
 In heartbeat mode, stop or disable only this run's heartbeat and record the returned status.
+For callback or interactive mode, record closure and reconcile any pending callback. Do not imply a nonexistent lifecycle API.
 
-Also stop only this heartbeat on cancellation or a legitimate recorded human-input/budget hold.
-A late wake after closure, cancellation, or that hold stops the heartbeat and reports saved disposition without dispatch.
-Ordinary waiting or an unchanged state is not a hold. Native Goal holds follow the Goal tool rules separately.
-If cleanup cannot be verified, report that limitation and the exact remaining native control.
+Stop only this heartbeat on cancellation or a legitimate recorded human-input/budget hold.
+A late wake after closure, cancellation, or that hold stops the heartbeat without dispatch.
+Ordinary waiting or unchanged state is not a hold. Native Goal holds follow native rules separately.
+If cleanup cannot be verified, report the limitation and exact remaining native control.
 
-## Concise heartbeat prompt
+## Heartbeat prompt contract
 
-> Resume this LAD run from saved state. If a stage is active, wait with collaboration.wait_agent. Never duplicate active work or end the turn prematurely. Preserve scope, criteria, counters, budgets, and routes. Continue until Arbiter verifies the original specification. Stop only this heartbeat and report on closure, cancellation, or a recorded human-input/budget hold. A late wake after that disposition must stop without starting another run.
-
-## Documented host boundary
-
-[Scheduled tasks](https://learn.chatgpt.com/docs/automations) documents same-chat tasks and minute intervals.
-[Long-running work](https://learn.chatgpt.com/docs/long-running-work) documents Goal mode in desktop, CLI, and IDE surfaces.
-The [glossary](https://learn.chatgpt.com/docs/glossary) labels Heartbeat as a desktop feature.
-These sources do not establish LAD scheduler behavior, a minimum cadence, serialized controllers, or Cloud compatibility.
+Save a concise native scheduler prompt that resumes this run from saved state using its pinned adapter.
+Require exact-owner waiting, no duplicate work, preserved criteria and budgets, and continuation through Arbiter review.
+Require stopping only this heartbeat on closure, cancellation, or a recorded human-input/budget hold.
+A late wake after that disposition must stop without starting another run.
+The adapter supplies actual tool names. This policy defines no generic executable API.

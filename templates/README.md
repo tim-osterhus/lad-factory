@@ -3,6 +3,8 @@
 Copy these structures into `run/current/`.
 Replace angle-bracket fields with actual values.
 These are record contracts, not an executable schema.
+For first installation, fill [installation profile](installation-profile.md) under [SETUP.md](../SETUP.md).
+That private installed profile and adapter are pinned into each run's instruction snapshot.
 
 | File | Owner | Purpose |
 | --- | --- | --- |
@@ -22,4 +24,4 @@ Use `prompts/setup.md` to prepare `bootstrap.md` and project-specific copies.
 Snapshot guidance and its separate manifest using `context/instruction-revisions.md`.
 No template requires an internal native goal ID that the host does not expose.
 Apply [continuation policy](../context/continuation.md) to mode-specific fields.
-`goal.md` stores the canonical original specification in both modes.
+`goal.md` stores the canonical original specification in every continuation mode.

@@ -23,11 +23,14 @@ Nested parents load `context/instruction-revisions.md`'s changed-path audit sect
 Read `run/current/assignment.md` from the package root recorded in bootstrap.
 It names run, invocation, stage, goal, specification, packet, ordered inputs, writable paths, checks, budgets, and outputs.
 It also supplies source metadata, instruction revision, manifest identity, path bases, and pre-dispatch snapshot.
+The assignment supplies the profile revision, effective owner binding, and native configuration identity.
+Delegating stages load pinned installation files. Other stages receive their binding in the assignment without extra policy preload.
 
 Reject missing or mismatched assignment identity. Record unavailable inputs honestly.
 
 Initial prompts contain only `Read <actual-relative-snapshot-stage-path>.md and follow instructions.`
 Model, effort, and fresh context are native settings.
+Use the pinned adapter's supported controls. Never silently substitute models or claim settings bypass native inheritance.
 
 Verify loaded guidance bytes against the assigned immutable revision and manifest. Never edit an active snapshot.
 Guidance paths use that instruction root. Runtime paths use the recorded package root.

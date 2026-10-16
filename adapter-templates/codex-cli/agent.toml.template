@@ -1,0 +1,6 @@
+# Resolve markers, then install as a uniquely named .codex/agents/*.toml file.
+name = "{{NATIVE_AGENT_NAME}}"
+description = "LAD {{ROLE}}. Invoke only for its current assigned work."
+model = "{{MODEL_ID}}"
+model_reasoning_effort = "{{NATIVE_EFFORT}}"
+developer_instructions = "Follow the pinned LAD stage or work-order file named by the initial user message. Preserve its input order, ownership, budgets, result and log contracts. Planner never delegates."

@@ -1,102 +1,89 @@
-# Setup and capability checks
+# Run setup and capability checks
 
-Use `prompts/setup.md` to prepare project-specific run records.
-No package manager, installer script, or compiled runtime is required.
-Choose a readable package copy and target workspace. Keep both paths stable during a run.
-Use one current run per package copy. Concurrent runs need separate copies.
+First follow [installation setup](../SETUP.md) to prepare the private profile and selected host adapter.
+Then use `prompts/setup.md` for each run. No installer program or compiled runtime is required.
+Choose stable package and target paths. One package copy holds one current run.
+Concurrent runs require separate copies.
 
 The package may be inside the target repository or beside it.
-Native agents inherit the host working directory. Do not assume a spawn control can change it.
+Native agents inherit their host directory unless the installed adapter establishes another control.
 Set application command working directories explicitly to the recorded target workspace.
-Resolve initial read-file paths from the actual inherited host directory.
-Reading a file does not change that directory.
+Resolve initial read-file prompts from the actual inherited directory. Reading a file never changes that directory.
 
-For a package in the host directory's `lad-factory/` subdirectory, start setup with exactly:
+For a package in the host directory's `lad-factory/` subdirectory, initialize a run with:
 
 ```text
 Read lad-factory/prompts/setup.md and follow instructions.
 ```
 
-When the host directory is the package root, use `Read prompts/setup.md and follow instructions.`
-For a sibling package, instantiate its actual relative path, including `../` segments as needed.
-Initial stage prompts must use relative paths. Never send a placeholder or absolute prompt path.
-Setup records the actual Orchestrator snapshot prompt for the user.
+At the package root, use `Read prompts/setup.md and follow instructions.`
+For a sibling package, instantiate its actual relative path, including `../` segments.
+Initial stage prompts must contain one actual relative read-file instruction, without placeholders or appended context.
 
-## Continuation mode and authorization
+## Installed binding and continuation
 
-Apply the shared [continuation policy](../context/continuation.md).
-Select native Goal mode or the native same-chat heartbeat fallback.
-Record explicit user authorization for the selected mode. Reading workflow files alone supplies neither authorization.
-For Goal mode, give a separate instruction such as:
+For a new run, read `installation/profile.md` and the self-contained `installation/adapter.md`.
+For an existing run, read their pinned snapshot copies before considering mutable installation changes.
+The adapter contains the complete primary guide, every selected secondary guide, and the full shared contract for cross-harness installations.
+These are identified sections in one file with resolved paths, not imports from separate mutable guides.
 
-```text
-Create a native goal for the original target specification and acceptance criteria in the prepared run/current/goal.md, and execute that LAD Factory run.
-```
+Check all owner/helper bindings, effective native configuration identities, and authorized fallback triggers.
+No silent model substitution is allowed. Select any explicitly authorized fallback during run setup and pin the effective binding.
+Changed mutable installation files never alter an active run.
 
-Resolve that goal path through the configured package root.
-Alternatively, use a verified native `/goal` composer command and record its observed response.
-The composer surface is host-dependent. It is not a shell command.
-Do not set a native token budget unless the user requests one.
+Apply [continuation policy](../context/continuation.md) using the installed adapter's actual controls.
+Select Goal, heartbeat, callback, or interactive mode without changing stage responsibilities.
+Reading files alone authorizes neither a Goal nor recurring work.
 
-For heartbeat mode, explicitly authorize recurring work in the owning chat, for example:
+An explicit native Goal request may refer to the prepared original specification and criteria in `run/current/goal.md`.
+A recurring-task request must authorize one native heartbeat in the owning session and its closure/hold cleanup.
+Do not set a token budget unless the user requests one.
+Callback yield requires exact owner delivery evidence. Interactive mode explicitly requires the user to return.
 
-```text
-Execute the prepared LAD run using one native recurring heartbeat in this chat. Preserve its original criteria and budgets, and stop that heartbeat at closure, cancellation, or a recorded human-input/budget hold.
-```
-
-The Orchestrator verifies host scheduling, owner binding, and safe idle-chat resumption before creating or reusing the heartbeat.
-Use the shared policy's concise scheduler prompt and lifecycle rules.
-Goals are not a required capability in heartbeat mode. Existing active Goal conflicts still require reconciliation.
-
-## Observed capability gate
+## Execution gates
 
 | Capability | Evidence required before dependent execution |
 | --- | --- |
-| Selected continuation mode | Goal: supported lifecycle controls and observed owner/objective binding. Heartbeat: native scheduler, same-chat binding, safe idle resumption without overlapping controllers |
-| Fresh agents | Actual support for fresh context on stage and nested dispatch |
-| Model control | Native settings accept the fixed stage model and reasoning effort |
-| Completion events | Native event/mailbox wait for launched identities |
-| Files and permissions | Observed access to required inputs and assigned writes in package and target |
+| Selected continuation mode | Actual lifecycle/owner binding or documented callback delivery and verified resume mechanics. Interactive mode records user-return limitation |
+| Fresh agents | Actual adapter support for fresh stage and helper contexts. |
+| Model control | Effective model/effort settings and native config identities match the pinned profile. |
+| Completion | Exact owner terminal signal and native event wait or authorized yield/resume mechanism. |
+| Files and permissions | Observed access to required reads and assigned writes in package and target. |
 
-Record observations, tool names, and limitations. Never infer capabilities from a filename or documentation alone.
-
-A supported fresh-context control may be `fork_turns="none"` with model and effort set outside the prompt.
-For collaboration hosts, use `collaboration.wait_agent` for mailbox events.
-Respect the actual per-call wait limit. Repeat event waits after timeouts without status polling.
-Progress and helper events do not permit stage acceptance.
-
-Missing common or selected-mode controls stop dependent execution. Preserve prepared files and name the missing capability.
-If neither continuation control is available, report that the user must resume manually without promising background continuation.
-Do not substitute CLI agent processes, unrelated chats, or a custom controller.
+Classify evidence as observed, documented, user-confirmed, or unknown, with dates and limitations.
+Documentation alone does not establish current runtime access or automatic resumption.
+Installation may finish without runtime proof. Missing controls stop only dependent execution.
+Do not run trial inference, benchmarks, calibration, or compatibility probes to complete installation.
+Do not substitute unrelated chats, unsupported CLI processes, or a custom controller.
 
 ## Prepared records
 
-Setup fills `run/current/bootstrap.md`, goal, state, assignment, and an empty evidence index.
-It preserves the original specification, stable criteria, target instructions, path bases, and pre-existing user work.
-Setup copies the default finite limits from `context/transitions.md` unless the user supplied other finite limits.
-Setup preserves model assignments. It never resets counters on an existing run.
+Setup fills bootstrap, goal, state, assignment, and an empty evidence index under `run/current/`.
+Preserve the original specification, stable criteria, target instructions, path bases, and existing user work.
+Copy finite limits from `context/transitions.md` unless the user supplied other finite limits.
+Never reset counters on an existing run.
 
-Create an immutable guidance snapshot and separate path/hash manifest using `context/instruction-revisions.md`.
-The first Orchestrator prompt reads that snapshot. Later stage prompts read the same pinned revision until an accepted boundary.
-Package guidance and target source identities remain separate.
+Create an immutable instruction snapshot and separate manifest under [instruction revisions](../context/instruction-revisions.md).
+Include the installed profile and complete merged adapter. Verify separate native configuration identities before dispatch and acceptance.
+Required installed/native files must exist outside the optional source folder.
+The first Orchestrator prompt and every stage read pinned guidance.
+Keep guidance/profile identity separate from target source identity.
 
-Preserve the target's `AGENTS.md` byte-for-byte by default.
-Only when the user authorized target routing, append one small link to this package's routing entrypoint.
-Check for an existing equivalent link first. Never replace target instructions or duplicate the addition.
+Preserve target `AGENTS.md` byte-for-byte by default.
+When the user authorized target routing, append one small link after checking for an equivalent existing entry.
+Never replace target instructions or duplicate the link.
 
-Current-run files and generated history directories are ignored by Git.
-Ignore rules provide neither backup nor access control.
-Use the target project's retention and backup policy for required evidence.
+Private installation files, current-run records, and generated history directories are ignored by Git.
+Ignore rules provide neither backup nor access control. Apply the target's retention and backup policy.
 
 ## Interrupted-run recovery
 
-Read canonical state and original goal, then reconcile the saved continuation control and recorded agent identity under the shared policy.
-Reconcile results against the exact invocation, instruction revision, and examined source.
-Wait for an active stage or explicitly interrupt it before replacement.
+Read canonical state and original goal. Reconcile the saved continuation control and exact owner under the pinned adapter.
+Validate results against the invocation, guidance/profile revision, manifest, and examined source.
+Wait for active work or explicitly interrupt it before replacement.
 Record interruption and preserve its spent attempt before a new invocation.
-Resume only within the remaining limits and hold guards in `context/transitions.md`.
+Resume only within remaining limits and hold guards in `context/transitions.md`.
 
-Do not replay writes whose external outcome is unknown.
-Resolve their outcome before deciding whether to repeat the action.
-Preserve the target's release and external-action gates.
-Files support recovery when the user returns. Scheduler availability alone does not prove unloaded-session wakeup.
+Do not replay external writes with unknown outcomes. Verify the outcome before deciding whether to repeat the action.
+Preserve target release and external-action gates.
+Files support recovery when the user returns. Scheduler presence alone does not prove unloaded-session wakeup.
