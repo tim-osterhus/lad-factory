@@ -26,6 +26,8 @@ Path bases: package, target, and inherited host directory are illustrative
 
 Existing work: illustrative clean target and unchanged package guidance
 
+Protected controls: illustrative parent-owned records for this assignment, state, goal, packet, baseline, and active guidance, including ignored runtime equivalents
+
 Parent invocation: none
 
 Result path: examples/dry-run/result.md
@@ -48,7 +50,13 @@ Produce a supported candidate or no-op assessment.
 
 ## Review baseline
 
-examples/dry-run/baseline.md, fixture-baseline-v1
+Path: examples/dry-run/baseline.md
+
+Version label: fixture-baseline-v1
+
+Expected SHA-256 retained in state.md: 808c1a5518bb13e4e77d18fd168857b5c12dcac755842f797b0930b5339eb8b6
+
+Separate freeze artifact: examples/dry-run/freeze.md
 
 ## Route and limits
 

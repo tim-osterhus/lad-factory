@@ -26,6 +26,8 @@ Path bases: <inherited host directory, package root, target workspace>
 
 Existing work: <relevant protected changes and ownership, needed untracked/non-Git content identities>
 
+Protected controls: <parent-owned run/current/control/<invocation-id>/ records for known canonical files, frozen baseline, and active guidance, including ignored files>
+
 Parent invocation: <none for top-level stages>
 
 Result path: run/current/outputs/<invocation-id>/result.md
@@ -39,7 +41,7 @@ Log directory: historylog/<run-id>/<invocation-id>/
 
 ## Writable paths and authority
 
-<Explicit project paths and artifact directory. Exclude canonical run files.>
+<Explicit project paths, run/current/outputs/<invocation-id>/, and assigned log paths. Exclude canonical files and parent-owned control records.>
 <Authorized development checks and separate external-action gates.>
 
 ## Checks and acceptance
@@ -50,16 +52,18 @@ Log directory: historylog/<run-id>/<invocation-id>/
 
 ## Review baseline
 
-<Frozen baseline path and identity, or not yet established.>
+<Frozen baseline path, exact-byte SHA-256 retained in canonical state, and separate Checker freeze artifact, or not yet established.>
+<No baseline contains its own digest. Later workers cannot replace the retained expected value.>
 
 ## Route and limits
 
-<Saved pending/resume route, evaluated cycle pairings, and relevant recovery evidence.>
+<Saved pending/resume route, evaluated cycle pairings, and relevant recovery evidence, including related Troubleshooter repair and recurrence.>
 <Explicit user limits and actual host/tool limits only, or none supplied.>
 
 ## Expected artifacts
 
 <Small handoff: actual change/diff, checks with relevant output, findings by criterion, unresolved issues, and route.>
+<Checker also writes a separate freeze artifact with the baseline path and exact-byte SHA-256 before implementation access.>
 
 ## Delegation
 

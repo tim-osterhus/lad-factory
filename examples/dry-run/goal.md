@@ -6,19 +6,25 @@ Target workspace: illustrative greeting project
 
 Original source: fixture specification below
 
-Continuation mode: illustrative Goal mode only. No native control is created.
+Continuation mode: illustrative interactive mode. No native control is created.
 
-Native goal authorization: none. This fixture does not create a goal.
+Continuation authorization: none for execution
 
-Native goal reference: not created in this structural fixture
+Native Goal fields are not applicable in interactive mode. This fixture does not create a Goal.
 
-Native goal owning thread: none
+Native goal reference: not applicable
 
-Native goal verified objective/status: not observed
+Native goal owning thread: not applicable
 
-Native goal verification evidence: none
+Native goal verified objective/status: not applicable
 
-Optional goal_id: not exposed
+Native goal verification evidence: not applicable
+
+Optional goal_id: not applicable
+
+Heartbeat reference/owning chat/verification evidence: not applicable
+
+Callback/interactive evidence: a real interactive run records the exact user-return resume instruction
 
 ## Original target specification
 

@@ -18,7 +18,9 @@ Record criteria, expected behavior, required checks, and pinned guidance revisio
 Record supplied source identity as assignment metadata, without inspecting source before freeze.
 
 Include only pre-existing exceptions already supplied on the requirement side.
-Freeze its path and identity. Do not rewrite the baseline after implementation exposure.
+Freeze its exact bytes before implementation access. Record its path and actual SHA-256 in a separate freeze artifact, never inside the baseline.
+The Orchestrator verifies and pins that expected value in canonical state before downstream dispatch.
+Do not rewrite the baseline after implementation exposure.
 
 Then independently inspect the implementation and run appropriate checks.
 Verify actual source identity after freeze.

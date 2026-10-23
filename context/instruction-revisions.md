@@ -54,17 +54,28 @@ Workers may inherit parent permissions. Never claim prompts enforce isolation.
 
 Before dispatch, record the target/package roots, base Git revision, and relevant existing user changes.
 Use existing staged/unstaged diffs and relevant untracked paths to distinguish prior work from the assignment.
-For protected pre-existing untracked or non-Git files, retain content identities only where needed to detect mutation.
+
+Retain scoped before versions or content identities for known canonical goal, specification, bootstrap, assignment, state, packets, and evidence records.
+Include the frozen baseline and active guidance used by the invocation even when ignored or outside Git.
+Keep these small records in parent-owned `run/current/control/<invocation-id>/`. Record explicit parent bookkeeping updates separately.
 Normally exclude dependencies, caches, and build outputs unless they matter to the task.
 Do not require full-tree inventories, recursive hash records, or environment archives.
 
 After the owner and descendants finish, inspect the actual diff and relevant untracked changes.
 Include additions, deletions, renames, mode changes, and binary changes when present.
+Compare the protected control files with their retained versions or identities, allowing only recorded parent bookkeeping changes.
+Inspect actual ignored outputs against the invocation's assigned output directory and log paths, including helper outputs.
 Compare actual changes with assigned paths and existing user work.
 
 Each nested parent checks helper changes and integration. The Orchestrator checks the aggregate changes independently.
 Keep canonical bookkeeping changes distinct from worker output.
 Review and Learning stages receive no application-code write authority.
+
+At Checker freeze, record the exact baseline SHA-256 in a separate freeze artifact before implementation access.
+The Orchestrator verifies and retains that expected digest in canonical state before downstream dispatch, outside every worker's writable paths.
+Compare against that retained value before accepting any worker allowed near the baseline, including Fixer, Doublechecker, Troubleshooter, and Updater.
+On mismatch, preserve evidence and reject the tampered review basis. Use Consultant and a fresh Checker under an accepted valid basis.
+Never rewrite the frozen baseline, store its digest inside itself, or accept a later worker's replacement digest.
 
 Investigate unexpected paths and attribute differences before acceptance.
 Preserve files and user work. Never reset, delete, or overwrite them to hide an unexpected change.

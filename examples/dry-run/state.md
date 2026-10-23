@@ -36,17 +36,27 @@ Effective native configuration: none observed
 
 Existing user work: illustrative clean target
 
+Protected controls: illustrative parent-owned before versions/identities for known canonical records, baseline, and active guidance, including ignored runtime equivalents
+
+Parent bookkeeping updates: none, structural example only
+
 Applicable limits: no user limits supplied, no live host execution
 
 ## Ordered packets
 
 | Packet | Dependencies | Status | Guidance revision | Baseline | Evaluated Fixer cycles | Learning |
 | --- | --- | --- | --- | --- | --- | --- |
-| fixture-p01 | none | review findings | fixture-guidance-v1 | examples/dry-run/baseline.md, fixture-baseline-v1 | 2 | pending |
+| fixture-p01 | none | review findings | fixture-guidance-v1 | examples/dry-run/baseline.md, version label fixture-baseline-v1 | 2 | pending |
+
+Retained expected baseline SHA-256: 808c1a5518bb13e4e77d18fd168857b5c12dcac755842f797b0930b5339eb8b6
+
+Separate freeze artifact: examples/dry-run/freeze.md
+
+The digest matches the actual fixture file. No live Checker freeze or parent acceptance occurred.
 
 ## Dispatch history
 
-| Invocation | Stage/packet | Native owner | Outcome/result | Cycle pairing | Changes/evidence |
+| Invocation | Stage/packet | Native owner | Outcome/result | Cycle/recovery relationship | Changes/evidence |
 | --- | --- | --- | --- | --- | --- |
 | fixture-fixer-01 | Fixer / fixture-p01 | not spawned | illustrative repair | fixture-doublechecker-01 | illustrative candidate |
 | fixture-doublechecker-01 | Doublechecker / fixture-p01 | not spawned | illustrative findings | fixture-fixer-01 | unchanged baseline |

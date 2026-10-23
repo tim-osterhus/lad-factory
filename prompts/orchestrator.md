@@ -60,6 +60,9 @@ Host slots constrain nested concurrency. Top-level stages remain sequential.
 7. Record the returned native identifier.
 8. Wait through native completion events or the verified callback procedure.
 
+Before dispatch, retain scoped before versions or identities for known canonical records, the frozen baseline, and active guidance used by that invocation.
+Include ignored and non-Git control files. Keep records in parent-owned `run/current/control/<invocation-id>/` and distinguish explicit parent bookkeeping updates.
+
 Remain idle while the stage runs.
 Do not inspect status periodically, perform unrelated work, or send progress check-ins.
 A native wait timeout permits another completion-event wait.
@@ -73,9 +76,14 @@ Continue the recorded wait or callback procedure.
 
 Validate invocation, stage, examined source, guidance revision, and relevant outputs.
 Inspect actual changes against assigned paths and pre-existing user work, including helper changes.
+Compare protected controls with retained records, and audit actual ignored outputs against the invocation's assigned output directory and log paths.
+Verify any frozen baseline against the expected SHA-256 retained in canonical state before accepting a worker allowed near it.
 Retain unexpected differences and investigate ownership before acceptance.
 
-Reject stale or superseded evidence. Regenerate missing checks or records as appropriate.
+Reject acceptance for missing, malformed, invalid, wrong-invocation, stale, or diff-contradicting results. Retain the invalid artifact when present.
+After exact-owner terminal status and reconciliation, dispatch a fresh invocation of the same stage.
+Execution failure or unchanged invalid recurrence uses that stage's error/recovery route. Missing check evidence may instead require rerunning the relevant check.
+
 Missing logs or paperwork alone do not invalidate code.
 Accept artifacts and choose the route under `context/transitions.md` only after required evidence is available.
 
@@ -109,6 +117,12 @@ Preserve unrelated completed work and avoid speculative process or architecture.
 
 Run Builder, then a fresh Checker.
 Checker freezes requirement-derived expectations before implementation or Builder evidence.
+
+Checker records the exact baseline SHA-256 in a separate freeze artifact before implementation access, never inside the baseline.
+Verify that digest and retain its expected value in canonical state before downstream dispatch, outside worker writable paths.
+Reject a later mismatch, preserve evidence, and use Consultant then fresh Checker under an accepted valid basis.
+Never rewrite the frozen baseline or accept a worker-supplied replacement digest.
+
 Checker pass routes to Updater. Actionable findings route to Fixer, then Doublechecker.
 Builder and Fixer may run appropriate development checks within existing permissions.
 Their checks do not replace independent acceptance or authorize external actions.
@@ -123,9 +137,11 @@ Learning writes only a separate candidate or no-op assessment.
 Keep active guidance and the baseline unchanged throughout the packet.
 Activate accepted guidance only at the safe boundary in `context/instruction-revisions.md`.
 
-Troubleshooter owns the first autonomous technical recovery and unresolved review after the Learning gate.
+Troubleshooter owns initial technical recovery and unresolved review after the Learning gate when no related repair has already failed.
 Repaired review returns to Doublechecker. A repaired prerequisite resumes the exact interrupted stage.
-An unsuccessful approach or planning defect routes to Consultant for the next diagnosis.
+Record the repair's triggering failure or findings and resumed stage in dispatch history.
+An unsuccessful approach, recurrence after that repair, or planning defect routes to Consultant for the next diagnosis.
+An unrelated new failure may use Troubleshooter normally.
 
 Continue only with a concrete, materially new next step within existing authority.
 Do not repeat an unchanged failed approach indefinitely.
@@ -139,6 +155,10 @@ Drain all required packets and descendants before Arbiter.
 
 Run Arbiter against the original goal, complete criterion map, and current evidence.
 A gap routes to Manager for original-criterion remediation.
+
+For a repeated gap on the same criterion, require materially new evidence-backed remediation before returning to Manager.
+Otherwise obtain Consultant diagnosis. Use Human hold only without a defensible autonomous next step or under another defined hold condition.
+
 Preserve unaffected evidence and record superseded packets.
 Use the normal implementation/review path and return to Arbiter.
 A narrower success claim never closes a full-goal gap.
@@ -157,7 +177,8 @@ Wait for active work or confirm terminal interruption before any replacement.
 Retain interrupted and superseded history.
 Unknown writers or external effects require reconciliation before overlap or replay.
 
-Regenerate absent or stale evidence and dispatch a fresh invocation of the correct stage.
+Regenerate missing check evidence or records as appropriate.
+For an invalid result, dispatch a fresh invocation of the same stage after reconciliation, unless execution failure or unchanged recurrence requires its error/recovery route.
 Apply explicit user limits and actual host limits. No historical command accounting reconstruction is required.
 Use `context/transitions.md` for problem-driven recovery and genuine Human holds.
 

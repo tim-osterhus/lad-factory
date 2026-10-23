@@ -36,19 +36,25 @@ Effective native configuration: <selection, setting precedence, owner/helper bin
 
 Existing user work: <relevant protected changes and ownership>
 
+Protected controls: <parent-owned run/current/control/<invocation-id>/ before versions/identities for known canonical records, baseline, and active guidance, including ignored files>
+
+Parent bookkeeping updates: <explicit canonical changes excluded from worker changes>
+
 Applicable limits: <explicit user limits and actual host/tool limits only, or none supplied>
 
 ## Ordered packets
 
 | Packet | Dependencies | Status | Guidance revision | Baseline | Evaluated Fixer cycles | Learning |
 | --- | --- | --- | --- | --- | --- | --- |
-| <id> | <ids or none> | pending | <revision> | <path and identity or none> | 0 | pending |
+| <id> | <ids or none> | pending | <revision> | <path, retained expected SHA-256, separate freeze artifact or none> | 0 | pending |
+
+Retain the verified Checker freeze digest here before downstream dispatch, outside worker writable paths and outside the baseline itself.
 
 ## Dispatch history
 
-| Invocation | Stage/packet | Native owner | Outcome/result | Cycle pairing | Changes/evidence |
+| Invocation | Stage/packet | Native owner | Outcome/result | Cycle/recovery relationship | Changes/evidence |
 | --- | --- | --- | --- | --- | --- |
-| <id> | <stage and packet if any> | <ID or unresolved> | <active, rejected, interrupted, or result path> | <Fixer/Doublechecker IDs or none> | <relevant paths> |
+| <id> | <stage and packet if any> | <ID or unresolved> | <active, rejected, interrupted, or result path> | <paired cycle IDs, related Troubleshooter repair and resumed review/failure, or none> | <relevant paths> |
 
 Record failed, interrupted, superseded, and rejected invocations for exact-owner recovery.
 Learning status is pending, passed, findings, or failed. Preserve its saved route.

@@ -21,6 +21,8 @@ Reject stale source identities, omitted criteria, contradictory artifacts, and u
 Write a per-criterion verdict and a full-goal decision.
 
 For gaps, propose concrete remediation tied to original criteria through the normal review path.
+For a repeated same-criterion gap, require materially new evidence-backed remediation before recommending Manager again.
+Otherwise recommend Consultant diagnosis, then Human hold only when no defensible autonomous next step remains or another hold condition applies.
 For unavailable authority or inputs, identify the required human action.
 Recommend closure only when every original criterion passes and required work is complete.
 

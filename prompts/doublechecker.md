@@ -17,8 +17,8 @@ Do not replace the baseline or silently dismiss findings.
 Record current source identity and failed or unrun checks.
 
 Recommend Updater when findings and packet criteria pass.
-Recommend Fixer for unresolved findings before the second evaluated cycle.
-After the second evaluated cycle, recommend Troubleshooter if findings remain.
+For findings recurring after a Troubleshooter repair, recommend Consultant for the next diagnosis.
+Otherwise recommend Fixer before the second evaluated cycle, then Troubleshooter if findings remain.
 
 The Orchestrator inserts Learning after two cycles, even on a pass.
 Report invalidated requirements or baseline assumptions to Consultant.

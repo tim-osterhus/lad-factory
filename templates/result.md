@@ -21,6 +21,7 @@ Parent invocation: <none or exact parent>
 ## Artifacts and actual changes
 
 <Small evidence index, actual change/diff, and relevant untracked paths.>
+<Include actual ignored outputs and the separate freeze artifact for Checker.>
 <Identify source evidence directly. A summary is not proof.>
 
 ## Checks
@@ -36,11 +37,13 @@ Parent invocation: <none or exact parent>
 ## Recovery or decisions
 
 <Unresolved issues, proposed route, materially new next step, or missing input/authority.>
+<Link any Troubleshooter repair to triggering failure/findings and the resumed stage or review. Identify recurrence after a related repair.>
 <For blocked: exact human dependence and why authorized retrieval, checks, or repair cannot resolve it.>
 
 ## Change review
 
 <Actual changed paths compared with assigned paths and existing user work.>
+<Include ignored outputs and protected control files, not only Git-visible changes. Parent checks retained versions and baseline SHA-256 independently.>
 <Unexpected differences and ownership investigation. Preserve files. Parent independently checks aggregate changes.>
 
 ## Nested work

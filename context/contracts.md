@@ -12,8 +12,10 @@ Project edits require assigned writable paths. Preserve target instructions and 
 Path ownership is an instruction, not a sandbox boundary.
 
 Parents record the base Git revision and relevant existing work before dispatch.
-They inspect the actual diff and relevant untracked paths before accepting outputs.
-Use content identities for protected pre-existing untracked or non-Git files when needed to detect changes.
+They inspect actual diffs, relevant untracked paths, and ignored invocation outputs before accepting results.
+
+Protect known canonical run records, the frozen baseline, and active guidance used by the invocation even when Git ignores them.
+Retain scoped before versions or content identities in parent-owned `run/current/control/<invocation-id>/`, separate from worker outputs and explicit parent bookkeeping updates.
 Normally exclude dependencies, caches, and build outputs unless relevant to the task.
 Investigate unexpected paths without deleting, resetting, or overwriting user work.
 See `context/instruction-revisions.md` for guidance stability and change review.
@@ -79,11 +81,17 @@ Do not read, search, or inspect any target application code, code excerpts, diff
 Defer implementation appendices and evidence until after freeze.
 Before freeze, record supplied source identity as metadata without inspecting that source.
 Record criteria, expected behavior, required checks, guidance revision, and requirement-side pre-existing exceptions.
-Freeze the baseline path and identity before implementation access.
+Before implementation access, freeze the baseline's exact bytes and record its path and SHA-256 in a separate freeze artifact.
+The baseline must not contain its own digest. The Orchestrator verifies and pins the freeze artifact's expected digest in canonical state before downstream dispatch.
 
 After freeze, verify actual source identity and record newly discovered pre-existing issues separately.
 Never rewrite the baseline to accommodate the implementation.
 Preserve it through Fixer and Doublechecker.
+
+Before accepting any worker allowed near the baseline, compare its current SHA-256 with the parent's retained expected value.
+This includes Fixer, Doublechecker, Troubleshooter, and Updater. Preserve mismatch evidence, reject the tampered basis, and route through Consultant to fresh Checker review.
+Never rewrite the frozen baseline or accept a worker-supplied replacement digest.
+
 Doublechecker checks findings and the full current packet criteria for regressions.
 Changed requirements or an invalid baseline require Consultant review and an accepted new review basis.
 

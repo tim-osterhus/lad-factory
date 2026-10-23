@@ -33,7 +33,7 @@ This is illustrative data. No stage executed and no target changed.
 ## Findings and criteria
 
 AC-01 and AC-02 remain subject to current-source review.
-The frozen baseline remains fixture-baseline-v1.
+The frozen baseline retains version label fixture-baseline-v1 and the expected SHA-256 recorded in state.md.
 Two evaluated cycle pairings remain recorded.
 
 ## Recovery or decisions
@@ -46,6 +46,7 @@ Restore the pending Troubleshooter route. The successful variant restores Update
 Illustrative pre-state: clean target and unchanged guidance.
 Illustrative post-state: assigned result artifact only.
 No real change review executed. A native parent must inspect actual changes before acceptance.
+That review includes ignored outputs and protected controls, with the baseline checked against the parent's retained expected SHA-256.
 
 ## Nested work
 

@@ -18,6 +18,8 @@ Stages draft outputs under `run/current/outputs/<invocation-id>/`.
 The Orchestrator accepts scoped drafts into canonical records.
 Accepted packets live at `run/current/packets/<packet-id>.md`.
 The canonical evidence index is `run/current/evidence.md`.
+The Orchestrator owns scoped control-protection records under `run/current/control/<invocation-id>/` and retains expected baseline SHA-256 values in canonical state.
+Checker writes its separate freeze artifact in its assigned output directory. No baseline contains its own digest.
 
 Use `prompts/setup.md` and `context/instruction-revisions.md` to prepare records and stable guidance.
 No template requires an internal native Goal ID the host does not expose.
