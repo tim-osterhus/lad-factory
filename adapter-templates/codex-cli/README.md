@@ -2,7 +2,7 @@
 
 This guide binds LAD stages to Codex CLI's fresh custom agents.
 
-Merge and adapt this entire guide as an identified binding section in `installation/adapter.md`. For cross-harness work, merge the entire primary and secondary guides and entire shared cross-harness contract into that same file. Record every section's source and revision. Resolve all template markers and source-relative references there. Record the installed version, profile revision, configuration paths and identities, working directory, and authorized read/write roots. Leave no separate mutable guide import. The installed guide must remain usable after the optional pack is removed.
+Merge and adapt this entire guide as an identified binding section in `installation/adapter.md`. For cross-harness work, merge the entire primary and secondary guides and shared cross-harness contract into that same file. Record every section's source and revision. Resolve template markers and source-relative references there. Record the installed version, profile revision, native configuration paths, working directory, and authorized read/write roots. Leave no separate mutable guide import. The installed guide must remain usable after the optional pack is removed.
 
 ## Native binding
 
@@ -22,7 +22,7 @@ Custom agents inherit the parent's provider, permissions, and MCP servers. They 
 
 Native sandbox and approval settings enforce their documented boundary. LAD's writable-path list is an additional instruction, not a sandbox. Record the actual sandbox, approval policy, writable roots, configuration precedence, and inherited capabilities. Use normal approved permissions. Do not enable bypass or widen roots to make a dispatch succeed.
 
-Planner has no helpers under LAD policy. Non-Planner stages may use fresh helpers within the pinned profile, remaining counters, native concurrency limits, and disjoint write ownership. Do not equate `agents.max_concurrent_threads_per_session` with LAD's total dispatch budget. Descendants must all be terminal and collected before a stage finishes.
+Planner has no helpers under LAD policy. Non-Planner stages select the smallest suitable helper tier within the pinned profile, explicit user limits, actual host constraints, and disjoint write ownership. Respect native concurrency and depth limits. LAD defines no additional quotas. Descendants must all be terminal and collected before a stage finishes.
 
 Use native completion-event waiting when available. Collect the exact agent ID, terminal state, current result, examined source, pinned guidance identity, log, and descendant results. A final chat message alone does not pass a stage. For a separate `codex exec`, preserve actual process exit status and assigned artifacts as well as JSON events.
 
@@ -32,7 +32,7 @@ Bind `goal`, `heartbeat`, `callback`, or `interactive` only when the actual host
 
 ## Installed record and cleanup
 
-Record every stage/helper's native agent name, model, effort, config path and identity in `installation/profile.md`. Keep this entire binding and any entire cross-harness contract/other binding sections inside the one self-contained `installation/adapter.md`. Copy required native files outside `adapter-templates/` before source cleanup. Pin both installation records and required native configuration identities into each run. Reject configuration drift and uncertain launches. Preserve active workers and evidence during recovery. Cleanup requires explicit user authorization for the exact source folder and never removes installed files.
+Record every stage/helper's native agent name, model, effort, configuration path, and revision in `installation/profile.md`. Keep this entire binding and any cross-harness contract/other binding sections inside the one self-contained `installation/adapter.md`. Copy required native files outside `adapter-templates/` before source cleanup. Retain both installation records in each run's instruction snapshot. Verify effective native settings against the pinned binding and actual configuration precedence. Use revisioned files or content checks where mutable discovery could change that binding. Reconcile uncertain launches before replacement work. Preserve active workers and evidence during recovery. Cleanup requires explicit user authorization for the exact source folder and preserves installed files.
 
 ## Primary sources
 

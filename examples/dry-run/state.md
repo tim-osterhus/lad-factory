@@ -2,19 +2,13 @@
 
 Run: fixture-greeting
 
-Continuation mode: illustrative Goal mode only. No native control is created.
+Continuation mode: illustrative interactive mode, no native control created
 
-Native goal reference: not created in this structural fixture
+Continuation authorization: none for execution
 
-Native goal owning thread: none
+Continuation owning chat/reference/status/evidence: no live task or observed native control
 
-Native goal verified objective: not observed
-
-Native goal verification evidence: none
-
-Optional goal_id: not exposed
-
-Native goal status: not executed
+Mode details: a real interactive run would record the exact user-return resume instruction
 
 Workflow status: illustrative Learning assignment
 
@@ -26,76 +20,56 @@ Current packet: fixture-p01
 
 Active stage: Learning
 
-Active invocation: fixture-learning-01
+Active invocation/native owner: fixture-learning-01, not spawned
 
-Native agent ID: not spawned
+Last accepted stage/result: illustrative second Doublechecker findings
 
-Last accepted result: illustrative second Doublechecker findings
+Current candidate: fixture-source-after-cycle-2, illustrative only
 
-Evidence index: transition cases in examples/dry-run/README.md
+Evidence index: examples/dry-run/README.md
 
-Instruction revision: fixture-guidance-v1, illustrative only
+Instruction revision/root: fixture-guidance-v1, illustrative versioned snapshot
 
-Guidance manifest: illustrative path/hash inventory, not a generated snapshot
+Profile/adapter revisions: fixture-profile-v1 and fixture-adapter-v1, illustrative only
 
-Instruction root: illustrative immutable fixture-guidance-v1 snapshot
+Effective native configuration: none observed
 
-Pre-dispatch path snapshot: illustrative clean target and unchanged package inventory
+Existing user work: illustrative clean target
+
+Applicable limits: no user limits supplied, no live host execution
 
 ## Ordered packets
 
-| Packet | Dependencies | Status | Guidance revision | Baseline | Fixer cycles | Learning status |
+| Packet | Dependencies | Status | Guidance revision | Baseline | Evaluated Fixer cycles | Learning |
 | --- | --- | --- | --- | --- | --- | --- |
 | fixture-p01 | none | review findings | fixture-guidance-v1 | examples/dry-run/baseline.md, fixture-baseline-v1 | 2 | pending |
 
-## Budgets
+## Dispatch history
 
-| Scope | Budget | Used | Remaining |
-| --- | --- | --- | --- |
-| Total top-level dispatches | 60 | 10 | 50 |
-| Recon / Planner / Manager dispatches, each | 3 | 1 | 2 |
-| Builder / Checker dispatches, each | 4 | 1 | 3 |
-| Doublechecker dispatches | 4 | 2 | 2 |
-| Updater dispatches | 4 | 0 | 4 |
-| Fixer dispatches | 3 | 2 | 1 |
-| Evaluated Fixer cycles | 2 | 2 | 0 |
-| Troubleshooter dispatches for originating fixture-p01 lineage | 2 | 0 | 2 |
-| Local repair attempts for originating fixture-p01 lineage | 1 | 0 | 1 |
-| Consultant dispatches | 2 | 0 | 2 |
-| Planning repair | 1 | 0 | 1 |
-| Learning dispatches | 2 | 1 | 1 |
-| Arbiter dispatches | 3 | 0 | 3 |
-| Arbiter remediation plan | 1 | 0 | 1 |
-| Invalid-result or technical replacement for this stage/fixture-p01 lineage | 1 | 0 | 1 |
-| Nested dispatches / nesting depth for this invocation | 4 / 2 | 0 / 0 | 4 / 2 |
-| Check-command invocations for this invocation | 12 | 0 | 12 |
-| Per-command time limit | 600 seconds | not executed | 600 seconds |
+| Invocation | Stage/packet | Native owner | Outcome/result | Cycle pairing | Changes/evidence |
+| --- | --- | --- | --- | --- | --- |
+| fixture-fixer-01 | Fixer / fixture-p01 | not spawned | illustrative repair | fixture-doublechecker-01 | illustrative candidate |
+| fixture-doublechecker-01 | Doublechecker / fixture-p01 | not spawned | illustrative findings | fixture-fixer-01 | unchanged baseline |
+| fixture-fixer-02 | Fixer / fixture-p01 | not spawned | illustrative repair | fixture-doublechecker-02 | illustrative candidate |
+| fixture-doublechecker-02 | Doublechecker / fixture-p01 | not spawned | illustrative findings | fixture-fixer-02 | frozen baseline and full criteria |
+| fixture-learning-01 | Learning / fixture-p01 | not spawned | illustrative pending assignment | none | examples/dry-run/assignment.md |
 
-These are illustrative counter values for the preceding nine stages and reserved Learning dispatch.
-No actual native attempt or command occurred.
-
-Recovery counter scope: originating fixture-p01 lineage, retained through Consultant, Troubleshooter, and any replacement packets.
-
-## Dispatch ledger
-
-Illustrative Learning reservation: fixture-learning-01, one spent dispatch, no spawned native identity.
-The two evaluated cycles pair separate illustrative Fixer and Doublechecker invocation IDs.
-In a real run, retain those pairings and debits for failed, interrupted, or invalid attempts.
+These are structural examples. No dispatch, command, or native attempt occurred.
 
 ## Pending route
 
 Troubleshooter, based on illustrative second Doublechecker findings.
-For the successful variant, substitute Updater without changing the cycle count.
+The successful variant saves Updater instead.
 
 ## Decisions and recovery
 
-No canonical transition has occurred. No live task exists.
+No canonical transition or live work exists.
 
 ## Guidance candidates and activation
 
-No-op variant leaves fixture-guidance-v1 unchanged.
-Candidate variant keeps fixture-guidance-v1 through this packet's Updater and completion.
-An accepted next-packet boundary would create fixture-guidance-v2 without changing this packet's baseline.
+The no-op variant leaves fixture-guidance-v1 unchanged.
+A candidate retains that revision through this packet's completion.
+An accepted next-packet boundary could create fixture-guidance-v2 without changing this baseline.
 
 ## Arbiter
 

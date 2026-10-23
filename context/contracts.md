@@ -2,111 +2,118 @@
 
 ## Authority and ownership
 
-`run/current/goal.md` preserves the original target specification and stable criterion identifiers.
-Planner may propose necessary detail. Only the Orchestrator accepts refinements within the original scope.
-A material scope decision requires the user.
+`run/current/goal.md` preserves the original specification and stable criterion identifiers.
+Planner may propose necessary detail. The Orchestrator accepts refinements within the original scope.
+A material product or scope decision requires the user.
 
 Only the Orchestrator writes canonical state, assignment, accepted specification, packets, and evidence index.
 Stages write assigned artifacts, their result, and their log.
-Project edits require explicit writable paths. Preserve repository instructions and existing user work.
+Project edits require assigned writable paths. Preserve target instructions and existing user work.
 Path ownership is an instruction, not a sandbox boundary.
 
-Parents record pre-dispatch path state and audit actual changes before accepting worker outputs.
-Assignments supply the audit roots, snapshot, protected paths, exclusions, and permitted writes.
-Workers report actual changes and unexpected paths without deleting, resetting, or overwriting protected work.
+Parents record the base Git revision and relevant existing work before dispatch.
+They inspect the actual diff and relevant untracked paths before accepting outputs.
+Use content identities for protected pre-existing untracked or non-Git files when needed to detect changes.
+Normally exclude dependencies, caches, and build outputs unless relevant to the task.
+Investigate unexpected paths without deleting, resetting, or overwriting user work.
+See `context/instruction-revisions.md` for guidance stability and change review.
 
-The Orchestrator independently checks aggregate changes under its controller policy.
-Nested parents load `context/instruction-revisions.md`'s changed-path audit section when preparing and accepting helper work.
-
-## Assignment and immutable guidance
+## Assignment and guidance
 
 Read `run/current/assignment.md` from the package root recorded in bootstrap.
-It names run, invocation, stage, goal, specification, packet, ordered inputs, writable paths, checks, budgets, and outputs.
-It also supplies source metadata, instruction revision, manifest identity, path bases, and pre-dispatch snapshot.
-The assignment supplies the profile revision, effective owner binding, and native configuration identity.
-Delegating stages load pinned installation files. Other stages receive their binding in the assignment without extra policy preload.
+It names the run, invocation, stage, goal, specification, packet, ordered inputs, writable paths, checks, and outputs.
+It records source identity, guidance revision, path bases, effective owner binding, and relevant existing work.
+Delegating stages load the pinned installation files. Other stages receive their binding in the assignment.
 
-Reject missing or mismatched assignment identity. Record unavailable inputs honestly.
+Reject mismatched invocation or stage identity. Retrieve unavailable inputs through already-authorized means.
+Initial stage messages contain only `Read <actual-relative-pinned-stage-path>.md and follow instructions.`
+Substitute the real path. Set model, effort, and fresh context through native controls outside that message.
+Use the pinned adapter's supported controls. Never silently substitute models or ignore native setting precedence.
 
-Initial prompts contain only `Read <actual-relative-snapshot-stage-path>.md and follow instructions.`
-Model, effort, and fresh context are native settings.
-Use the pinned adapter's supported controls. Never silently substitute models or claim settings bypass native inheritance.
-
-Verify loaded guidance bytes against the assigned immutable revision and manifest. Never edit an active snapshot.
-Guidance paths use that instruction root. Runtime paths use the recorded package root.
+Use the assigned versioned guidance throughout the packet. Never edit an active snapshot.
+Guidance paths use its instruction root. Runtime paths use the recorded package root.
 Target paths use the assigned target workspace. Reading a file never changes the working directory.
 
-Read cited inputs in the owning stage's required order, including embedded appendices.
-Generic preloading never overrides that order. Chat history is not authoritative state.
+Read cited inputs in the stage's required order, including embedded appendices.
+Generic preloading and chat history never override that order or canonical records.
 
 ## Evidence and outcomes
 
-Use the pinned `templates/result.md` for each result.
+Use the pinned `templates/result.md`.
 Outcomes are `pass`, `findings`, `blocked`, or `error`.
+Use `findings` for inspectable defects or deficient planning.
+Use `error` for execution failures that need diagnosis or repair.
+Use `blocked` only for human dependence defined in `context/transitions.md`.
+Show why authorized retrieval, checks, or repair cannot resolve the obstacle.
 
-Use `findings` for inspectable defects or deficient planning and `error` for recoverable execution failures.
-Use `blocked` only when progress requires human input, authority, protected-work resolution, or an approved budget decision.
-Show why already-authorized retrieval, checks, or bounded repair cannot resolve the obstacle.
+The Orchestrator validates evidence and owns routes and acceptance.
+A recommendation cannot grant new scope or authority.
+Stages and helpers never control Goals, heartbeats, or run resumption.
+Unknown external outcomes require reconciliation before replay.
 
-An exhausted bounded diagnosis with no safe actionable route also requires a Human hold.
-Do not label ordinary access retrieval or a repairable environment failure human-only.
+Keep handoffs small and inspectable:
 
-A recommendation never authorizes a transition or additional budget.
-The Orchestrator validates blocker evidence and owns routes, counters, holds, and acceptance.
-Stage and nested agents never create, adopt, update, complete, or disable any Goal or heartbeat.
-Do not replay an external action with an unknown outcome.
+- Invocation and examined source identity.
+- Actual change or diff, including relevant untracked paths.
+- Checks with command, working directory, status, and relevant output.
+- Findings tied to criteria, unresolved issues, and the proposed route.
 
-Evidence identifies commands, working directory, exit status, and examined source.
-Dirty-checkout identity includes base revision, diff or content hashes, and relevant untracked files.
-Keep failed and unrun checks visible. Assignment metadata is not proof of examined source.
+Provide an evidence index and targeted supporting evidence to reviewers.
+Retain raw evidence only when useful. Transcript exports, full environment archives, and command preauthorization are not required.
+A summary never substitutes for the source or check evidence it describes.
 
-## Independent review
+Failed and unrun checks stay visible. Assignment metadata does not prove examined source.
+Missing logs or paperwork alone do not invalidate code. Regenerate missing check evidence when needed.
 
-Checker derives expectations only from the original goal, specification, and requirement-side packet inputs.
+## Independent review and development checks
+
+Builder and Fixer may run appropriate development checks within their assigned scope and existing permissions.
+Independent review does not prohibit self-testing.
+Edit/test authority, independent acceptance, and merge/publish/deploy or other external-action authority are separate.
+
+Checker derives expectations from the original goal, specification, and requirement-side packet inputs.
 Checker follows this prohibition:
 
 Do not read, search, or inspect any target application code, code excerpts, diffs, implementation-derived tests, or Builder evidence until you have written and frozen your expectations baseline.
 
-Defer embedded implementation appendices and evidence until after freeze.
-Before freeze, record supplied source identity as assignment metadata without inspecting that source.
-Include only pre-existing exceptions already supplied on the requirement side.
-Record criteria, expected behavior, required checks, pinned guidance revision, and manifest identity in the baseline.
+Defer implementation appendices and evidence until after freeze.
+Before freeze, record supplied source identity as metadata without inspecting that source.
+Record criteria, expected behavior, required checks, guidance revision, and requirement-side pre-existing exceptions.
 Freeze the baseline path and identity before implementation access.
 
-After freeze, verify actual source identity and record newly discovered pre-existing issues as separate observations.
-Never silently rewrite the baseline to accommodate implementation or new observations.
+After freeze, verify actual source identity and record newly discovered pre-existing issues separately.
+Never rewrite the baseline to accommodate the implementation.
+Preserve it through Fixer and Doublechecker.
+Doublechecker checks findings and the full current packet criteria for regressions.
+Changed requirements or an invalid baseline require Consultant review and an accepted new review basis.
 
-The Orchestrator preserves the baseline through Fixer and Doublechecker.
-Fixer cannot replace it. Doublechecker checks findings and current packet criteria for regressions.
-Changed requirements or an invalid baseline require Consultant review.
+## Execution and nested work
 
-## Assigned limits and nested work
+One top-level stage runs at a time. Nested work stays inside that active stage.
+Planner works alone. Other stages use `context/nested-models.md` when delegating.
 
-Use the assignment's applicable finite limits and used/remaining counters. Never reset usage or invent routes.
-Separate this invocation's reserved dispatch/replacement debits from capacity for future invocations.
-Zero future capacity does not revoke an already-reserved invocation. It forbids another dispatch under that cap.
+Parents assign concrete work, disjoint paths, outputs, logs, and applicable explicit user or host limits.
+Parents integrate helper results and verify actual changes.
+Collect every descendant result and confirm every descendant is terminal before finishing.
+Never replace an active or uncertain owner or overlap writers.
 
-Report attempted repairs and check usage, including failed or interrupted attempts.
+Enforce explicit user limits and actual host concurrency and tool limits.
+Do not invent default command, duration, dispatch, nesting, recovery, or remediation limits.
+Dispatch history records ownership and outcomes for recovery. It is not a capacity ledger.
+Two evaluated Fixer/Doublechecker cycles trigger Learning, including a successful second cycle.
+This trigger controls routing, not spent capacity.
 
-One top-level stage runs at a time. Nested work stays inside the active stage.
-Planner never delegates. Other stages load `context/nested-models.md` when using helpers.
-
-Parents assign disjoint paths, pinned guidance, outputs, log directories, and remaining descendant budgets.
-Parents persist child debits before launch and integrate audited helper results.
-Parents collect every descendant result and confirm all descendants are terminal before finishing.
-Never dispatch a replacement while an owner is active or its identity/outcome is uncertain.
-
-Learning writes only a separate candidate. It cannot change guidance, snapshots, baseline, target code, counters, or pending route.
-The Orchestrator owns candidate acceptance and activation under its controller policy.
+Learning writes a separate candidate only.
+It cannot change active guidance, baselines, target code, canonical state, or the pending route.
+The Orchestrator accepts and activates candidates only at a safe boundary.
 
 ## Finish and logs
 
 Write assigned artifacts, the result, and one Markdown log smaller than 5120 bytes.
 Every Orchestrator, stage, and nested invocation logs under `historylog/<run-id>/<invocation-id>/`.
 Use UTC and the exact filename `StageName_HHMM-MMDDYY.md`.
-Nested workers use their owning stage's name and record their specific role in the log body.
+Nested workers use their owning stage's name and record their specific role in the body.
 
 Unique invocation directories prevent collisions. Never overwrite another log.
-Log assignment, outcome, evidence paths, decisions, and unresolved issues. Omit transcripts, credentials, and secrets.
-
-Return the result path, outcome, unresolved issue, and confirmation that all descendants are terminal and collected.
+Record assignment, outcome, evidence paths, decisions, and unresolved issues. Omit transcripts, credentials, and secrets.
+Return result path, outcome, unresolved issues, and confirmation that descendants are terminal and collected.

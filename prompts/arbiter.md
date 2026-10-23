@@ -20,7 +20,7 @@ Mark each criterion pass, gap, or unavailable.
 Reject stale source identities, omitted criteria, contradictory artifacts, and unsupported claims.
 Write a per-criterion verdict and a full-goal decision.
 
-For gaps, propose bounded remediation tied to original criteria.
+For gaps, propose concrete remediation tied to original criteria through the normal review path.
 For unavailable authority or inputs, identify the required human action.
 Recommend closure only when every original criterion passes and required work is complete.
 

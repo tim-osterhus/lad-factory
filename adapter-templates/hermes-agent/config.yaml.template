@@ -14,7 +14,6 @@ delegation:
   model: "{{CHILD_MODEL_ID}}"
   provider: "{{CHILD_PROVIDER_ID}}"
   fallback_providers: []
-  max_concurrent_children: 3
-  max_spawn_depth: 2
+  # Keep actual host concurrency/depth settings. LAD defines no numeric defaults.
   orchestrator_enabled: true
   subagent_auto_approve: false

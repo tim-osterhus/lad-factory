@@ -8,27 +8,26 @@ Stage: <stage>
 
 Outcome: <pass | findings | blocked | error>
 
-Examined source: <revision plus dirty/untracked identity>
+Examined source: <base revision plus actual diff/relevant untracked identity>
 
-Instruction revision: <same immutable revision as assignment>
+Instruction revision: <same guidance revision as assignment>
 
-Profile revision and adapter identity: <same pinned installation identities as assignment>
+Profile/adapter revisions: <same pinned revisions as assignment>
 
-Guidance manifest: <same path and identity as assignment>
-
-Recommended route: <stage or human decision>
+Recommended route: <stage or required human decision>
 
 Parent invocation: <none or exact parent>
 
-## Artifacts
+## Artifacts and actual changes
 
-<Paths, identities, and scope.>
+<Small evidence index, actual change/diff, and relevant untracked paths.>
+<Identify source evidence directly. A summary is not proof.>
 
 ## Checks
 
-| Check | Working directory | Result | Evidence |
+| Command or observation | Working directory | Status | Relevant output/evidence |
 | --- | --- | --- | --- |
-| <command or observation> | <directory> | <exit status, failed, or unrun> | <path> |
+| <check> | <directory> | <exit status, failed, or unrun> | <targeted output or path> |
 
 ## Findings and criteria
 
@@ -36,17 +35,17 @@ Parent invocation: <none or exact parent>
 
 ## Recovery or decisions
 
-<Attempt usage, pending route, proposed repair, missing authority or inputs.>
-<For blocked: exact human dependence and evidence that already-authorized retrieval, checks, or bounded repair cannot resolve it.>
+<Unresolved issues, proposed route, materially new next step, or missing input/authority.>
+<For blocked: exact human dependence and why authorized retrieval, checks, or repair cannot resolve it.>
 
-## Changed-path audit
+## Change review
 
-<Pre-dispatch snapshot path, post-state/difference evidence, actual changed paths, and comparison with assigned writable paths.>
-<Parent performs an independent audit before acceptance. Record unexpected paths without deleting user work.>
+<Actual changed paths compared with assigned paths and existing user work.>
+<Unexpected differences and ownership investigation. Preserve files. Parent independently checks aggregate changes.>
 
 ## Nested work
 
-<Affirm all descendants terminal and results collected. Include worker IDs, pinned revisions, work-order/result/log paths, spent counters, changed-path audits, integration checks, or none.>
+<All descendants terminal and results collected, with IDs, work-order/result/log paths, integration checks, or none.>
 
 ## Log
 

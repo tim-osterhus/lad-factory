@@ -8,8 +8,6 @@ Baseline identity: fixture-baseline-v1
 
 Instruction revision: fixture-guidance-v1, illustrative only
 
-Guidance manifest: illustrative path/hash inventory, not generated
-
 Supplied source identity: fixture-source-before-review, assignment metadata only
 
 Recorded and frozen before any target implementation access: yes, illustrative sequence only

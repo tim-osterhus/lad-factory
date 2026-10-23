@@ -6,5 +6,4 @@ approval_policy = "on-request"
 
 [agents]
 enabled = true
-# Choose a finite value within host capacity and the accepted profile.
-max_concurrent_threads_per_session = 3
+# Keep actual host concurrency settings. LAD defines no numeric default.

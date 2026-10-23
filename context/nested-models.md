@@ -12,25 +12,25 @@ These helper aliases describe capability needs, not fixed provider or model name
 
 Choose the smallest suitable tier using the profile's explicit model and effort bindings.
 Load the pinned `installation/profile.md` and `installation/adapter.md` before delegating.
-Use only permitted child tiers, authorized fallbacks, and actual host slots. Never silently substitute a model.
+Use permitted child tiers, authorized fallbacks, and actual host slots. Never silently substitute a model.
+The Codex preset never assigns L as a stage owner.
 
-Set supported model, effort, and fresh context outside the initial prompt.
-Check native configuration identities and precedence. A requested setting may be overridden by native configuration.
+Set supported model, effort, and fresh context outside the initial message.
+Check effective native settings and precedence against the pinned binding.
 Provider, permissions, tools, and unsupported effort controls follow the actual adapter and host.
 
-Stages and helpers may delegate separable work within their assigned scope and budgets.
-Assign concrete inputs, disjoint writable paths, acceptance checks, and permitted child tiers.
-Report work beyond the assigned scope to the owning stage before expanding it.
+Delegate only useful separable work within assigned scope and existing permissions.
+Assign concrete inputs, disjoint paths, acceptance checks, and permitted child tiers.
+Pass applicable explicit user limits and actual host limits.
 Avoid manager layers for trivial or inseparable work.
 
 Write each helper's work order to a readable Markdown file.
-Include run ID, parent invocation, outputs, log directory, and shared contracts.
-Include pinned guidance/profile revision, manifest, explicit path bases, and remaining descendant budgets.
-Initial helper prompts contain only the instruction to read that work-order file.
+Include run and parent invocation IDs, guidance/profile revision, path bases, outputs, logs, and shared contracts.
+Initial helper messages contain only the instruction to read that work-order file.
+Do not repeat unrelated worker context or preload implementation into a fresh Checker before baseline freeze.
 
-Parents integrate and verify helper results before finishing.
-Record pre-dispatch path state and audit helper changes before integration and acceptance.
-Never treat writable-path instructions as permission enforcement.
-Every helper logs under its own invocation directory using the owning stage name.
-Helpers never edit canonical goal, state, assignment, or packet records.
-Collect every descendant result and verify terminal identity using the pinned adapter before stage completion.
+Parents integrate and verify helper results and actual changes.
+Record helper IDs, work-order/result/log paths, and integration evidence.
+Every helper logs in its own invocation directory using the owning stage name.
+Helpers never edit canonical goal, state, assignment, or packets.
+Collect every descendant result and verify terminal identity through the pinned adapter before stage completion.

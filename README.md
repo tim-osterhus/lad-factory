@@ -43,16 +43,18 @@ Checker freezes expected behavior before inspecting any target implementation or
 ## Inspect the package
 
 - [Routing](context/routing.md) identifies each role's required context.
-- [Shared contracts](context/contracts.md) define worker ownership, evidence, logs, and assigned limits.
+- [Shared contracts](context/contracts.md) define worker ownership, development checks, evidence, and logs.
 - [Continuation policy](context/continuation.md) defines Goal, heartbeat, callback, and interactive resumption, authorization, recovery, and closure.
-- [Transition policy](context/transitions.md) covers every stage outcome and finite dispatch limits.
-- [Instruction revisions](context/instruction-revisions.md) preserve review guidance and require changed-path audits before acceptance.
+- [Transition policy](context/transitions.md) covers every stage outcome and evidence-driven recovery.
+- [Instruction revisions](context/instruction-revisions.md) preserve stable review guidance and existing user work.
 - [Nested model selection](context/nested-models.md) defines helper capability tiers and delegation. Your profile binds their models and efforts.
 - [Protocol fixture](examples/dry-run/README.md) exercises documented transitions without running native agents.
 
-## Installed bindings and limits
+## Installed bindings
 
-The optional [adapter source pack](adapter-templates/README.md) contains Codex CLI, Claude Code, OpenCode, Pi, and Hermes Agent starters.
+The optional [adapter source pack](adapter-templates/README.md) contains six guides.
+They cover Codex CLI, [Codex Cloud](adapter-templates/codex-cloud/README.md), Claude Code, OpenCode, Pi, and Hermes Agent.
+Codex Cloud follows the same methodology with capabilities exposed by its current session.
 Its [cross-harness guide](adapter-templates/cross-harness.md) describes explicit transport bindings and their limits.
 The Codex CLI source supplies the shipped Sol/Astra/Luna defaults. Your installed profile may choose other permitted models.
 
@@ -63,6 +65,9 @@ Keep the folder to reconfigure later, or deliberately restore the needed source 
 
 The host must provide fresh contexts, effective model settings, exact-owner completion, and the selected continuation mechanics.
 Native configuration can override requested settings. Provider, permission, and tool inheritance follow the actual host.
+
+Explicit user limits and actual host limits apply. LAD supplies no default dispatch, command, duration, or recovery quotas.
+Builder and Fixer may run development checks within existing permissions. Independent review follows their work.
 
 Model IDs alone do not enable another harness. No universal bridge, scheduler, or recovery service is included.
 Unloaded-session resumption requires actual evidence. Run records require retention and backup.

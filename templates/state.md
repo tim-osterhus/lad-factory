@@ -4,27 +4,11 @@ Run: <run-id>
 
 Continuation mode: <goal, heartbeat, callback, or interactive>
 
-Continuation authorization: <preserved selected-mode user evidence>
+Continuation authorization: <preserved user evidence>
 
-Continuation owning chat/reference/status/evidence: <verified saved selected control>
+Continuation owning chat/reference/status/evidence: <verified saved control or preparation gap>
 
-These native Goal fields apply only in Goal mode. Mark them not applicable in other modes.
-
-Native goal reference: <stable host-exposed reference>
-
-Native goal owning thread: <verified thread reference>
-
-Native goal verified objective: <observed objective matching original target>
-
-Native goal verification evidence: <response path and time>
-
-Optional goal_id: <only if exposed, otherwise not exposed>
-
-Native goal status: <observed status, or unverified before native binding>
-
-Heartbeat details: <heartbeat mode only: cadence, exact prompt, safe idle-resumption/serialization evidence, lifecycle receipt, otherwise not applicable>
-
-Callback/interactive details: <exact owner delivery and authorized yield, or saved resume instruction requiring user return, otherwise not applicable>
+Mode details: <native Goal objective/status and exposed reference, heartbeat prompt/cadence, verified callback delivery, or interactive resume instruction>
 
 Workflow status: prepared
 
@@ -36,70 +20,54 @@ Current packet: <packet-id or none>
 
 Active stage: <stage or none>
 
-Active invocation: <invocation-id or none>
+Active invocation/native owner: <invocation and verified identifier, unresolved, or none>
 
-Native agent ID: <verified identifier or none>
+Last accepted stage/result: <stage and result path or none>
 
-Last accepted result: <path or none>
+Current candidate: <base revision plus relevant current diff/untracked paths>
 
 Evidence index: run/current/evidence.md
 
-Instruction revision: <active immutable revision>
+Instruction revision/root: <versioned revision and snapshot root>
 
-Profile revision and adapter identity: <pinned installation files and manifest entries>
+Profile/adapter revisions: <pinned installation revisions>
 
-Effective native configuration identities: <recorded paths, hashes, precedence and selected owner/helper bindings>
+Effective native configuration: <selection, setting precedence, owner/helper bindings>
 
-Guidance manifest: <run/current/manifests/revision.md and identity>
+Existing user work: <relevant protected changes and ownership>
 
-Instruction root: <explicit immutable snapshot path>
-
-Pre-dispatch path snapshot: <current invocation snapshot path or none>
+Applicable limits: <explicit user limits and actual host/tool limits only, or none supplied>
 
 ## Ordered packets
 
-| Packet | Dependencies | Status | Guidance revision | Baseline | Fixer cycles | Learning status |
+| Packet | Dependencies | Status | Guidance revision | Baseline | Evaluated Fixer cycles | Learning |
 | --- | --- | --- | --- | --- | --- | --- |
 | <id> | <ids or none> | pending | <revision> | <path and identity or none> | 0 | pending |
 
-## Budgets
+## Dispatch history
 
-| Scope | Budget | Used | Remaining |
-| --- | --- | --- | --- |
-| <each applicable scope from context/transitions.md> | <finite limit> | <0 for a new run, otherwise reconciled debits> | <remaining after recorded debits> |
+| Invocation | Stage/packet | Native owner | Outcome/result | Cycle pairing | Changes/evidence |
+| --- | --- | --- | --- | --- | --- |
+| <id> | <stage and packet if any> | <ID or unresolved> | <active, rejected, interrupted, or result path> | <Fixer/Doublechecker IDs or none> | <relevant paths> |
 
-Recovery counter scope: <originating packet lineage or this run's persistent unpacketized scope, with reconciled ledger references>
-
-## Dispatch ledger
-
-| Invocation | Stage/packet | Reserved attempt | Native identity | Outcome | Cycle pairing | Path audit |
-| --- | --- | --- | --- | --- | --- | --- |
-| <id> | <stage, packet if any, and originating recovery counter scope> | <counter debit and scope reference> | <agent ID or unresolved> | <active, rejected, interrupted, or result> | <Fixer/evaluation IDs or none> | <evidence or pending> |
-
-Preserve debits on failed, invalid, interrupted, and unknown dispatches.
-Learning status is pending, passed, findings, or failed. Failed Learning preserves the pending route.
+Record failed, interrupted, superseded, and rejected invocations for exact-owner recovery.
+Learning status is pending, passed, findings, or failed. Preserve its saved route.
 
 ## Pending route
 
-<Resume stage after Learning or recovery and its supporting result.>
-
-<For a Human hold: reason/type, triggering invocation, exact saved resume stage/route, and necessary human resolution evidence.>
-<Source/guidance identities and relevant historical usage, current reservations, remaining limits, and active-owner identity/outcome.>
-<On resolution: verified scope/authority and identities, affected evidence/dependents, approved finite budget changes preserving past debits, and fresh resume invocation/debit.>
-<A terminal blocked invocation remains blocked. Reconcile active or uncertain owners before replacement.>
+<Next or exact resume stage, supporting evidence, and materially new next step when recovering.>
+<For a hold: reason, triggering invocation, owner status, required input/authority/resolution, and affected evidence.>
+<A terminal blocked invocation stays blocked. Reconcile active or uncertain owners before fresh invocation.>
 
 ## Decisions and recovery
 
-<Refinements, superseded invocations, blockers, and required human decisions.>
-
-<Selected-mode recovery/closure under context/continuation.md. Preserve active owner and control reference, never duplicate schedules, and record legitimate holds/cancellation/closure.>
-
-<Arbiter remediation episode ID, original criteria, reserved debit before Manager dispatch, and retained lineage/counters on rejection or interruption.>
+<Accepted refinements, superseded packets, resolved prerequisites, unresolved issues, and human decisions.>
+<Selected continuation control disposition on recovery, hold, cancellation, or closure.>
 
 ## Guidance candidates and activation
 
-<Candidate paths, old/new revisions, safe boundary, accepted scope, and affected evidence. No-op preserves the revision.>
+<Candidate paths, old/new revisions, accepted scope, safe boundary, and affected evidence.>
 
 ## Arbiter
 
-<Per-criterion verdict path or not yet reviewed.>
+<Current per-criterion verdict or not yet reviewed.>

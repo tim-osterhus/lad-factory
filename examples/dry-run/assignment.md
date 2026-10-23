@@ -14,17 +14,17 @@ Packet: examples/dry-run/packet.md
 
 Target workspace: illustrative greeting project
 
-Source identity: fixture-source-after-cycle-2
+Source identity: fixture-source-after-cycle-2, illustrative only
 
-Instruction revision: fixture-guidance-v1, illustrative only
+Instruction revision/root: fixture-guidance-v1, illustrative versioned snapshot
 
-Guidance manifest: illustrative path/hash inventory, not generated
+Profile/adapter revisions: fixture-profile-v1 and fixture-adapter-v1, illustrative only
 
-Instruction root: illustrative immutable fixture-guidance-v1 snapshot
+Effective owner binding: illustrative installed Learning binding, no native dispatch
 
-Path bases: package, target, and inherited host directory are illustrative, not real paths
+Path bases: package, target, and inherited host directory are illustrative
 
-Pre-dispatch path snapshot: illustrative clean target and unchanged package inventory
+Existing work: illustrative clean target and unchanged package guidance
 
 Parent invocation: none
 
@@ -32,33 +32,29 @@ Result path: examples/dry-run/result.md
 
 Log directory: illustrative historylog/fixture-greeting/fixture-learning-01/
 
-## Task and inputs
+## Task and ordered inputs
 
-Examine two illustrative Fixer cycles and whether current guidance could prevent recurrence.
-Use examples/dry-run/baseline.md and the transition cases in examples/dry-run/README.md.
+Examine two illustrative Fixer/Doublechecker pairs and whether guidance could prevent recurrence.
+Read examples/dry-run/baseline.md and examples/dry-run/README.md.
 
-## Writable paths
+## Writable paths and authority
 
-An illustrative assigned artifact directory only.
-No application or canonical file changes.
+Illustrative assigned artifacts only. No application, canonical record, or active-guidance changes.
 
 ## Checks and acceptance
 
-Preserve original criteria, baseline identity, counters, and pending route.
+Preserve original criteria, frozen baseline, cycle pairings, and pending route.
+Produce a supported candidate or no-op assessment.
 
 ## Review baseline
 
 examples/dry-run/baseline.md, fixture-baseline-v1
 
-## Budgets and counters
+## Route and limits
 
-Recovery counter scope: originating fixture-p01 lineage, matching the illustrative state.
-
-Fixer cycles used: 2. Learning not yet completed.
-
-Pending route: Troubleshooter. First Learning dispatch reserved, one retry remains.
-Use the illustrative finite limits and counters in examples/dry-run/state.md.
-No counters reset during Learning or interrupted-run recovery.
+Two evaluated cycles are recorded in examples/dry-run/state.md.
+Pending route: Troubleshooter. Learning assessment is pending.
+No user limits or live host limits apply to this non-executing fixture.
 
 ## Expected artifacts
 
@@ -66,5 +62,5 @@ Illustrative no-op assessment and matching result.
 
 ## Delegation
 
-Available under context/nested-models.md for separable work.
-No nested agents are spawned by this fixture.
+Available for useful separable work under context/nested-models.md.
+This fixture spawns no agents.

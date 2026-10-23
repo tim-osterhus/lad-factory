@@ -14,8 +14,11 @@ Preserve the review baseline and accepted packet criteria.
 
 Do not redefine success to fit the implementation.
 Run targeted checks and relevant regression checks.
+You may run appropriate development checks within assigned scope and existing permissions.
+Independent review does not prohibit self-testing.
+Edit/test authority does not grant independent acceptance, merge, publish, deploy, or other external-action authority.
 Report each finding's repair and evidence against current source.
 
-Recommend Doublechecker after a bounded repair attempt.
+Recommend Doublechecker after an inspectable repair.
 For unavailable authority, defective planning, or failed execution, describe the exact obstacle.
-The Orchestrator owns cycle counters and recovery routing.
+The Orchestrator records evaluated cycle pairings and owns recovery routing.

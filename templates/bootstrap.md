@@ -8,53 +8,52 @@ Package root: <observed absolute path>
 
 Target workspace: <observed absolute path>
 
-Target instructions: <applicable instruction paths and identities>
+Target instructions: <applicable paths>
 
-Original request source: <preserved user request path or evidence>
+Original request source: <preserved request or evidence path>
 
-Profile revision and identity: <pinned installation/profile.md revision and manifest entry>
+Profile revision: <pinned installation/profile.md revision>
 
-Adapter identity: <pinned installation/adapter.md revision and manifest entry>
+Adapter revision: <pinned installation/adapter.md revision>
 
-Effective native configuration identities: <paths, content identities, precedence, and effective owner/helper settings>
+Effective native configuration: <paths, selection, precedence, and effective owner/helper settings>
 
 Continuation mode: <goal, heartbeat, callback, or interactive>
 
-Continuation authorization: <selected-mode evidence, explicit Goal/recurring request when applicable, or missing>
+Continuation authorization: <selected-mode evidence or missing>
 
-Continuation owning chat: <verified host-exposed reference>
+Continuation owning chat: <verified host reference>
 
-Continuation reference/status/evidence: <verified selected control, or unverified during preparation>
+Continuation reference/status/evidence: <verified control or unverified during preparation>
 
-Instruction revision: <immutable revision>
+Instruction revision: <versioned guidance revision>
 
 Instruction root: <actual snapshot root>
 
-Guidance manifest: <path and identity>
+Exact Orchestrator startup prompt: <one actual relative read-file line>
 
-Exact Orchestrator startup prompt: <one Read actual-relative-snapshot-path and follow instructions. line>
+## Capabilities and permissions
 
-## Observed capabilities and permissions
+Classify evidence as observed, documented, user-confirmed, or unknown. Record dates and dependent execution gaps.
 
-Classify evidence as observed, documented, user-confirmed, or unknown. Record dates and whether each execution gate is verified.
-
-| Control/access | Observation and evidence | Status |
+| Control/access | Evidence | Status |
 | --- | --- | --- |
-| Selected continuation control | <actual lifecycle/binding, callback wait/yield/resume, or interactive user-return limitation under context/continuation.md> | <observed, documented, user-confirmed, or unknown> |
-| Fresh context | <actual host control> | <verified or unverified> |
-| Pinned model and effort bindings | <actual effective settings and configuration identities> | <observed, documented, user-confirmed, or unknown> |
-| Native completion/wait/yield | <actual host control, exact owner terminal signal, and limits> | <observed, documented, user-confirmed, or unknown> |
-| Required package and target paths | <observed read/write access and limits> | <verified or unverified> |
+| Continuation | <lifecycle/binding, verified callback delivery, or interactive user-return limitation> | <classification> |
+| Fresh context | <host control> | <verified or unverified> |
+| Model and effort | <effective settings and native precedence> | <classification> |
+| Completion/wait | <exact-owner terminal signal and native wait/yield> | <classification> |
+| Package/target access | <observed reads, assigned writes, and actual enforcement> | <classification> |
 
-## Existing work and prepared limits
+## Existing work and applicable limits
 
-<Declared target/package audit roots, full initial inventory, protected/untracked content identities, exclusions, and pre-existing ownership.>
-<Finite limits copied from context/transitions.md or explicit user overrides. Preserve existing counters on resume.>
+<Base Git revision, relevant existing diff/untracked paths, protected ownership, and needed non-Git content identities.>
+<Explicit user limits and actual host/tool limits only. If none were supplied, say so.>
 
 ## Preparation gaps
 
-<Exact missing target, specification, capability, or authority. No native proof is implied by prepared files.>
+<Missing specification, capability, input, or authority. Prepared records do not prove native execution.>
 
 ## Continuation details
 
-<Apply context/continuation.md. Goal: objective/criteria binding and lifecycle evidence. Heartbeat: reference, cadence, prompt, safe resumption/serialization evidence. Callback: exact owner delivery and authorized yield. Interactive: saved resume instruction and explicit user-return requirement. Preserve existing controls.>
+<Goal: objective/criteria binding and lifecycle evidence. Heartbeat: reference, cadence, prompt, and verified same-chat resumption.>
+<Callback: exact-owner delivery and yield contract. Interactive: saved resume instruction requiring user return.>

@@ -1,38 +1,38 @@
 # Setup
 
 Read `../context/routing.md` relative to this file.
-For setup, the instruction root and package root are the parent of this file's `prompts/` directory.
-Read `context/contracts.md`, `context/transitions.md`, `context/instruction-revisions.md`, `context/continuation.md`, and `docs/setup.md` from that root.
+For setup, the instruction and package root are the parent of this file's `prompts/` directory.
+Read `context/contracts.md`, `context/transitions.md`, `context/instruction-revisions.md`, `context/continuation.md`, and `docs/setup.md`.
 
 Prepare a run. Do not implement target code or spawn a stage.
-Reconcile any existing run using its pinned profile and adapter before considering mutable installation files.
-For a new run, require private `installation/profile.md` and `installation/adapter.md`. If absent, follow `SETUP.md`.
-For a new run, verify complete bindings, revisions, native configuration identities, and known capability gaps in both installed files.
+Reconcile an existing run through its pinned profile and adapter before considering mutable installation files.
+For a new run, require private `installation/profile.md` and self-contained `installation/adapter.md`.
+If absent, follow `SETUP.md`.
 
-Leave continuation-control creation to the owning Orchestrator after the selected mode's explicit authorization and capability gates.
+Check complete owner/helper bindings, native setting precedence, and known capability gaps.
+The Orchestrator creates continuation controls only after the selected mode's authorization and capability gates.
 
-1. Determine the actual inherited host working directory and this package root.
-2. Identify the target workspace and preserve its original user request and acceptance criteria.
-3. Ask only for missing target, specification, scope, binding choice, or consequential continuation preferences under `context/continuation.md`.
-4. Read target instructions and record the full declared target/package inventory, content identities, ownership, and explicit exclusions.
-5. Record observed native capabilities and file permissions. Mark unobserved controls unverified.
-6. If `run/current/` exists, reconcile it before writing. Preserve active work, original criteria, counters, and recorded native identities.
-7. For a new run, allocate a unique run ID and fill canonical records from the templates.
-8. Copy the finite default limits from `context/transitions.md`, or the user's explicit finite limits.
-9. Pin the installed profile, adapter, and effective model bindings with the guidance snapshot and its separate manifest.
-10. Record the actual single-line relative read-file prompt for that snapshot's Orchestrator.
+1. Determine the inherited host directory, package root, and target workspace.
+2. Preserve the original request, criteria, target instructions, and existing user work.
+3. Ask only for missing scope, binding, required input, or consequential continuation choices.
+4. Record the base Git revision, relevant existing diff/untracked paths, and protected ownership.
+5. Record observed capabilities and permissions. Mark unobserved controls unverified.
+6. Reconcile any existing current run before writing.
+7. For a new run, allocate a unique run ID and prepare canonical records.
+8. Record only explicit user limits and actual host or tool limits.
+9. Create one versioned guidance snapshot including the installed profile and merged adapter.
+10. Record the actual single-line relative read-file prompt for its Orchestrator.
 
-Fill `templates/bootstrap.md` with the observed paths, capabilities, permission evidence, authority, and prepared budgets.
-Save it as `run/current/bootstrap.md`.
+Fill `templates/bootstrap.md` as `run/current/bootstrap.md`.
+Record guidance revision/root, path bases, profile revision, adapter revision, and effective bindings.
+Choose only authorized fallbacks before pinning.
+Keep host-specific paths in private run records.
 
-Also record the active instruction root, revision, manifest, and exact startup prompt.
-Record the profile revision and adapter identity. Choose only explicitly authorized fallbacks before pinning.
-Paths inside private run records may be host-specific. Do not copy them into public package guidance.
+Prepare goal, state, initial assignment, and evidence index without claiming native execution.
+Record the selected continuation mode and its gaps.
+Leave native reference/status unverified until observed by the owning Orchestrator.
+Preserve target `AGENTS.md` by default.
+If target routing is authorized, append one small link after checking for an equivalent entry.
 
-Prepare goal, state, initial assignment, and evidence index without claiming verified native execution.
-Record the selected mode. Leave its native reference/status unverified until the owning Orchestrator observes and binds the actual control.
-Do not replace or alter an existing target `AGENTS.md` by default.
-If the user authorized adding routing, append one package-routing link only after checking for an equivalent existing entry.
-
-Finish with prepared record paths, the exact startup prompt, and missing capabilities or required inputs.
-No new runtime, installer program, benchmark, or alternate stage workflow is part of run setup.
+Finish with prepared paths, exact startup prompt, and missing capabilities or inputs.
+Do not add a runtime, benchmark, or alternate workflow.

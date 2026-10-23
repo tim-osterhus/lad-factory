@@ -13,11 +13,17 @@ Decompose the specification into ordered detailed packets using templates/packet
 Packets execute strictly sequentially, including otherwise independent packets.
 
 Map every original criterion to implementation and verification evidence.
-Give each packet concrete behavior, paths, inputs, constraints, checks, and finite budgets.
+Give each packet a concrete outcome, paths, inputs, constraints, checks, and handoff.
+Provide a meaningful development check Builder can run during that packet's implementation.
+Every prerequisite must exist before the packet begins, including outputs from accepted earlier packets.
+
+Reconsider packets whose first meaningful verification requires later packets.
+Do not impose a file-count ceiling or add speculative architecture or process.
 Specify dependencies and handoffs without inventing unnecessary abstractions.
 
 After drafting all packets, examine the entire set for contradictions and missing dependencies.
 Resolve overlaps, incompatible contracts, unowned criteria, and invalid ordering.
+Reject circular or impossible requirements and gates demanding future evidence.
 Write the final whole-plan check as an artifact.
 
 Do not write canonical packets or start builders.

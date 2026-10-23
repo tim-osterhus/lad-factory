@@ -2,7 +2,7 @@
 
 Use an existing native CLI, MCP, or ACP integration to assign a bounded LAD invocation to another harness. This guide defines the handoff contract. It supplies no transport daemon, controller, scheduler, or pair-specific bridge program.
 
-Merge this entire contract and the entire primary and selected secondary binding guides into the one self-contained `installation/adapter.md`. Use identified sections with each source and revision. Resolve source-relative links to installed native paths or source URLs. Do not leave separate mutable guide imports. Copy required native files outside the optional pack and record their exact identities. Pin the complete `installation/adapter.md`, profile, and native identities in every affected run. No active invocation may depend on removable source templates or unsnapshotted guidance.
+Merge this entire contract and the entire primary and selected secondary binding guides into the one self-contained `installation/adapter.md`. Identify each source and revision. Resolve source-relative links to installed native paths or source URLs. Leave no separate mutable guide imports. Copy required native files outside the optional pack and record their paths/revisions. Retain the complete adapter and profile in every affected run's instruction snapshot. Verify effective native settings against the pinned binding and actual configuration precedence. No active invocation may depend on removable templates.
 
 ## One assignment across the boundary
 
@@ -12,11 +12,11 @@ Before launch, the parent records the following in the assignment or work order 
 
 | Record | Required content |
 | --- | --- |
-| Ownership | Run, invocation, exact parent identity, stage/helper role, disjoint allowed writes, protected paths, pre-dispatch path snapshot |
+| Ownership | Run, invocation, exact parent identity, stage/helper role, disjoint allowed writes, protected paths, existing target changes |
 | Execution | Harness executable/integration and version, native agent/profile identity, working directory, read roots, permission enforcement |
-| Model | Exact provider route, model ID, supported native effort, configuration paths/content identities, explicit authorized fallback |
-| Guidance | Pinned profile revision, adapter revision, instruction root, manifest identity, ordered inputs, source identity metadata |
-| Limits | Finite attempts and descendant limits, reservations, used/remaining counters, originating packet or persistent unpacketized ledger |
+| Model | Exact provider route, model ID, supported native effort, effective native configuration, explicit authorized fallback |
+| Guidance | Pinned profile revision, adapter revision, instruction root/revision, ordered inputs, examined source identity |
+| Constraints | Explicit user limits, actual host concurrency/depth/tool constraints, ordinary permissions |
 | Return | Exact result and log paths, artifact paths, process/session/child identity, terminal status and descendant collection method |
 | Continuation | Actual parent delivery mechanism, supported wait/turn-end behavior, interruption recovery, or explicit manual return |
 
@@ -24,31 +24,31 @@ Use a fresh worker context. Do not resume a session selected by a familiar name,
 
 ## Launch and collection
 
-1. The parent verifies the assignment, approved authority, pinned bindings, source/path snapshot, and remaining reserved capacity.
-2. The parent persists dispatch and descendant debits before launch. A bridge consumes existing budgets, including failed or interrupted attempts.
+1. The parent verifies the assignment, approved authority, pinned bindings, source revision, existing changes, and applicable constraints.
+2. The parent records the invocation in dispatch history before launch.
 3. The parent launches exactly one identified owner for the assigned paths through the selected native mechanism.
 4. The parent records returned process/session/child IDs and where terminal status will be collected.
 5. The parent uses supported completion delivery. Orchestrator remains idle in native waiting or yields for the documented callback. Only stage/helper parents may do independent work while helpers run, within ownership and input order.
 6. The parent collects actual terminal status and the matching current result, artifacts, source identity, guidance identity, log, and every descendant result.
 7. The parent independently audits changed paths and required checks before accepting the result or changing canonical LAD state.
 
-A zero exit code, JSON response, agent summary, transport acknowledgment, or callback alone is insufficient. Match run, invocation, parent, stage, source, profile, adapter, and manifest against the current assignment. Retain stderr, process exit status, and interrupted or failed attempts. A result copied from an earlier invocation cannot satisfy the current one.
+A zero exit code, JSON response, agent summary, transport acknowledgment, or callback alone is insufficient. Match run, invocation, parent, stage, examined source, and pinned guidance against the current assignment. Retain stderr, process exit status, and interrupted or failed attempts. A result copied from an earlier invocation cannot satisfy the current one.
 
-All descendants must be terminal and collected. Non-Planner nesting follows the secondary harness's real capabilities and the assignment's allowed child tiers. Planner never delegates. Pi's first adapter uses manual fresh-session handoffs. A selected Pi extension that disables nesting does not satisfy nested dispatch automatically. Hermes background completion requires the parent to end its turn when using a later-result consumer. Follow the installed guide's semantics instead of copying another harness's wait API.
+All descendants must be terminal and collected. Non-Planner nesting follows the secondary harness's real capabilities, pinned profile, and explicit user limits. Planner never delegates. Pi's first adapter uses manual fresh-session handoffs. A selected Pi extension that disables nesting does not satisfy nested dispatch automatically. Hermes background completion requires the parent to end its turn when using a later-result consumer. Follow the installed guide's semantics instead of copying another harness's wait API.
 
 ## Uncertainty and authority
 
-If launch acknowledgment, writer identity, process status, or write outcome is uncertain, hold overlapping writes and replacement dispatch. Reconcile native process/session records and current artifacts first. Never retry blindly. Recovery retains the originating packet ledger or the run's single persistent unpacketized counter scope. Changing harnesses, restoring a session, or rewriting a work order cannot reset counters.
+If launch acknowledgment, writer identity, process status, or write outcome is uncertain, hold overlapping writes and replacement dispatch. Reconcile native process/session records and current artifacts first. Never retry blindly. Recover from the current candidate and accepted stage results, then rerun missing checks. Changing harnesses or restoring a session preserves explicit user limits, ownership, and dispatch history.
 
 The secondary harness cannot expand authority unavailable to the parent. Keep normal approvals and sandboxing. A native shell tool's availability does not authorize all commands it can run. An MCP or ACP connection is not permission to forward credentials, provider accounts, environment secrets, or unrelated context. Use the already configured provider boundary without automatic secret forwarding.
 
-Only Orchestrator writes canonical state, assignment, packets, and accepted guidance. Secondary agents never control the parent's Goal or heartbeat. Their result recommends a route among the existing four outcomes. It does not authorize another stage, extra budget, changed requirements, or replacement of Checker's frozen baseline. Learning remains a separate candidate process under the shared contract.
+Only Orchestrator writes canonical state, assignment, packets, and accepted guidance. Secondary agents never control the parent's Goal or heartbeat. Their result recommends a route among the existing four outcomes. It does not authorize another stage, changed requirements, or replacement of Checker's frozen baseline. Learning remains a separate candidate process under the shared contract.
 
 ## Claude primary → Codex secondary
 
 Example: Claude Code hosts Orchestrator. The selected profile assigns one Builder invocation to Codex CLI. Setup has merged this entire contract and both entire binding guides into the pinned `installation/adapter.md`. The user has authorized the target edits. The assignment declares the exact writable project paths and output directory. No other owner writes those paths.
 
-Before running the command, Claude records the invocation, source/path snapshot, pinned identities, existing budget reservation, working directory, output paths, and normal native permissions. Claude checks existing Codex configuration for conflicting provider/model settings and instruction discovery. Any unknown account access remains explicit. Do not call a model to test access.
+Before running the command, Claude records the invocation, source revision, existing changes, pinned guidance revision, working directory, output paths, and normal native permissions. Claude checks effective Codex configuration for conflicting provider/model settings and instruction discovery. Any unknown account access remains explicit. Do not call a model to test access.
 
 The following is an operator-reviewed command example, not an installed launcher. Replace every `{{...}}` marker with already resolved values. Create the unique output directory through the ordinary authorized setup procedure. Choose a workspace containing the authorized project and output paths, or resolve the documented native writable-root arrangement first. Do not broaden the sandbox to make missing paths writable.
 

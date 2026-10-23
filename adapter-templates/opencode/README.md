@@ -16,7 +16,7 @@ Start fresh sessions or Task contexts. Do not continue or fork an unrelated sess
 
 ## Permissions and completion
 
-The starter asks for edit, shell, and delegation approval. Resolve its policies to approved access without increasing authority. For Planner, set `permission.task` to `deny`. For other agents, allow only approved helper identities within the pinned profile and budgets. Native Task permissions use ordered pattern rules with the last match winning. Explicit user `@` invocation can bypass a Task type restriction, so reconcile manually launched workers as well.
+The starter asks for edit, shell, and delegation approval. Resolve its policies to approved access without increasing authority. For Planner, set `permission.task` to `deny`. Other stages select the smallest suitable helper tier within the pinned profile, explicit user limits, and actual host constraints. Native Task permissions use ordered pattern rules with the last match winning. Explicit user `@` invocation can bypass a Task type restriction, so reconcile manually launched workers as well.
 
 Foreground `opencode run` auto-rejects unresolved `ask` requests without `--auto`. It cannot present an interactive approval prompt. Before choosing this route, resolve narrowly authorized commands, write paths, and helper identities to native `allow` rules. Keep other access denied or unresolved. If the installed schema cannot express the required narrow access, use an interactive native session for approvals. Do not add broad `--auto` to make the template run.
 
@@ -26,9 +26,9 @@ Use the installed version's native Task completion or a foreground `opencode run
 
 ## Continuation and installed record
 
-Bind `goal`, `heartbeat`, `callback`, or `interactive` only to a mechanism verified in the actual host. Neither v1 agent configuration nor this template installs a scheduler. Use `interactive` when the user must return. Keep parent Goal/heartbeat controls out of delegated work. Reconcile uncertain launches before replacements and retain existing counters during recovery.
+Bind `goal`, `heartbeat`, `callback`, or `interactive` only to a mechanism verified in the actual host. Neither v1 agent configuration nor this template installs a scheduler. Use `interactive` when the user must return. Keep parent Goal/heartbeat controls out of delegated work. Reconcile uncertain launches before replacements. Recover from the current candidate and accepted results, then rerun missing checks.
 
-Copy the installed prompt import and native configurations outside `adapter-templates/`. Keep this entire binding and any entire cross-harness contract/other binding sections in the one self-contained `installation/adapter.md`. Record native destinations and content identities in `installation/profile.md` and that adapter. Pin both installation records and required native identities in each run. Use a pinned configuration copy or verify exact bytes before dispatch. Source cleanup requires explicit user authorization for the named folder. Preserve installed files, active runs, snapshots, logs, and evidence.
+Copy the installed prompt import and native configurations outside `adapter-templates/`. Keep this entire binding and any cross-harness contract/other binding sections in the one self-contained `installation/adapter.md`. Record native destinations and revisions in `installation/profile.md` and that adapter. Retain both installation records in each run's instruction snapshot. Check effective settings against the pinned binding and configuration precedence. Use revisioned files or content checks where mutable discovery could change that binding. Source cleanup requires explicit user authorization for the named folder. Preserve installed files, active runs, snapshots, logs, and evidence.
 
 ## Primary sources
 

@@ -8,53 +8,51 @@ Stage: Learning
 
 Outcome: pass
 
-Examined source: fixture-source-after-cycle-2
+Examined source: fixture-source-after-cycle-2, illustrative only
 
 Instruction revision: fixture-guidance-v1, illustrative only
 
-Guidance manifest: illustrative path/hash inventory, not generated
+Profile/adapter revisions: fixture-profile-v1 and fixture-adapter-v1, illustrative only
 
 Recommended route: Troubleshooter
 
 Parent invocation: none
 
-## Artifacts
+## Artifacts and actual changes
 
-No-op assessment: the fixture has insufficient evidence for an instruction change.
-
-This is illustrative data. No stage executed.
+No-op assessment: this fixture lacks evidence supporting an instruction change.
+This is illustrative data. No stage executed and no target changed.
 
 ## Checks
 
-| Check | Working directory | Result | Evidence |
+| Command or observation | Working directory | Status | Relevant output/evidence |
 | --- | --- | --- | --- |
-| Fixture field consistency | Package root | Structural check only | examples/dry-run/README.md |
+| Fixture field consistency | Package root | Structural example only | examples/dry-run/README.md |
 | Application behavior | Illustrative target | Unrun | No live application |
 
 ## Findings and criteria
 
 AC-01 and AC-02 remain subject to current-source review.
-Original baseline remains fixture-baseline-v1.
-Fixer cycles remain 2.
+The frozen baseline remains fixture-baseline-v1.
+Two evaluated cycle pairings remain recorded.
 
 ## Recovery or decisions
 
-Mark Learning completed only when accepting a real matching stage result.
-Restore the pending Troubleshooter route.
-The successful variant restores Updater.
+A real matching stage result would complete the Learning assessment.
+Restore the pending Troubleshooter route. The successful variant restores Updater.
 
-## Changed-path audit
+## Change review
 
-Illustrative pre-state: clean target and unchanged package guidance.
-Illustrative post-state: assigned result artifact only. No target-code or active-guidance changes.
-No real path audit executed. A native parent must independently compare actual differences before acceptance.
+Illustrative pre-state: clean target and unchanged guidance.
+Illustrative post-state: assigned result artifact only.
+No real change review executed. A native parent must inspect actual changes before acceptance.
 
 ## Nested work
 
-None.
+None. This fixture spawns no agents.
 
 ## Log
 
 Illustrative path: historylog/fixture-greeting/fixture-learning-01/Learning_1200-101426.md
 
-No runtime log was created. A real invocation must satisfy the shared byte limit.
+No runtime log was created. A real invocation must use UTC and a log smaller than 5120 bytes.

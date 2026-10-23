@@ -25,6 +25,6 @@ Preset revision: `codex-default-r1`. This preserves the original LAD assignments
 | SH | gpt-6.1-sol | high | Coupled implementation, debugging, integration |
 | SX | gpt-6.1-sol | xhigh | Difficult root cause, architecture, adversarial review |
 
-For this preset, Luna never owns a top-level stage and helpers never use Astra. These restrictions belong to this preset, not every harness or profile. Planner never delegates under the shared LAD contract. Other parents select the smallest suitable helper tier, within assigned child tiers and remaining budgets.
+For this preset, Luna never owns a top-level stage and helpers never use Astra. These restrictions belong to this preset, not every harness or profile. Planner never delegates under the shared LAD contract. Other parents select the smallest suitable helper tier within explicit user limits and actual host constraints.
 
 Resolve the provider route, exact native config identities, permissions, and explicit authorized fallbacks separately. No fallback is authorized by this preset. Unsupported or unavailable bindings require a profile decision before dispatch.

@@ -15,6 +15,9 @@ Choose the simplest appropriate change that meets the packet.
 Preserve user work and behavior outside the packet.
 Use nested agents for separable work when their ownership is disjoint.
 Run meaningful packet checks with the target project's tools.
+You may run appropriate development checks within assigned scope and existing permissions.
+Independent review does not prohibit self-testing.
+Edit/test authority does not grant independent acceptance, merge, publish, deploy, or other external-action authority.
 
 Record examined source identity, changes, failed checks, and unrun checks.
 Do not review yourself as Checker or claim packet closure.

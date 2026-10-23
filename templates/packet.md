@@ -8,11 +8,9 @@ Specification: run/current/spec.md
 
 Original criteria: <AC identifiers>
 
-Instruction revision: <packet's immutable guidance revision>
+Instruction revision: <packet's guidance revision>
 
-Guidance manifest: <path and identity>
-
-Depends on: <prior packet identifiers or none>
+Depends on: <accepted prior packets or none>
 
 Order: <sequential position>
 
@@ -20,28 +18,31 @@ Order: <sequential position>
 
 <Concrete behavior this packet establishes.>
 
-## Inputs and constraints
+## Inputs and prerequisites
 
-<Sources, contracts, preserved behavior, pre-existing issues.>
+<Relevant sources, contracts, preserved behavior, existing issues, and prerequisites available before this packet.>
 
 ## Writable paths
 
-<Explicit target-project paths.>
+<Explicit project paths without an arbitrary file-count ceiling.>
 
 ## Implementation detail
 
-<Necessary decisions and steps.>
+<Only necessary decisions and steps.>
 
-## Acceptance and checks
+## Acceptance and development checks
 
-| Criterion | Check | Required evidence |
+| Criterion | Check Builder can run during implementation | Required evidence |
 | --- | --- | --- |
-| <AC-ID> | <command or observation> | <examined source and result> |
+| <AC-ID> | <command or observation and working directory> | <examined source, status, relevant output> |
 
-## Budgets
+<Reconsider the packet if its first meaningful verification requires later work.>
+<Independent review still follows implementation.>
 
-<All applicable finite limits from context/transitions.md and existing used counters.>
+## Authority and limits
+
+<Development edit/test authority, separate external-action gates, and applicable explicit user or host limits.>
 
 ## Handoff
 
-<Artifacts for the next packet and authorized human gates.>
+<Concrete outputs and contracts available to the next packet, unresolved issues, and human gates.>

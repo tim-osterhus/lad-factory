@@ -2,7 +2,7 @@
 
 This guide binds LAD to Hermes Agent's native delegation and fresh CLI sessions.
 
-Merge and adapt this entire guide as an identified binding section in `installation/adapter.md`. For cross-harness work, merge the entire primary and secondary guides and entire shared cross-harness contract into that same file. Record each section's source and revision. Resolve markers and source-relative references. Leave no separate mutable guide imports. Record the installed version/source revision, profile revision, provider routes, native effort, native profile/config identities, working directory, and actual tool/path authority. Copy required native files outside this optional pack before cleanup.
+Merge and adapt this entire guide as an identified binding section in `installation/adapter.md`. For cross-harness work, merge the entire primary and secondary guides and shared cross-harness contract into that same file. Record each section's source and revision. Resolve markers and source-relative references. Leave no separate mutable guide imports. Record the installed version/source revision, profile revision, provider routes, native effort, native profile/config paths, working directory, and actual tool/path authority. Copy required native files outside this optional pack before cleanup.
 
 ## Native binding
 
@@ -27,15 +27,15 @@ Omit continue/resume flags. On a real terminal this seeds an interactive session
 
 ## Delegation and continuation
 
-Native delegation creates fresh child conversations. In the pinned implementation, `role` is a legacy ignored parameter. A child can delegate only when `orchestrator_enabled` is true and its depth is below `max_spawn_depth`. The non-Planner fragment permits nesting through depth 2. Configure finite concurrency and depth within the accepted LAD budget. Native iteration caps do not replace LAD's dispatch and recovery counters.
+Native delegation creates fresh child conversations. In the pinned implementation, `role` is a legacy ignored parameter. A child can delegate only when `orchestrator_enabled` is true and its depth is below `max_spawn_depth`. Respect the actual host's concurrency and depth settings. Resolve any required nesting through documented native configuration. LAD adds no numeric defaults. Select the smallest suitable helper tier within the profile and explicit user limits.
 
-Launch Planner as a fresh session under its separate Planner-only profile. That fragment sets `orchestrator_enabled: false` and `max_spawn_depth: 1`. It also selects only native `terminal` and `file` toolsets, excluding the delegation tool from Planner itself. Verify the effective tool list contains no delegation or alternative agent-launch tool. Do not inherit the general `hermes-cli` preset or pass toolset overrides that restore delegation. Shell access remains governed by LAD's prohibition on Planner delegation and the recorded command authority. Do not treat a legacy `role: leaf` argument as enforcement.
+Launch Planner as a fresh session under its separate Planner-only profile. That fragment sets `orchestrator_enabled: false`. It also selects only native `terminal` and `file` toolsets, excluding the delegation tool from Planner itself. Verify the effective tool list contains no delegation or alternative agent-launch tool. Do not inherit the general `hermes-cli` preset or pass toolset overrides that restore delegation. Shell access remains governed by LAD's prohibition on Planner delegation and the recorded command authority. Do not treat a legacy `role: leaf` argument as enforcement.
 
 Current model-facing background delivery occurs only between parent turns. Orchestrator persists the pending stage identity, gives a brief waiting status, and ends its turn without other work. Stage/helper parents may finish independent work permitted by their assignment before ending their turn. Do not imitate Codex's wait API or poll transcripts. A session without a later-result consumer, including one-shot CLI, joins children in the tool call. Record which mechanism actually applies.
 
 For callback mode, verify the precise parent session and delivery consumer. Native subagents do not guarantee durable work across parent process exit, stop, or new-session operations. If no reliable continuation mechanism exists, use `interactive` and require the user to return. This pack installs no scheduler. Only Orchestrator may control an authorized Goal or heartbeat.
 
-Collect exact child/session IDs, terminal status, current result, examined source, pinned guidance revision, log, and every descendant result. A background delivery or child self-report alone is insufficient. Reconcile unknown launches or writes before replacement dispatch and preserve the originating budget ledger.
+Collect exact child/session IDs, terminal status, current result, examined source, pinned guidance revision, log, and every descendant result. A background delivery or child self-report alone is insufficient. Reconcile unknown launches or writes before replacement dispatch. Recover from the current candidate and accepted results, then rerun missing checks.
 
 ## Permissions, transports, and installed record
 
@@ -43,7 +43,7 @@ Keep `subagent_auto_approve: false`. Record how refusals are surfaced and handle
 
 The referenced source supports configured provider/ACP routing, including trusted configuration for command/argument selection. These options do not authorize a model to choose arbitrary transport commands. If selecting an existing ACP integration, pin its executable, arguments, configuration, permissions, and completion behavior in the installed guide. Otherwise use the separate-session/manual route above. This pack builds no ACP bridge.
 
-Record native profile and configuration paths/content identities for every stage/helper, including the distinct Planner profile. Keep this entire binding and any entire cross-harness contract/other binding sections in the one self-contained `installation/adapter.md`. Copy required native files outside `adapter-templates/`. Pin both installation records and required native configuration identities in each run. Verify exact loaded bytes before dispatch. Mutable installation edits cannot alter active runs. Cleanup requires explicit user authorization for the exact source folder and preserves installed configurations, active sessions, snapshots, logs, and evidence.
+Record native profile and configuration paths/revisions for every stage/helper, including the distinct Planner profile. Keep this entire binding and any cross-harness contract/other binding sections in the one self-contained `installation/adapter.md`. Copy required native files outside `adapter-templates/`. Retain both installation records in each run's instruction snapshot. Check effective settings against the pinned binding and configuration precedence. Use revisioned files or content checks where mutable discovery could change that binding. Installation edits create a new revision without silently changing an active run. Cleanup requires explicit user authorization for the exact source folder and preserves installed configurations, active sessions, snapshots, logs, and evidence.
 
 ## Primary sources
 

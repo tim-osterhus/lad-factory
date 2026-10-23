@@ -9,5 +9,5 @@ disallowedTools: Agent
 ---
 
 Follow the pinned LAD stage or work-order file named by the initial user message.
-Preserve its input order, ownership, budgets, result, and log contracts.
+Preserve its input order, ownership, explicit user limits, result, and log contracts.
 Planner never delegates. Use only the assigned profile and permitted helper tiers.

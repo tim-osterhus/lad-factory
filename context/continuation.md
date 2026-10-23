@@ -38,12 +38,13 @@ Interactive mode requires the user to return and resume the owning session when 
 Save the active invocation, pending route, and exact resume instruction before yielding.
 Report what is running, where results will be saved, and that the user must return.
 Never claim background continuation. Reconcile the owner and result on return before dispatching anything else.
-Interactive mode preserves every stage, review guard, and finite budget.
+Interactive mode preserves every stage, review guard, and explicit user limit.
 
 Inspect exposed existing controls before adopting a mode. An unrelated active Goal or uncertain binding requires reconciliation.
 Preserve unrelated Goals and schedules. Do not silently pause, abandon, replace, or complete them.
 
-A mode change requires explicit user direction and verified lifecycle reconciliation before dependent dispatch.
+A mode change requires existing user authorization and verified lifecycle reconciliation before dependent dispatch.
+When Goal or heartbeat controls are unsupported, record a supported callback or interactive mode within that authorization.
 Missing capabilities stop dependent execution. Preserve prepared files and identify the exact missing evidence or authority.
 Do not invent APIs, launch unsupported external harnesses, or add a custom continuation service.
 
@@ -57,7 +58,7 @@ Progress events, helper completions, and unexpected identities cannot advance th
 Accept only the adapter's terminal completion signal for the exact recorded owner, with a valid current result and collected terminal descendants.
 
 Every wake or user return reconciles saved state and the exact active owner before dispatch.
-Preserve scope, criteria, counters, budgets, routes, and pinned instruction identities.
+Preserve scope, criteria, evaluated cycle history, explicit user limits, routes, and guidance revisions.
 Reconcile uncertain identities or outcomes under `context/transitions.md`. Never restart completed work.
 
 Only a current Arbiter pass for every original criterion, with all work drained, permits successful closure.
@@ -65,7 +66,7 @@ In Goal mode, reinspect and complete only the exact owning Goal using its suppor
 In heartbeat mode, stop or disable only this run's heartbeat and record the returned status.
 For callback or interactive mode, record closure and reconcile any pending callback. Do not imply a nonexistent lifecycle API.
 
-Stop only this heartbeat on cancellation or a legitimate recorded human-input/budget hold.
+Stop only this heartbeat on cancellation or a legitimate recorded Human hold.
 A late wake after closure, cancellation, or that hold stops the heartbeat without dispatch.
 Ordinary waiting or unchanged state is not a hold. Native Goal holds follow native rules separately.
 If cleanup cannot be verified, report the limitation and exact remaining native control.
@@ -73,7 +74,7 @@ If cleanup cannot be verified, report the limitation and exact remaining native 
 ## Heartbeat prompt contract
 
 Save a concise native scheduler prompt that resumes this run from saved state using its pinned adapter.
-Require exact-owner waiting, no duplicate work, preserved criteria and budgets, and continuation through Arbiter review.
-Require stopping only this heartbeat on closure, cancellation, or a recorded human-input/budget hold.
+Require exact-owner waiting, no duplicate work, preserved criteria and explicit user limits, and continuation through Arbiter review.
+Require stopping only this heartbeat on closure, cancellation, or a recorded Human hold.
 A late wake after that disposition must stop without starting another run.
 The adapter supplies actual tool names. This policy defines no generic executable API.

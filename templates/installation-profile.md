@@ -14,13 +14,13 @@ Package root / target workspace / inherited host directory: <explicit paths>
 
 Selected adapter: installation/adapter.md
 
-Adapter revision and identity: <selected binding revision and SHA-256>
+Adapter revision: <selected merged binding revision>
 
 Adapter sources and sections: <primary guide, each selected secondary guide, and cross-harness contract when selected, with source URLs, revisions, dates, evidence>
 
 Installed guide construction: <complete guides and selected shared contract merged as identified sections in installation/adapter.md, with resolved paths and no mutable guide imports>
 
-Native configuration files: <authorized destinations, identities, active selection, and setting precedence>
+Native configuration files: <authorized destinations, active selection, effective settings, precedence, and content identity only when needed>
 
 Provider / authentication / model access: <installed, authenticated, configured, or unknown per binding, without secrets>
 

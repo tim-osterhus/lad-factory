@@ -19,9 +19,9 @@ Check that the change preserves requirements and does not create contradictory i
 
 Prefer no change when evidence does not support an instruction repair.
 Record evidence, the candidate instruction, its expected effect, and validation.
-Do not reset counters, change the specification, or churn the workflow.
+Preserve cycle history, the specification, and the pending route.
 
 Return the assignment's pending route unchanged.
 This stage follows the two-cycle gate, including a successful second cycle.
 Report unavailable prerequisites or execution errors without starting another Learning invocation.
-The Orchestrator applies the bounded failure and activation policies. Preserve the assigned pending route.
+The Orchestrator applies the failure and safe-activation rules. Preserve the assigned pending route.

@@ -60,11 +60,10 @@ Do not substitute unrelated chats, unsupported CLI processes, or a custom contro
 
 Setup fills bootstrap, goal, state, assignment, and an empty evidence index under `run/current/`.
 Preserve the original specification, stable criteria, target instructions, path bases, and existing user work.
-Copy finite limits from `context/transitions.md` unless the user supplied other finite limits.
-Never reset counters on an existing run.
+Record explicit user limits and actual host/tool limits. Do not invent default quotas.
 
-Create an immutable instruction snapshot and separate manifest under [instruction revisions](../context/instruction-revisions.md).
-Include the installed profile and complete merged adapter. Verify separate native configuration identities before dispatch and acceptance.
+Create one versioned guidance snapshot under [instruction revisions](../context/instruction-revisions.md).
+Include the installed profile and complete merged adapter. Verify effective native settings against the pinned binding.
 Required installed/native files must exist outside the optional source folder.
 The first Orchestrator prompt and every stage read pinned guidance.
 Keep guidance/profile identity separate from target source identity.
@@ -79,11 +78,17 @@ Ignore rules provide neither backup nor access control. Apply the target's reten
 ## Interrupted-run recovery
 
 Read canonical state and original goal. Reconcile the saved continuation control and exact owner under the pinned adapter.
-Validate results against the invocation, guidance/profile revision, manifest, and examined source.
-Wait for active work or explicitly interrupt it before replacement.
-Record interruption and preserve its spent attempt before a new invocation.
-Resume only within remaining limits and hold guards in `context/transitions.md`.
+Establish the exact owner's terminal status, current candidate, and last accepted stage.
+Validate results against invocation, guidance/profile revision, and examined source.
+Wait for active work or confirm terminal interruption before replacement.
+
+Regenerate missing or stale evidence and use a fresh invocation of the correct stage.
+Apply explicit user limits and problem-driven recovery in `context/transitions.md`.
 
 Do not replay external writes with unknown outcomes. Verify the outcome before deciding whether to repeat the action.
 Preserve target release and external-action gates.
 Files support recovery when the user returns. Scheduler presence alone does not prove unloaded-session wakeup.
+
+To adopt a revised contract during an interrupted run, require user-authorized adoption and retain the old run record.
+Reconcile the owner, then reevaluate the current candidate under the new revision without reconstructing old command counts.
+Do not retroactively mark the old run compliant. Preserve useful evidence and rerun affected reviews through fresh owners.

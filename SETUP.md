@@ -8,6 +8,8 @@ Do not start a run, model call, service, scheduler, or Goal during installation.
 
 Read `AGENTS.md`, `context/routing.md`, `docs/setup.md`, and `templates/installation-profile.md`.
 Inspect the selected host's optional adapter source, when available, under `adapter-templates/`.
+The six guides cover Codex CLI, [Codex Cloud](adapter-templates/codex-cloud/README.md), Claude Code, OpenCode, Pi, and Hermes Agent.
+Codex Cloud uses the shared methodology and only capabilities exposed by its current session.
 Read the target workspace's applicable instructions before proposing target changes.
 
 Use read-only existing metadata to discover host versions, configured model lists, native configuration identities, and available tools.
@@ -31,7 +33,8 @@ Recommend explicit stage and helper bindings with their evidence and limitations
 Use dated primary documentation for capability claims. Artificial Analysis may be an optional secondary reference, never a dependency.
 
 The Codex CLI adapter supplies the shipped Sol/Astra/Luna defaults. Other profiles may use other models and supported efforts.
-Keep every stage, review boundary, outcome, and finite cap. Do not offer a collapsed or lightweight workflow.
+Keep every stage, review boundary, and outcome.
+Enforce explicit user limits and real host limits without inventing default quotas.
 
 Show the proposed profile, selected adapter, native file destinations, and unresolved capabilities before writing them.
 Proceed within existing user authorization. Obtain only missing authority for consequential host or target configuration changes.
@@ -44,7 +47,7 @@ Do not install a new runtime, daemon, plugin framework, or universal bridge.
 3. Merge the complete primary binding guide and every selected secondary binding guide into one self-contained `installation/adapter.md`.
 4. Copy required native starter files into authorized installation or native configuration paths outside `adapter-templates/`.
 5. Point native files to the shared pinned stage prompt or helper work order supplied at dispatch.
-6. Record exact native file identities and setting precedence in the profile.
+6. Record native file selection, effective settings, and precedence in the profile.
 7. Check required paths, completed bindings, native syntax, and links without inference.
 8. Report prepared files, unresolved capabilities, and the per-run `prompts/setup.md` entrypoint.
 
@@ -52,7 +55,8 @@ For cross-harness installations, merge the full shared cross-harness contract in
 Give each guide and contract an identified section with its source and revision. Resolve source-relative paths to installed paths or documentation URLs.
 
 Do not retain separate mutable guide imports. The run snapshot pins this single merged guide with the profile.
-Native configuration files remain separate. Record and verify their exact content identities as required by the profile.
+Native configuration files remain separate. Verify their effective settings against the pinned profile.
+Retain content identities only when needed to distinguish mutable files or detect drift.
 
 Never replace existing instructions or configuration wholesale. Preserve unrelated entries and user changes.
 Native configuration may override requested models or efforts. Record and check effective settings before dependent dispatch.

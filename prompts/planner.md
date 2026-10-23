@@ -13,6 +13,8 @@ Assess whether the original specification is sufficient to implement and verify.
 Use Recon for existing-code evidence when available.
 
 Check outcomes, constraints, criteria, real dependencies, and unresolved decisions.
+Reject circular or impossible requirements and gates demanding evidence from future work.
+Check that proposed implementation units can be verified when their work occurs.
 If sufficient, pass the specification through unchanged.
 Otherwise add only necessary detail in a proposed specification artifact.
 
